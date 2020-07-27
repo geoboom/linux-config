@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/geoboom/schoolwork/CS3230/ps4'
+let g:netrw_dirhist_0='/home/geoboom/schoolwork/CS3230'
+let g:netrw_dirhist_9='/home/geoboom/schoolwork/CS3230/ps4'
+let g:netrw_dirhist_8='/home/geoboom'
+let g:netrw_dirhist_7='/home/geoboom/.local'
+let g:netrw_dirhist_6='/home/geoboom'
+let g:netrw_dirhist_5='/home/geoboom/git-repos'
+let g:netrw_dirhist_4='/home/geoboom'
+let g:netrw_dirhist_3='/home/geoboom/git-repos'
+let g:netrw_dirhist_2='/home/geoboom'

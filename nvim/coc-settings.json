@@ -1,0 +1,9 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "css", "markdown"],
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all",
+    "signature.hideOnTextChange": true,
+    "python.jediEnabled": false,
+    "javascript.showUnused": false
+}
+
