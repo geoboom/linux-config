@@ -35,6 +35,7 @@ Change `nvim` in `VISUAL=nvim` or `EDITOR=nvim` to your preferred editor.
 ## nvim (WIP)
 
 Install fzf and Ag/Rg.
+:PlugInstall
 
 ## tmux
 
