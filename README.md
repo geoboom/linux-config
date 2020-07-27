@@ -27,6 +27,8 @@ ide2() {
 export VISUAL=nvim
 export EDITOR=nvim
 
+alias vim='nvim'
+
 alias ..='cd ..'
 ```
 
