@@ -41,7 +41,7 @@ Change `nvim` in `VISUAL=nvim` or `EDITOR=nvim` to your preferred editor.
 Install fzf and Ag/Rg.
 :PlugInstall
 
-## tmux
+## tmux (.tmux.conf)
 
 ```sh
 # default shell
@@ -53,7 +53,7 @@ set-option -g default-shell "/bin/bash"
 - Change default shell `bash` to your preferred shell.
 - Change `nvim` in `bind-key M split-window -h "nvim ~/.tmux.conf"` to your preferred editor.
 
-## i3 config (<img src="https://latex.codecogs.com/gif.latex?\Delta\text{s}" />)
+## i3 config (.i3/config <img src="https://latex.codecogs.com/gif.latex?\Delta\text{s}" />)
 
 This section contains the things I changed/added to the default manjaro config for i3.
 
@@ -129,3 +129,24 @@ exec --no-startup-id xset -b # remove the stupid bell
 - explore if `$mod+p` is a feasible shortcut (less mental context switching required) for `dmenu`
   (where you search for an app to run) - it's the shortcut I use for vim `ctrlp/fzf` plugin to
   search for a file.
+
+## urxvt config (.Xresources)
+
+urxvt is a unicode version of the lightweight rxvt terminal and is shipped with manjaro i3 by default, alongside iterm and i3-sensible-terminal which I don't use and should uninstall soon.
+
+I basically just wiped all `iterm.*` related configs here and applied gruvbox-dark theme which replaced the old one (between `! BEGIN THEME` and `! END THEME`). Additionally, I removed any lines in the file related to `URxvt*background/foreground` because they overrided the colors. Not sure why they were there to begin with.
+
+I also changed the font from fixed `9x15` to dynamic `pixelsize` based and installed two themes `resize-font` (requires installation from AUR, see arch wiki) and `clipboard` and configured them with the following keybinds (+removed any similar keybinds hitherto present):
+
+```sh
+! keybindings
+!! extension: resize-font
+URxvt.keysym.C-minus:     resize-font:smaller
+URxvt.keysym.C-plus:      resize-font:reset
+URxvt.keysym.C-equal:     resize-font:bigger
+URxvt.keysym.C-slash:     resize-font:show
+
+!! extension: clipboard
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+```
