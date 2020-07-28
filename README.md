@@ -53,7 +53,7 @@ set-option -g default-shell "/bin/bash"
 - Change default shell `bash` to your preferred shell.
 - Change `nvim` in `bind-key M split-window -h "nvim ~/.tmux.conf"` to your preferred editor.
 
-## i3 config ($\Delta$s)
+## i3 config (<img src="https://latex.codecogs.com/gif.latex?\Delta \text{s}" />)
 
 This section contains the things I changed/added to the default manjaro config for i3.
 
@@ -103,7 +103,7 @@ mode "resize" {
 ```
 
 5. To account for `$mod+h` being used for navigate left, I have changed horizontal split mode
-   to `mod+Shift+v`.
+   keybind to `mod+Shift+v`.
 
 ```sh
 # split orientation
