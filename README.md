@@ -1,6 +1,6 @@
 # My Config for Linux/WSL2
 
-## Contents
+**Contents:**
 
 - shell (zsh/bash/fish) aliases and functions
 - nvim
