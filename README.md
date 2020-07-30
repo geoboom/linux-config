@@ -7,6 +7,7 @@
 - tmux
 - i3 config (includes startup scripts)
 - Xresources (urxvt) config
+- suspend on lid clsoe (systemd-logind)
 
 ## shell stuff
 
@@ -150,3 +151,7 @@ URxvt.keysym.C-slash:     resize-font:show
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 ```
+
+## suspend on lid close
+
+See `/etc/systemd/logind.conf`.
