@@ -2,12 +2,32 @@
 
 **Contents:**
 
+- manjaro installation walkthrough
 - shell (zsh/bash/fish) aliases and functions
 - nvim
 - tmux
 - i3 config (includes startup scripts)
 - Xresources (urxvt) config
 - suspend on lid clsoe (systemd-logind)
+
+## manjaro installation walkthrough (i3wm)
+
+0.1. `xset r rate 270 33` my preferred repeat rate and delay
+0.2. `xset -b` to remove the bell
+
+1. clone this repo
+2. update pacman and repos `pacman-mirrors --geoip && pacman -Syyu`
+3. open `pamac-manager` gui and ensure enable AUR support is yes
+4. install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes)
+5. remove pale moon and update default browser for all applications
+   s. install zsh
+6. configure multiple monitor layout with xrandr
+7. sound:
+   8.1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
+   8.2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
+8. disable mouse acceleration
+9. configure datetime properly. Not sure why after boot into manjaro timezone fucks up: manjaro-settings-manager -> time and date -> set time and date automatically
+10. flameshot for screenshot: `pacman -S flameshot`
 
 ## shell stuff
 
@@ -41,6 +61,8 @@ Change `nvim` in `VISUAL=nvim` or `EDITOR=nvim` to your preferred editor.
 
 ## nvim (WIP)
 
+Install pynvim: `python3 -m pip install --user --upgrade pynvim`
+Install nodejs and npm: `pacman -S nodejs npm`
 Install fzf and Ag/Rg.
 :PlugInstall
 
@@ -60,16 +82,19 @@ set-option -g default-shell "/bin/bash"
 
 This section contains the things I changed/added to the default manjaro config for i3.
 
-1. Under `#Start Applications`, I changed `$mod+F2` to open `google-chrome-stable`
+0. sudo xdg-settings set default-web-browser google-chrome-stable.desktop
+1. `/home/$USER/.profile` replace browser entry google-chrome-stable.
+2. Under `#Start Applications`, I changed `$mod+F2` to open `google-chrome-stable`
    instead of the default `Pale Moon` (yikes). I also changed all the browser instances
    in `.config/mimeapps.list` (associates default apps to filetypes) to google-chrome.desktop.
-2. I commented out `bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf` because
+3. I commented out `bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf` because
    I'm using `$mod+h/j/k/l` for focus switching (instead of `$mod+j/k/l/;`) and `Shift+` the
    corresponding keys for movement. Also I'll just google for the manual if I need it.
-3. I uncommented this line `focus_follows_mouse no` because it's annoying to have the cursor
+4. `sudo systemctl restart lightdm` to restart xserver or some shit so the settings would take effect.
+5. I uncommented this line `focus_follows_mouse no` because it's annoying to have the cursor
    focus the window I'm on without me clicking on it, which is the default behavior if said line
    remained commented.
-4. The following keybinds have been changed from `j/k/l/;` for navigation to vim-keybinds `h/j/k/l`.
+6. The following keybinds have been changed from `j/k/l/;` for navigation to vim-keybinds `h/j/k/l`.
 
 ```sh
 # ...
