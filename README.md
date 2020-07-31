@@ -11,6 +11,8 @@
 
 ## shell stuff
 
+**todo:** upload zsh config
+
 ```sh
 gitcm() {
     git add . && git commit -m "$1" && git push
