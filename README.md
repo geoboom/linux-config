@@ -12,28 +12,37 @@
 
 ## manjaro installation walkthrough (i3wm)
 
-0.1. `xset r rate 270 33` my preferred repeat rate and delay
-0.2. `xset -b` to remove the bell
-
-1. clone this repo
-2. update pacman and repos `pacman-mirrors --geoip && pacman -Syyu`
-3. open `pamac-manager` gui and ensure enable AUR support is yes
-4. install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes)
-5. remove pale moon and update default browser for all applications
-   s. install zsh
-6. configure multiple monitor layout with xrandr
-7. sound:
-   8.1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
-   8.2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
-8. disable mouse acceleration
-9. configure datetime properly. Not sure why after boot into manjaro timezone fucks up: manjaro-settings-manager -> time and date -> set time and date automatically
-10. flameshot for screenshot: `pacman -S flameshot`
+1. `xset r rate 270 33` my preferred repeat rate and delay
+2. `xset -b` to remove the bell
+3. clone this repo
+4. update pacman and repos `pacman-mirrors --geoip && pacman -Syyu`
+5. open `pamac-manager` gui and ensure enable AUR support is yes
+6. install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes)
+7. remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!)
+8. install zsh
+9. configure multiple monitor layout with xrandr
+10. sound:
+    1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
+    2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
+11. disable mouse acceleration
+12. configure datetime properly. Not sure why after boot into manjaro timezone fucks up: manjaro-settings-manager -> time and date -> set time and date automatically
+13. flameshot for screenshot: `pacman -S flameshot`
+14. disable mouse acceleration (`xinput --list`, `xinput --list-props <device-id>`, `xinput --set-prop <device-id> 'libinput Accel Speed' -0.7`) and permanently commit: xorg config file in `/etc/X11/xorg.conf.d/`...
+15. if window is nested/stuck, just move it to the left/right until it gets unnested!
+16. change cursor to inverted color and make it bigger
 
 ## shell stuff
 
 **todo:** upload zsh config
 
 ```sh
+# change all instances of VISUAL and EDITOR to nvim
+export VISUAL=nvim
+export EDITOR=nvim
+```
+
+```sh
+# helpful functions
 gitcm() {
     git add . && git commit -m "$1" && git push
 }
@@ -49,12 +58,10 @@ ide2() {
     tmux split-window -h -p 50
 }
 
-export VISUAL=nvim
-export EDITOR=nvim
-
+# helpful aliases
 alias vim='nvim'
-
 alias ..='cd ..'
+alias rr='ranger'
 ```
 
 Change `nvim` in `VISUAL=nvim` or `EDITOR=nvim` to your preferred editor.
@@ -95,6 +102,9 @@ This section contains the things I changed/added to the default manjaro config f
    focus the window I'm on without me clicking on it, which is the default behavior if said line
    remained commented.
 6. The following keybinds have been changed from `j/k/l/;` for navigation to vim-keybinds `h/j/k/l`.
+7. super+Print to screenshot currently focused window with scrot -u into xclip clipboard. TODO: `flameshot`
+   to screenshot active display
+8. bind different workspaces to different displays
 
 ```sh
 # ...
