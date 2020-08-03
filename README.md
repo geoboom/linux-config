@@ -20,7 +20,7 @@
 6. install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes)
 7. remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!)
 8. install zsh
-9. configure multiple monitor layout with xrandr
+9. configure multiple monitor layout with arandr and save config as `.sh`. Then, xrandr startup script...
 10. sound:
     1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
     2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
@@ -30,6 +30,12 @@
 14. disable mouse acceleration (`xinput --list`, `xinput --list-props <device-id>`, `xinput --set-prop <device-id> 'libinput Accel Speed' -0.7`) and permanently commit: xorg config file in `/etc/X11/xorg.conf.d/`...
 15. if window is nested/stuck, just move it to the left/right until it gets unnested!
 16. change cursor to inverted color and make it bigger
+17. replace `dmenu` with `rofi`
+18. to mount windows partition (`mkdir -p /media/$USER/WIN_PART` first):
+    1. `lsblk`
+    2. `sudo mount -t ntfs-3g -o ro /dev/sdXX /media/$USER/WIN_PART`
+    3. `sudo umount /media/$USER/WIN_PART`
+19. `inxi -G` to see graphic drivers. Then, `nvidia-settings`: set refresh rate to 144Hz.
 
 ## shell stuff
 
