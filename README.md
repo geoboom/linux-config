@@ -71,7 +71,8 @@
     4. add `exec_always --no-startup-id focus-last.py` and
        `bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch` to `~/.i3/config`
     5. restart i3 and enjoy alt-tab behavior for 2 LRU windows
-24. placeholder
+24. scrolling sucks - too slow. How to fix?!
+25. `sudo pacman -S piper` for mouse config. Supports g502.
 
 ## shell stuff
 
