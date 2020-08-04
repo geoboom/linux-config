@@ -27,7 +27,16 @@
 11. disable mouse acceleration
 12. configure datetime properly. Not sure why after boot into manjaro timezone fucks up: manjaro-settings-manager -> time and date -> set time and date automatically
 13. flameshot for screenshot: `pacman -S flameshot`
-14. disable mouse acceleration (`xinput --list`, `xinput --list-props <device-id>`, `xinput --set-prop <device-id> 'libinput Accel Speed' -0.7`) and permanently commit: xorg config file in `/etc/X11/xorg.conf.d/`...
+14. disable mouse acceleration (`xinput --list`, `xinput --list-props <device-id>`, `xinput --set-prop <device-id> 'libinput Accel Speed' -0.7`) and permanently commit: xorg config file in `/etc/X11/xorg.conf.d/10-mouse.conf`:
+
+```sh
+Section "InputClass"
+    Identifier "Mouse"
+    MatchIsPointer "True"
+    Option "libinput Accel Speed" "-0.8"
+EndSection
+```
+
 15. if window is nested/stuck, just move it to the left/right until it gets unnested!
 16. change cursor to inverted color and make it bigger
 17. replace `dmenu` with `rofi`
@@ -36,6 +45,23 @@
     2. `sudo mount -t ntfs-3g -o ro /dev/sdXX /media/$USER/WIN_PART`
     3. `sudo umount /media/$USER/WIN_PART`
 19. `inxi -G` to see graphic drivers. Then, `nvidia-settings`: set refresh rate to 144Hz.
+20. set ctrl+j/k to select prev/next row in rofi: https://gist.github.com/MilesMcBain/0e6f449c3f8e07ed1b06aa785b0726ff
+    1. to get rofi config, `mkdir -p ~/.config/rofi/`
+    2. then `rofi -dump-xresources > ~/.config/rofi/config`
+21. change DNS to google dns:
+    1. create `/etc/NetworkManager/conf.d/20-rc-manager.conf`
+    2. save with:
+    ```sh
+    [main]
+    rc-manager=resolvconf
+    ```
+    3. edit `/etc/resolv.conf` and add:
+    ```sh
+    # google dns
+    name_servers="8.8.8.8 8.4.4.4"
+    ```
+    4. `sudo resolvconf -u` to reload changes
+22. placeholder
 
 ## shell stuff
 
@@ -111,6 +137,7 @@ This section contains the things I changed/added to the default manjaro config f
 7. super+Print to screenshot currently focused window with scrot -u into xclip clipboard. TODO: `flameshot`
    to screenshot active display
 8. bind different workspaces to different displays
+9. bind alt+tab and super+tab to switch workspaces back-and-forth because I keep hitting alt+tab accidentally lol.
 
 ```sh
 # ...
