@@ -10,7 +10,7 @@
 - Xresources (urxvt) config
 - suspend on lid clsoe (systemd-logind)
 
-## manjaro installation walkthrough (i3wm)
+## My manjaro installation walkthrough (i3wm)
 
 1. `xset r rate 270 33` my preferred repeat rate and delay
 2. `xset -b` to remove the bell
