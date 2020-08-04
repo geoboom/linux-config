@@ -61,7 +61,17 @@ EndSection
     name_servers="8.8.8.8 8.4.4.4"
     ```
     4. `sudo resolvconf -u` to reload changes
-22. placeholder
+22. `i3-msg -t get_tree` to see all windows. Can get class of specific window you
+    wish to make floating e.g. `for_window [class="Google-chrome" window_role="pop-up"] floating enable`
+    for chrome pop-ups e.g. sign in with google OAuth.
+23. for alt-tab behavior:
+    1. `pip3 install i3ipc`
+    2. download the `focus-last.py` from https://github.com/altdesktop/i3ipc-python
+    3. `chmod +x focus-last.py` and `mv focus-last.py /usr/bin/`.
+    4. add `exec_always --no-startup-id focus-last.py` and
+       `bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch` to `~/.i3/config`
+    5. restart i3 and enjoy alt-tab behavior for 2 LRU windows
+24. placeholder
 
 ## shell stuff
 
