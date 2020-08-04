@@ -29,13 +29,13 @@
 13. flameshot for screenshot: `pacman -S flameshot`
 14. disable mouse acceleration (`xinput --list`, `xinput --list-props <device-id>`, `xinput --set-prop <device-id> 'libinput Accel Speed' -0.7`) and permanently commit: xorg config file in `/etc/X11/xorg.conf.d/10-mouse.conf`:
 
-```sh
-Section "InputClass"
-    Identifier "Mouse"
-    MatchIsPointer "True"
-    Option "libinput Accel Speed" "-0.8"
-EndSection
-```
+    ```sh
+    Section "InputClass"
+        Identifier "Mouse"
+        MatchIsPointer "True"
+        Option "libinput Accel Speed" "-0.8"
+    EndSection
+    ```
 
 15. if window is nested/stuck, just move it to the left/right until it gets unnested!
 16. change cursor to inverted color and make it bigger
@@ -51,15 +51,15 @@ EndSection
 21. change DNS to google dns:
     1. create `/etc/NetworkManager/conf.d/20-rc-manager.conf`
     2. save with:
-    ```sh
-    [main]
-    rc-manager=resolvconf
-    ```
+       ```sh
+       [main]
+       rc-manager=resolvconf
+       ```
     3. edit `/etc/resolv.conf` and add:
-    ```sh
-    # google dns
-    name_servers="8.8.8.8 8.4.4.4"
-    ```
+       ```sh
+       # google dns
+       name_servers="8.8.8.8 8.4.4.4"
+       ```
     4. `sudo resolvconf -u` to reload changes
 22. `i3-msg -t get_tree` to see all windows. Can get class of specific window you
     wish to make floating e.g. `for_window [class="Google-chrome" window_role="pop-up"] floating enable`
