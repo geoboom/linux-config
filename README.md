@@ -12,6 +12,9 @@
 
 ## My manjaro installation walkthrough (i3wm)
 
+Take note that this section is heavily WIP. Will move the tips out to another
+section.
+
 1. `xset r rate 270 33` my preferred repeat rate and delay
 2. `xset -b` to remove the bell
 3. clone this repo
