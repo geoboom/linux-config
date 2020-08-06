@@ -71,3 +71,5 @@ nnoremap <silent> 0 g0
 nnoremap <silent> <leader>s :w<CR>
 nnoremap <silent> <leader>q :wqa<CR>
 nnoremap <silent> <leader>d :bd<CR>
+
+nnoremap <silent> <C-q> :q!<CR>

@@ -36,11 +36,16 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
+"""""""""""""""""""""""""""goyo.vim settings""""""""""""""""""""""""""""""
+nnoremap <C-g> :Goyo<Cr>
+
 """""""""""""""""""""""""""fzf.vim settings""""""""""""""""""""""""""""""
-nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-p> :Files<Cr>
+nnoremap \p :Rg<Cr>
 
 """""""""""""""""""""""""""vimtex settings""""""""""""""""""""""""""""""
 let g:vimtex_view_general_viewer='sumatraPDF'

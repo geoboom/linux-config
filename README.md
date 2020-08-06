@@ -15,15 +15,15 @@
 Take note that this section is heavily WIP. Will move the tips out to another
 section.
 
-1. `xset r rate 270 33` my preferred repeat rate and delay
-2. `xset -b` to remove the bell
-3. clone this repo
-4. update pacman and repos `pacman-mirrors --geoip && pacman -Syyu`
-5. open `pamac-manager` gui and ensure enable AUR support is yes
-6. install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes)
-7. remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!)
-8. install zsh
-9. configure multiple monitor layout with arandr and save config as `.sh`. Then, xrandr startup script...
+1.  `xset r rate 270 33` my preferred repeat rate and delay
+2.  `xset -b` to remove the bell
+3.  clone this repo
+4.  update pacman and repos `pacman-mirrors --geoip && pacman -Syyu`
+5.  open `pamac-manager` gui and ensure enable AUR support is yes
+6.  install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes)
+7.  remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!)
+8.  install zsh
+9.  configure multiple monitor layout with arandr and save config as `.sh`. Then, xrandr startup script...
 10. sound:
     1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
     2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
@@ -77,6 +77,10 @@ section.
 24. scrolling sucks - too slow. How to fix?! (TODO)
 25. `sudo pacman -S piper` for mouse config. Supports g502.
 26. `i3-msg 'rename workspace <num1> to <num2>'` helpful to rename/renumber workspace!
+27. Troubleshooting steps if attempting to run docker but getting permissions issue
+    trying to connect to the docker daemon socket:
+    1. google first and follow digitalocean's guide (the docker usergroup one)
+    2. `sudo chmod 777 /var/run/docker.sock` from some stackoverflow answer.
 
 ## shell stuff
 
