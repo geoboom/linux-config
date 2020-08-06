@@ -42,7 +42,7 @@
 17. replace `dmenu` with `rofi`
 18. to mount windows partition (`mkdir -p /media/$USER/WIN_PART` first):
     1. `lsblk`
-    2. `sudo mount -t ntfs-3g -o ro /dev/sdXX /media/$USER/WIN_PART`
+    2. `sudo mount -t ntfs-3g -o ro /dev/sdX# /media/$USER/WIN_PART`
     3. `sudo umount /media/$USER/WIN_PART`
 19. `inxi -G` to see graphic drivers. Then, `nvidia-settings`: set refresh rate to 144Hz.
 20. set ctrl+j/k to select prev/next row in rofi: https://gist.github.com/MilesMcBain/0e6f449c3f8e07ed1b06aa785b0726ff
@@ -55,12 +55,12 @@
        [main]
        rc-manager=resolvconf
        ```
-    3. edit `/etc/resolv.conf` and add:
+    3. edit `/etc/resolvconf.conf` and add:
        ```sh
        # google dns
        name_servers="8.8.8.8 8.4.4.4"
        ```
-    4. `sudo resolvconf -u` to reload changes
+    4. `sudo resolvconf -u` to reload changes but breaks after restart. Not sure why (TODO).
 22. `i3-msg -t get_tree` to see all windows. Can get class of specific window you
     wish to make floating e.g. `for_window [class="Google-chrome" window_role="pop-up"] floating enable`
     for chrome pop-ups e.g. sign in with google OAuth.
@@ -71,8 +71,9 @@
     4. add `exec_always --no-startup-id focus-last.py` and
        `bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch` to `~/.i3/config`
     5. restart i3 and enjoy alt-tab behavior for 2 LRU windows
-24. scrolling sucks - too slow. How to fix?!
+24. scrolling sucks - too slow. How to fix?! (TODO)
 25. `sudo pacman -S piper` for mouse config. Supports g502.
+26. `i3-msg 'rename workspace <num1> to <num2>'` helpful to rename/renumber workspace!
 
 ## shell stuff
 
