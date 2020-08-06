@@ -6,18 +6,17 @@ set $mod Mod4
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
-
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 3
 default_floating_border normal
 
 # Hide borders
 hide_edge_borders none
 
-# change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+# change borders - useless
+# bindsym $mod+u border none
+bindsym $mod+y border pixel 5
+# bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -33,7 +32,9 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+# bindsym $mod+Shift+d exec --no-startup-id dmenu_recency
+bindsym $mod+Shift+d exec --no-startup-id "rofi -show run -show-icons"
+bindsym $mod+d exec --no-startup-id "rofi -show window -show-icons"
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -63,12 +64,12 @@ bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym $mod+Print --release exec "scrot -u /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+bindsym $mod+Shift+Print --release exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+
+# flatten nesting
+# bindsym $mod+o [workspace=__focused__] move workspace restore, move workspace current
 
 focus_follows_mouse no
 
@@ -84,27 +85,39 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+y move left
-bindsym $mod+Shift+u move down
-bindsym $mod+Shift+i move up
-bindsym $mod+Shift+o move right
+#navigate workspaces next / previous
+bindcode $mod+Mod1+47 workspace prev_on_output
+bindcode $mod+Mod1+48 workspace next_on_output
+bindsym $mod+Mod1+h focus output left
+bindsym $mod+Mod1+l focus output right
+bindsym $mod+Mod1+j focus output down
+bindsym $mod+Mod1+k focus output up
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# move workspace
+bindsym $mod+Shift+Left move workspace to output left
+bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Shift+Up move workspace to output up
+bindsym $mod+Shift+Down move workspace to output down
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
+# bindsym Mod1+Tab workspace back_and_forth
+# bindsym Mod1+Tab exec --no-startup-id i3-cycle-focus.py --switch
+bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch
+bindsym $mod+Tab exec --no-startup-id "rofi -show window -show-icons"
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
 # bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+Shift+v split h;exec notify-send 'tile horizontally'
+bindsym $mod+Shift+v split v;exec notify-send 'tile horizontally'
+bindsym $mod+v split h;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -134,16 +147,6 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
-#navigate workspaces next / previous
-bindsym $mod+Shift+h workspace prev
-bindsym $mod+Shift+l workspace next
-
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
-
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
-
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
@@ -156,6 +159,14 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 set $ws8 8
+set $ws9 9
+set $ws10 ".10.u"
+set $ws11 ".11.i"
+set $ws12 ".12.o"
+set $ws13 ".13.p"
+set $ws14 ".14.["
+set $ws15 ".15.]"
+set $ws16 ".16.backslash"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -166,6 +177,14 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+u workspace $ws10
+bindsym $mod+i workspace $ws11
+bindsym $mod+o workspace $ws12
+bindsym $mod+p workspace $ws13
+bindcode $mod+34 workspace $ws14
+bindcode $mod+35 workspace $ws15
+bindcode $mod+51 workspace $ws16
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -176,6 +195,14 @@ bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+u move container to workspace $ws10
+bindsym $mod+Ctrl+i move container to workspace $ws11
+bindsym $mod+Ctrl+o move container to workspace $ws12
+bindsym $mod+Ctrl+p move container to workspace $ws13
+bindcode $mod+Ctrl+34 move container to workspace $ws14
+bindcode $mod+Ctrl+35 move container to workspace $ws15
+bindcode $mod+Ctrl+51 move container to workspace $ws16
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -186,6 +213,26 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+u move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+i move container to workspace $ws11; workspace $ws11
+bindsym $mod+Shift+o move container to workspace $ws12; workspace $ws12
+bindsym $mod+Shift+p move container to workspace $ws13; workspace $ws13
+bindcode $mod+Shift+34 move container to workspace $ws14; workspace $ws14
+bindcode $mod+Shift+35 move container to workspace $ws15; workspace $ws15
+bindcode $mod+Shift+51 move container to workspace $ws16; workspace $ws16
+
+workspace $ws1 output DP-2.8
+workspace $ws2 output DP-2.8
+workspace $ws3 output primary
+workspace $ws4 output primary
+workspace $ws5 output HDMI-0
+workspace $ws8 output DP-0
+
+workspace $ws10 output DP-2.8     # u
+workspace $ws11 output primary   # i
+workspace $ws12 output DP-0    # o
+workspace $ws13 output HDMI-0      # p
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -221,6 +268,25 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+
+# https://github.com/z3ntu/dotfiles/blob/master/i3/.config/i3/config
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
+# for chrome popup
+for_window [class="Google-chrome" window_role="pop-up"] floating enable
+
+# for piper
+for_window [class="Piper"] floating enable
+
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -259,16 +325,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -276,7 +342,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+# bindsym $mod+9 exec --no-startup-id blurlock
 
 # ==================================================================================
 # ==================================================================================
@@ -297,6 +363,7 @@ exec --no-startup-id start_conky_maia
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+exec_always --no-startup-id focus-last.py
 exec --no-startup-id xset r rate 270 33 # delay, interval
 exec --no-startup-id xset -b # remove the stupid bell
 
@@ -338,7 +405,7 @@ bar {
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
+	tray_output primary
 #	tray_output eDP1
 
 	bindsym button4 nop
