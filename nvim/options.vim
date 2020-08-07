@@ -1,3 +1,7 @@
+" relatve and absolute line numbers
+set rnu nu
+
+" good to have
 set nocompatible
 
 " always show tabs
