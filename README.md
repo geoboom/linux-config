@@ -8,7 +8,11 @@
 - tmux
 - i3 config (includes startup scripts)
 - Xresources (urxvt) config
-- suspend on lid clsoe (systemd-logind)
+- suspend on lid close (systemd-logind)
+
+**TODO:**
+
+- make note on the need to change workspace-to-output mapping when change to laptop with external display
 
 ## My manjaro installation walkthrough (i3wm)
 

@@ -45,7 +45,7 @@ nnoremap <C-g> :Goyo<Cr>
 
 """""""""""""""""""""""""""fzf.vim settings""""""""""""""""""""""""""""""
 nnoremap <C-p> :Files<Cr>
-nnoremap \p :Rg<Cr>
+nnoremap \\ :Rg<Cr>
 
 """""""""""""""""""""""""""vimtex settings""""""""""""""""""""""""""""""
 let g:vimtex_view_general_viewer='sumatraPDF'
