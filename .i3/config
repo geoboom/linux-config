@@ -57,7 +57,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec google-chrome-stable
+bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -88,6 +88,8 @@ bindsym $mod+Right focus right
 #navigate workspaces next / previous
 bindcode $mod+Mod1+47 workspace prev_on_output
 bindcode $mod+Mod1+48 workspace next_on_output
+bindsym $mod+Shift+Tab workspace prev_on_output
+bindsym $mod+Tab workspace next_on_output
 bindsym $mod+Mod1+h focus output left
 bindsym $mod+Mod1+l focus output right
 bindsym $mod+Mod1+j focus output down
@@ -110,7 +112,6 @@ workspace_auto_back_and_forth yes
 # bindsym Mod1+Tab workspace back_and_forth
 # bindsym Mod1+Tab exec --no-startup-id i3-cycle-focus.py --switch
 bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch
-bindsym $mod+Tab exec --no-startup-id "rofi -show window -show-icons"
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
@@ -283,7 +284,7 @@ for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Require
 for_window [title="^Steam Keyboard$"] floating enable
 
 # for chrome popup
-for_window [class="Google-chrome" window_role="pop-up"] floating enable
+for_window [class="Chromium" window_role="pop-up"] floating enable
 
 # for piper
 for_window [class="Piper"] floating enable
