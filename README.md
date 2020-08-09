@@ -87,6 +87,8 @@ section.
     trying to connect to the docker daemon socket:
     1. google first and follow digitalocean's guide (the docker usergroup one)
     2. `sudo chmod 777 /var/run/docker.sock` from some stackoverflow answer.
+28. spellchecking: `pacman -S hunspell-en_US` and `echo $LANG` - make sure `LANG` is `en_US`.
+    Otherwise, `vim /etc/locale.conf` and set `LANG=en_US.UTF-8`.
 
 ## shell stuff
 
