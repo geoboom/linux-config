@@ -16,6 +16,10 @@
 - find out how to copy and paste with tmux keyboard-only
 - alt-tab behavior for workspace switching perhaps LOL
 - zathura config
+- document `system_to_repo.sh` and `repo_to_system.sh`
+- install intellij idea and document process and blog about the helpful keybindings
+  - figure out if intellij idea vim emulation has plugin support
+  - evaluate performance of intellij idea vim emulation especially `set rnu nu`
 
 ## My manjaro installation walkthrough (i3wm)
 

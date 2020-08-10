@@ -90,6 +90,10 @@ bindcode $mod+Mod1+47 workspace prev_on_output
 bindcode $mod+Mod1+48 workspace next_on_output
 bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Mod1+Left focus output left
+bindsym $mod+Mod1+Right focus output right
+bindsym $mod+Mod1+Down focus output down
+bindsym $mod+Mod1+Up focus output up
 bindsym $mod+Mod1+h focus output left
 bindsym $mod+Mod1+l focus output right
 bindsym $mod+Mod1+j focus output down
