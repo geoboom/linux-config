@@ -45,12 +45,13 @@ nnoremap <C-g> :Goyo<Cr>
 
 """""""""""""""""""""""""""fzf.vim settings""""""""""""""""""""""""""""""
 nnoremap <C-p> :Files<Cr>
-nnoremap \\ :Rg<Cr>
+nnoremap <C-\> :Rg<Cr>
 
 """""""""""""""""""""""""""vimtex settings""""""""""""""""""""""""""""""
-let g:vimtex_view_general_viewer='sumatraPDF'
-let g:vimtex_view_general_options='-reuse-instance @pdf'
-let g:vimtex_view_general_options_latexmk='-reuse-instance'
+let g:tex_flavor='latex'
+let g:vimtex_view_general_viewer='zathura'
+" let g:vimtex_view_general_options='-reuse-instance @pdf'
+" let g:vimtex_view_general_options_latexmk='-reuse-instance'
 
 " Disable overfull/underfull \hbox and all package warnings
 let g:vimtex_quickfix_latexlog = {
