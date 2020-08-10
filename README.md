@@ -1,6 +1,6 @@
 # My Config for Linux/WSL2
 
-**Contents:**
+**Contents (TODO: hyperlink):**
 
 - manjaro installation walkthrough
 - shell (zsh/bash/fish) aliases and functions
@@ -15,6 +15,7 @@
 - make note on the need to change workspace-to-output mapping when change to laptop with external display
 - find out how to copy and paste with tmux keyboard-only
 - alt-tab behavior for workspace switching perhaps LOL
+- zathura config
 
 ## My manjaro installation walkthrough (i3wm)
 
