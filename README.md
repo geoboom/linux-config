@@ -94,6 +94,14 @@ section.
     2. `sudo chmod 777 /var/run/docker.sock` from some stackoverflow answer.
 28. spellchecking: `pacman -S hunspell-en_US` and `echo $LANG` - make sure `LANG` is `en_US`.
     Otherwise, `vim /etc/locale.conf` and set `LANG=en_US.UTF-8`.
+29. Dropbox installation process
+    1. `cd ~/Downloads` and `git clone https://aur.archlinux.org/dropbox.git`
+    2. `cd dropbox` and `wget https://linux.dropbox.com/fedora/rpm-public-key.asc` to download dropbox's
+       public key
+    3. import it with `gpg --import rpm-public-key.asc` and check keys with `gpg -k`
+    4. `makepkg -si` to build and install
+    5. run `dropbox` from dmenu/rofi and login to dropbox on the browser
+    6. your dropbox folder can be found in `~/dropbox`. Installation complete.
 
 ## shell stuff
 
