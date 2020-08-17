@@ -37,8 +37,12 @@ Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
 Plug 'junegunn/goyo.vim'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
+
+"""""""""""""""""""""""""""gruvbox settings""""""""""""""""""""""""""""""
+autocmd vimenter * colorscheme gruvbox
 
 """""""""""""""""""""""""""goyo.vim settings""""""""""""""""""""""""""""""
 nnoremap <C-g> :Goyo<Cr>

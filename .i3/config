@@ -85,11 +85,15 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-#navigate workspaces next / previous
+# next/prev workspace on output
 bindcode $mod+Mod1+47 workspace prev_on_output
 bindcode $mod+Mod1+48 workspace next_on_output
 bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Ctrl+h workspace prev_on_output
+bindsym $mod+Ctrl+l workspace next_on_output
+
+# select output
 bindsym $mod+Mod1+Left focus output left
 bindsym $mod+Mod1+Right focus output right
 bindsym $mod+Mod1+Down focus output down
@@ -112,7 +116,7 @@ bindsym $mod+Shift+Up move workspace to output up
 bindsym $mod+Shift+Down move workspace to output down
 
 # workspace back and forth (with/without active container)
-workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth no
 # bindsym Mod1+Tab workspace back_and_forth
 # bindsym Mod1+Tab exec --no-startup-id i3-cycle-focus.py --switch
 bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch
@@ -156,15 +160,16 @@ bindsym $mod+minus scratchpad show
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
+set $ws0 0
 set $ws1 1
 set $ws2 2
 set $ws3 3
-set $ws4 4
+set $ws4 "4:ML and SQL"
 set $ws5 5
 set $ws6 6
-set $ws7 7
-set $ws8 8
-set $ws9 9
+set $ws7 "7: schoolA"
+set $ws8 "8: schoolB"
+set $ws9 "9: schoolC"
 set $ws10 10
 set $ws11 ".11.u"
 set $ws12 ".12.i"
@@ -175,6 +180,7 @@ set $ws16 ".16.]"
 set $ws17 ".17.backslash"
 
 # switch to workspace
+bindsym $mod+grave workspace $ws0
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -194,6 +200,7 @@ bindcode $mod+35 workspace $ws16
 bindcode $mod+51 workspace $ws17
 
 # Move focused container to workspace
+bindsym $mod+Ctrl+grave move container to workspace $ws0
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3
@@ -213,6 +220,7 @@ bindcode $mod+Ctrl+35 move container to workspace $ws16
 bindcode $mod+Ctrl+51 move container to workspace $ws17
 
 # Move to workspace with focused container
+bindsym $mod+Shift+grave move container to workspace $ws0; workspace $ws0
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
@@ -231,10 +239,14 @@ bindcode $mod+Shift+34 move container to workspace $ws15; workspace $ws15
 bindcode $mod+Shift+35 move container to workspace $ws16; workspace $ws16
 bindcode $mod+Shift+51 move container to workspace $ws17; workspace $ws17
 
-workspace $ws1 output DP-2.8
-workspace $ws2 output DP-2.8
-workspace $ws3 output primary
+workspace $ws0 output DP-2.8
+workspace $ws1 output primary
+workspace $ws2 output DP-0
+workspace $ws3 output HDMI-0
+
 workspace $ws4 output primary
+workspace $ws6 output primary
+workspace $ws7 output primary
 workspace $ws5 output HDMI-0
 workspace $ws8 output DP-0
 workspace $ws9 output DP-0
@@ -291,11 +303,15 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
-# for chrome popup
+# for browser popup
 for_window [class="Chromium" window_role="pop-up"] floating enable
+for_window [class="firefox" window_role="pop-up"] floating enable
 
 # for piper
 for_window [class="Piper"] floating enable
+
+# for zoom
+# for_window [class="zoom"] floating enable
 
 
 # switch to workspace with urgent window automatically
@@ -421,7 +437,7 @@ bar {
 	bindsym button4 nop
 	bindsym button5 nop
 #   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
+	# strip_workspace_numbers yes
 
     colors {
         background #222D31

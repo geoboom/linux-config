@@ -102,6 +102,7 @@ section.
     4. `makepkg -si` to build and install
     5. run `dropbox` from dmenu/rofi and login to dropbox on the browser
     6. your dropbox folder can be found in `~/dropbox`. Installation complete.
+30. Installing powerline fonts and configuring urxvt to use them
 
 ## shell stuff
 
