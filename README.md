@@ -104,6 +104,23 @@ section.
     6. your dropbox folder can be found in `~/dropbox`. Installation complete.
 30. Installing powerline fonts and configuring urxvt to use them
 
+### Wifi setup
+
+1. Follow manjaro wifi connection guide and if you can connect to wifi, ignore following steps.
+2. Ensure your packages are updated first: `pacman -Syyu`.
+3. Type `ip link` and see if `wlan0` is present. Probably not.
+4. Type `lspci -nn` and find your `Network Controller` and google the installation instructions for it.
+5. Example:
+   ```
+   09:00.0 Network controller [0280]: Broadcom Inc. and subsidiaries BCM4360 802.11ac Wireless Network Adapter [14e4:43a0] (rev 03)
+   ```
+   1. From google, I have to install `broadcom-wl` using `pacman -S broadcom-wl`.
+   2. After typing that, there will be a list of `broadcom-wl` versions to install - these are actually
+      kernel versions and you must install the correct one based on your linux kernel.
+   3. To view your kernel version, type `uname -r`. Example output is `5.7.14-1-MANJARO`.
+   4. Thus, I will select `linux57-broadcom-wl` from the `pacman -S broadcom-wl` to install.
+   5. After successful install, type `ip link` and check if `wlan0` is present. If it is, you may connect to wifi normally (step 1).
+
 ## shell stuff
 
 **todo:** upload zsh config
