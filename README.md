@@ -16,7 +16,7 @@
 - find out how to copy and paste with tmux keyboard-only
 - alt-tab behavior for workspace switching perhaps LOL
 - zathura config
-- document `system_to_repo.sh` and `repo_to_system.sh`
+- document `system_to_repo.sh` and `repo_to_system.sh`. AND HAVE CONFIRMATION PROMPT.
 - install intellij idea and document process and blog about the helpful keybindings
   - figure out if intellij idea vim emulation has plugin support
   - evaluate performance of intellij idea vim emulation especially `set rnu nu`
@@ -32,15 +32,15 @@ section.
 4.  update pacman and repos `pacman-mirrors --geoip && pacman -Syyu`
 5.  open `pamac-manager` gui and ensure enable AUR support is yes
 6.  install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes). TODO: replaced with chromium now!!!
-7.  remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!)
+7.  remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!) (TODO: more detaile steps)
 8.  install zsh
-9.  configure multiple monitor layout with arandr and save config as `.sh`. Then, xrandr startup script...
+9.  configure multiple monitor layout with arandr and save config as `.sh`. Then, xrandr startup script... (TODO: persist xrandr config, rate 144, etc)
 10. sound:
     1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
     2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
 11. disable mouse acceleration
 12. configure datetime properly. Not sure why after boot into manjaro timezone fucks up: manjaro-settings-manager -> time and date -> set time and date automatically
-13. flameshot for screenshot: `pacman -S flameshot`
+13. flameshot for screenshot: `pacman -S flameshot` (TODO: remove this. Document `scrot`)
 14. disable mouse acceleration (`xinput --list`, `xinput --list-props <device-id>`, `xinput --set-prop <device-id> 'libinput Accel Speed' -0.7`) and permanently commit: xorg config file in `/etc/X11/xorg.conf.d/10-mouse.conf`:
 
     ```sh
