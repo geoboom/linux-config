@@ -35,7 +35,7 @@ section.
 7.  remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!) (TODO: more detaile steps)
 8.  install zsh
 9.  configure multiple monitor layout with arandr and save config as `.sh`. Then, xrandr startup script... (TODO: persist xrandr config, rate 144, etc)
-10. sound:
+10. sound: (TODO: `alsa-utils` sound driver install; `pulseaudio` is the soundserver)
     1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
     2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
 11. disable mouse acceleration
