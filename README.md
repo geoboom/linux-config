@@ -32,7 +32,7 @@ section.
 4.  update pacman and repos `pacman-mirrors --geoip && pacman -Syyu`
 5.  open `pamac-manager` gui and ensure enable AUR support is yes
 6.  install google-chrome with yay from AUR `yay google-chrome` (check AUR first for the correct package name in case it changes). TODO: replaced with chromium now!!!
-7.  remove pale moon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!) (TODO: more detaile steps)
+7.  remove palemoon and update default browser for all applications (in `~/.profile`, `.config/mimeapps.list` do this before `:PlugInstall` in nvim!!!) (TODO: more detaile steps)
 8.  install zsh
 9.  configure multiple monitor layout with arandr and save config as `.sh`. Then, xrandr startup script... (TODO: persist xrandr config, rate 144, etc)
 10. sound: (TODO: `alsa-utils` sound driver install; `pulseaudio` is the soundserver)
