@@ -20,6 +20,8 @@
 - install intellij idea and document process and blog about the helpful keybindings
   - figure out if intellij idea vim emulation has plugin support
   - evaluate performance of intellij idea vim emulation especially `set rnu nu`
+- update ranger config in bootstraping scripts
+- update rofi config in boostraping scripts
 
 ## My manjaro installation walkthrough (i3wm)
 
@@ -85,7 +87,22 @@ section.
     4. add `exec_always --no-startup-id focus-last.py` and
        `bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch` to `~/.i3/config`
     5. restart i3 and enjoy alt-tab behavior for 2 LRU windows
-24. scrolling sucks - too slow. How to fix?! (TODO)
+24. `sudo pacman -S imwheel` to install `imwheel` which can modify scroll wheel speed on a per-program basis and paste the following config into `~/.imwheelrc`
+
+    ```sh
+    # Speed up scrolling for chromium
+    "^chromium$"
+        None, Up, Button4, 2
+        None, Down, Button5, 2
+
+    # Speed up scrolling for the document viewer
+    "^zathura$"
+        None, Up, Button4, 2
+        None, Down, Button5, 2
+    ```
+
+    This will allow you to scroll faster (twice normal speed) in chromium and zathura and not break your index finger trying to scroll at one sentence per revolution, the default in linux -\_-
+
 25. `sudo pacman -S piper` for mouse config. Supports g502.
 26. `i3-msg 'rename workspace <num1> to <num2>'` helpful to rename/renumber workspace!
 27. Troubleshooting steps if attempting to run docker but getting permissions issue
