@@ -101,7 +101,7 @@ section.
         None, Down, Button5, 2
     ```
 
-    This will allow you to scroll faster (twice normal speed) in chromium and zathura and not break your index finger trying to scroll at one sentence per revolution, the default in linux -\_-
+    This will allow you to scroll faster (twice normal speed) in chromium and zathura and not break your index finger trying to scroll at one sentence per revolution, the default in linux -\_-. To reload config, `pkill imwheel` and then run `imwheel`. TODO: run as startup task.
 
 25. `sudo pacman -S piper` for mouse config. Supports g502.
 26. `i3-msg 'rename workspace <num1> to <num2>'` helpful to rename/renumber workspace!
