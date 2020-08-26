@@ -22,6 +22,7 @@
   - evaluate performance of intellij idea vim emulation especially `set rnu nu`
 - update ranger config in bootstraping scripts
 - update rofi config in boostraping scripts
+- huion tablet driver installation/build from source walkthrough
 
 ## My manjaro installation walkthrough (i3wm)
 
