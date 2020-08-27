@@ -27,6 +27,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec terminal
+bindsym $mod+Shift+Return exec chromium
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -57,6 +58,7 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+F1 exec pavucontrol
 bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
@@ -316,6 +318,7 @@ for_window [class="Piper"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
+bindsym $mod+slash [urgent=latest] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
