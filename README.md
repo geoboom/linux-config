@@ -141,38 +141,8 @@ section.
 
 ## shell stuff
 
-**todo:** upload zsh config
-
-```sh
-# change all instances of VISUAL and EDITOR to nvim
-export VISUAL=nvim
-export EDITOR=nvim
-```
-
-```sh
-# helpful functions
-gitcm() {
-    git add . && git commit -m "$1" && git push
-}
-
-ide1() {
-    tmux split-window -h -p 50
-    tmux split-window -v
-}
-
-ide2() {
-    tmux split-window -v -p 30
-    tmux split-window -h -p 66
-    tmux split-window -h -p 50
-}
-
-# helpful aliases
-alias vim='nvim'
-alias ..='cd ..'
-alias rr='ranger'
-```
-
-Change `nvim` in `VISUAL=nvim` or `EDITOR=nvim` to your preferred editor.
+Find my `zsh` config in `.zshrc`. I wrote some aliases to simplify common operations
+cough cough alias vim=nvim and opening tmux splits. Also, change `nvim` in `VISUAL=nvim` or `EDITOR=nvim`.
 
 ## nvim (WIP)
 
