@@ -142,7 +142,7 @@ section.
 ## shell stuff
 
 Find my `zsh` config in `.zshrc`. I wrote some aliases to simplify common operations
-cough cough alias vim=nvim and opening tmux splits. Also, change `nvim` in `VISUAL=nvim` or `EDITOR=nvim`.
+cough cough alias vim=nvim and opening tmux splits.
 
 ## nvim (WIP)
 
