@@ -139,3 +139,19 @@ ide2() {
 }
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/geoboom/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/geoboom/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/geoboom/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/geoboom/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
