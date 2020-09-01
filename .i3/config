@@ -28,9 +28,11 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec terminal
 bindsym $mod+Shift+Return exec chromium
+bindsym $mod+Mod1+Return exec chromium
 
 # kill focused window
-bindsym $mod+Shift+q kill
+# bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start program launcher
 # bindsym $mod+Shift+d exec --no-startup-id dmenu_recency
@@ -112,23 +114,28 @@ bindsym $mod+Shift+l move right
 
 # move workspace
 bindsym $mod+Shift+Left move workspace to output left
-bindsym $mod+Shift+Right move workspace to output right
-bindsym $mod+Shift+Up move workspace to output up
 bindsym $mod+Shift+Down move workspace to output down
+bindsym $mod+Shift+Up move workspace to output up
+bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Ctrl+Shift+h move workspace to output left
+bindsym $mod+Ctrl+Shift+j move workspace to output down
+bindsym $mod+Ctrl+Shift+k move workspace to output up
+bindsym $mod+Ctrl+Shift+l move workspace to output right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth no
 # bindsym Mod1+Tab workspace back_and_forth
 # bindsym Mod1+Tab exec --no-startup-id i3-cycle-focus.py --switch
 bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch
-bindsym $mod+b workspace back_and_forth
+bindsym $mod+b exec --no-startup-id focus-last.py --switch
+bindsym $mod+Mod1+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
 # bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+Shift+v split v;exec notify-send 'tile horizontally'
 bindsym $mod+v split h;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+# bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -326,7 +333,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+equal mode "$mode_system"
@@ -474,8 +481,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+# gaps inner 8
+# gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
