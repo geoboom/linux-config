@@ -8,7 +8,8 @@ export ZSH="/home/geoboom/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="bureau"
 # powerline-daemon -q . /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Set list of themes to pick from when loading at random
@@ -106,9 +107,23 @@ alias v='nvim'
 alias ..='cd ..'
 alias rr='ranger'
 alias ssource='source ~/.zshrc'
+alias sss='source ~/.zshrc'
 alias cs='xclip -selection clipboard' # to simplify copying
 alias cpwd='pwd | cs'
 alias dora='pcmanfm . &'
+alias venv='. venv/bin/activate'
+
+# from https://github.com/ecnerwala/dotfiles/blob/master/zsh/.zshrc
+function mkcd {
+  if [ ! -n "$1" ]; then
+    echo "Enter a directory name"
+  elif [ -d $1 ]; then
+    echo "\`$1' already exists"
+	cd $1
+  else
+    md $1 && cd $1
+  fi
+}
 
 gitcm() {
     git add . && git commit -m "$1" && git push
@@ -154,4 +169,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+. /usr/share/fzf/key-bindings.zsh
 
