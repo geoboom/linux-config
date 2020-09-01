@@ -22,10 +22,11 @@ let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
 
 call plug#begin(g:PLUGIN_HOME)
 
+Plug 'vimwiki/vimwiki'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -96,7 +97,7 @@ let g:closetag_close_shortcut = '<leader>>'
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 """""""""""""""""""""""""""easymotion settings""""""""""""""""""""""""""""""
-map <leader> <Plug>(easymotion-prefix)
+" map <leader> <Plug>(easymotion-prefix)
 
 """""""""""""""""""""""""""markdown-preview.nvim settings""""""""""""""""""""""""""""""
 " set to 1, nvim will open the preview window after entering the markdown buffer

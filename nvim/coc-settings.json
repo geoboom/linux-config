@@ -4,6 +4,8 @@
     "prettier.trailingComma": "all",
     "signature.hideOnTextChange": true,
     "python.jediEnabled": false,
+    "python.jediPath": "/home/geoboom/.local/lib/python3.8/site-packages",
+    "python.condaPath": "/home/geoboom/anaconda3/bin/python",
     "python.formatting.provider": "black",
     "javascript.showUnused": false
 }
