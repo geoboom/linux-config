@@ -134,6 +134,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 # split orientation
 # bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+Shift+v split v;exec notify-send 'tile horizontally'
+bindsym $mod+Mod1+v split v;exec notify-send 'tile horizontally'
 bindsym $mod+v split h;exec notify-send 'tile vertically'
 # bindsym $mod+q split toggle
 
@@ -263,6 +264,8 @@ workspace $ws11 output DP-2.8     # u
 workspace $ws12 output primary   # i
 workspace $ws13 output DP-0    # o
 workspace $ws14 output HDMI-0      # p
+workspace $ws15 output primary    
+workspace $ws16 output HDMI-0     
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
