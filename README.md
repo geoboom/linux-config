@@ -23,6 +23,7 @@
 - update ranger config in bootstraping scripts
 - update rofi config in boostraping scripts
 - huion tablet driver installation/build from source walkthrough
+- add misc section and add this in: `sudo chown -R $(whoami) /usr/share/idea`
 
 ## My manjaro installation walkthrough (i3wm)
 
