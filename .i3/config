@@ -36,6 +36,7 @@ bindsym $mod+q kill
 
 # start program launcher
 # bindsym $mod+Shift+d exec --no-startup-id dmenu_recency
+bindsym $mod+Mod1+d exec --no-startup-id "rofi -show run -show-icons"
 bindsym $mod+Shift+d exec --no-startup-id "rofi -show run -show-icons"
 bindsym $mod+d exec --no-startup-id "rofi -show window -show-icons"
 
@@ -50,6 +51,7 @@ exec --no-startup-id volumeicon
 # bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
+bindsym $mod+F1 exec pavucontrol
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
@@ -250,7 +252,7 @@ bindcode $mod+Shift+51 move container to workspace $ws17; workspace $ws17
 
 workspace $ws0 output DP-2.8
 workspace $ws1 output primary
-workspace $ws2 output DP-0
+workspace $ws2 output HDMI-0
 workspace $ws3 output HDMI-0
 
 workspace $ws4 output primary

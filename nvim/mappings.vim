@@ -73,3 +73,16 @@ nnoremap <silent> <leader>q :wqa<CR>
 nnoremap <silent> <leader>d :bd<CR>
 
 nnoremap <silent> <C-q> :q!<CR>
+
+autocmd filetype c noremap <F2> :w <bar> !gcc -Wall % -o %:r<CR> :wq <CR>
+autocmd filetype c noremap <F3> :w <bar> !gcc -Wall % -o %:r<CR>
+autocmd filetype c noremap <F4> :w <bar> !gcc -Wall % -o %:r && ./%:r <CR>
+
+" ddP: make sure pasted text is on the line above
+inoremap <silent>\date <ESC>:r !date '+\%a \%d \%b'<CR>ddPi
+inoremap <silent>\now <ESC>:r !date<CR>ddPi
+nnoremap <silent>\date :r !date '+\%a \%d \%b'<CR>ddP
+nnoremap <silent>\now :r !date<CR>ddP
+:command! PDate :r !date '+\%a \%d \%b'
+
+

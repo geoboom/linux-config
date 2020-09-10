@@ -22,7 +22,9 @@ let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
 
 call plug#begin(g:PLUGIN_HOME)
 
+Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -38,12 +40,36 @@ Plug 'lervag/vimtex'
 Plug 'alvan/vim-closetag'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
 Plug 'junegunn/goyo.vim'
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'https://github.com/alok/notational-fzf-vim'
 
 call plug#end()
+"""""""""""""""""""""""""""vim-zettel settings""""""""""""""""""""""""""""""
+" g:zettel_options
+" g:zettel_format
+" g:zettel_default_mappings
+" g:zettel_fzf_command
+" g:zettel_fzf_options
+" g:zettel_backlinks_title
+"""""""""""""""""""""""""""vimwiki settings""""""""""""""""""""""""""""""
+nnoremap <silent>\b :VimwikiBacklinks<CR>
+nnoremap <silent>\ll :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR>
+nnoremap <silent>\lb :VimwikiAll2HTML<CR><CR>
+nnoremap <silent>\lv :Vimwiki2HTMLBrowse<CR>
+" let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/vimwiki_/'}]
+"""""""""""""""""""""""""""notational-fzf-vim settings"""""""""""""""""""""""""""""""""
+nnoremap <silent>\n :NV<CR>
+let g:nv_search_paths = ['~/vimwiki_']
+
+"""""""""""""""""""""""""""airline settings""""""""""""""""""""""""""""""
+" let g:airline#extensions#tabline#buffer_idx_mode = 1
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 """""""""""""""""""""""""""gruvbox settings""""""""""""""""""""""""""""""
-autocmd vimenter * colorscheme gruvbox
+" autocmd vimenter * colorscheme gruvbox
 
 """""""""""""""""""""""""""goyo.vim settings""""""""""""""""""""""""""""""
 nnoremap <C-g> :Goyo<Cr>

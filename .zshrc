@@ -112,6 +112,7 @@ alias cs='xclip -selection clipboard' # to simplify copying
 alias cpwd='pwd | cs'
 alias dora='pcmanfm . &'
 alias venv='. venv/bin/activate'
+alias datee='date "+%a %d %b"'
 
 # from https://github.com/ecnerwala/dotfiles/blob/master/zsh/.zshrc
 function mkcd {
@@ -131,6 +132,7 @@ gitcm() {
 
 ide() {
     tmux rename-window "fe-dev"
+    cd ~/Projects
     tmux new-window
     tmux rename-window "fe-etc"
     tmux new-window
