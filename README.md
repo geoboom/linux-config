@@ -24,6 +24,7 @@
 - update rofi config in boostraping scripts
 - huion tablet driver installation/build from source walkthrough
 - add misc section and add this in: `sudo chown -R $(whoami) /usr/share/idea`
+- add notes on bluetoothctl setup for audio devices (a2dp_sink, aptX support, pavucontrol, pulseaudio pactl)
 
 ## My manjaro installation walkthrough (i3wm)
 
