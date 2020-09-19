@@ -5,6 +5,7 @@ rm ./.Xresources
 rm ./.zshrc
 rm -rf ./ranger/
 rm -rf ./rofi/
+rm -rf ./zathura/
 
 cp -r ~/.config/nvim/ .
 cp -r ~/.i3/ .
@@ -13,3 +14,4 @@ cp ~/.Xresources .
 cp ~/.zshrc .
 cp -r ~/.config/ranger/ .
 cp -r ~/.config/rofi/ .
+cp -r ~/.config/zathura/ .
