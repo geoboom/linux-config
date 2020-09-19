@@ -23,6 +23,8 @@
 - huion tablet driver installation walkthrough and `xinput map-to-output <device-id> <output-id>`
 - add misc section and add this in: `sudo chown -R $(whoami) /usr/share/idea`
 - add notes on `bluetoothctl` setup for audio devices (`a2dp_sink`, `aptX` support, `pavucontrol`, `pulseaudio`, `pactl`, `modprobe`, `lsusb`, `journalctl -f`)
+- add stuff on what is `lsmod`, `modprobe`, `lsblk`, `lsusb`, what is a linux kernel module, etc
+- add more kernel and hardware stuff and how terminal commands interface with them (so next time know where to look to diagnose an issue)
 - disable `lightdm` and use `startx` to run `i3`
 
 ## My manjaro installation walkthrough (i3wm)
