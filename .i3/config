@@ -27,7 +27,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec terminal
-bindsym $mod+Shift+Return exec chromium
 bindsym $mod+Mod1+Return exec chromium
 
 # kill focused window
@@ -70,6 +69,7 @@ bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+bindsym Print --release exec "scrot -u /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 bindsym $mod+Print --release exec "scrot -u /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 bindsym $mod+Shift+Print --release exec "scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 
@@ -166,12 +166,13 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
+bindsym $mod+Ctrl+Return scratchpad show
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws0 0
+set $ws0 "~"
 set $ws1 1
 set $ws2 2
 set $ws3 3

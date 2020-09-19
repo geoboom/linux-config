@@ -10,6 +10,7 @@ export ZSH="/home/geoboom/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="bureau"
+# ZSH_THEME="agnoster"
 # powerline-daemon -q . /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Set list of themes to pick from when loading at random
@@ -114,16 +115,26 @@ alias dora='pcmanfm . &'
 alias venv='. venv/bin/activate'
 alias datee='date "+%a %d %b"'
 
+function tablmap {
+    if [ "$1" = "right" ]; then
+        echo "tablet mapped to right monitor (HDMI-0)"
+        xinput map-to-output 25 HDMI-0
+    else
+        echo "tablet mapped to main monitor (DP-4)"
+        xinput map-to-output 25 DP-4
+    fi
+}
+
 # from https://github.com/ecnerwala/dotfiles/blob/master/zsh/.zshrc
 function mkcd {
-  if [ ! -n "$1" ]; then
-    echo "Enter a directory name"
-  elif [ -d $1 ]; then
-    echo "\`$1' already exists"
-	cd $1
-  else
-    md $1 && cd $1
-  fi
+    if [ ! -n "$1" ]; then
+        echo "Enter a directory name"
+    elif [ -d $1 ]; then
+        echo "\`$1' already exists"
+        cd $1
+    else
+        md $1 && cd $1
+    fi
 }
 
 gitcm() {
@@ -142,6 +153,15 @@ ide() {
     tmux new-window
     tmux rename-window "be-etc"
     tmux next-window
+}
+
+ide_lite() {
+    tmux rename-window "frontend"
+    cd ~/Projects
+    tmux new-window
+    tmux rename-window "server"
+    tmux new-window
+    tmux rename-window "backend"
 }
 
 ide1() {

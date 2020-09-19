@@ -52,10 +52,10 @@ call plug#end()
 " g:zettel_fzf_options
 " g:zettel_backlinks_title
 """""""""""""""""""""""""""vimwiki settings""""""""""""""""""""""""""""""
-nnoremap <silent>\b :VimwikiBacklinks<CR>
-nnoremap <silent>\ll :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR>
-nnoremap <silent>\lb :VimwikiAll2HTML<CR><CR>
-nnoremap <silent>\lv :Vimwiki2HTMLBrowse<CR>
+autocmd FileType vimwiki nnoremap <silent>\b :VimwikiBacklinks<CR>
+autocmd FileType vimwiki nnoremap <silent>\ll :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR> 
+autocmd FileType vimwiki nnoremap <silent>\lb :VimwikiAll2HTML<CR><CR>                    
+autocmd FileType vimwiki nnoremap <silent>\lv :Vimwiki2HTMLBrowse<CR>                     
 " let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_list = [{'path': '~/vimwiki_/'}]
 """""""""""""""""""""""""""notational-fzf-vim settings"""""""""""""""""""""""""""""""""
