@@ -22,7 +22,7 @@
   - evaluate performance of intellij idea vim emulation especially `set rnu nu`
 - huion tablet driver installation walkthrough and `xinput map-to-output <device-id> <output-id>`
 - add misc section and add this in: `sudo chown -R $(whoami) /usr/share/idea`
-- add notes on `bluetoothctl` setup for audio devices (`a2dp_sink`, `aptX` support, `pavucontrol`, `pulseaudio`, `pactl`)
+- add notes on `bluetoothctl` setup for audio devices (`a2dp_sink`, `aptX` support, `pavucontrol`, `pulseaudio`, `pactl`, `modprobe`, `lsusb`, `journalctl -f`)
 - disable `lightdm` and use `startx` to run `i3`
 
 ## My manjaro installation walkthrough (i3wm)
