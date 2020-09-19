@@ -1,4 +1,4 @@
-# My Config for Linux/WSL2
+# My very rough walkthrough for setting up stuff on an Arch-based system
 
 **Contents (TODO: hyperlink):**
 
@@ -20,11 +20,10 @@
 - install intellij idea and document process and blog about the helpful keybindings
   - figure out if intellij idea vim emulation has plugin support
   - evaluate performance of intellij idea vim emulation especially `set rnu nu`
-- update ranger config in bootstraping scripts
-- update rofi config in boostraping scripts
-- huion tablet driver installation/build from source walkthrough
+- huion tablet driver installation walkthrough and `xinput map-to-output <device-id> <output-id>`
 - add misc section and add this in: `sudo chown -R $(whoami) /usr/share/idea`
-- add notes on bluetoothctl setup for audio devices (a2dp_sink, aptX support, pavucontrol, pulseaudio pactl)
+- add notes on `bluetoothctl` setup for audio devices (`a2dp_sink`, `aptX` support, `pavucontrol`, `pulseaudio`, `pactl`)
+- disable `lightdm` and use `startx` to run `i3`
 
 ## My manjaro installation walkthrough (i3wm)
 
