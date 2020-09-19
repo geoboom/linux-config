@@ -26,6 +26,10 @@
 - add stuff on what is `lsmod`, `modprobe`, `lsblk`, `lsusb`, what is a linux kernel module, etc
 - add more kernel and hardware stuff and how terminal commands interface with them (so next time know where to look to diagnose an issue)
 - disable `lightdm` and use `startx` to run `i3`
+- add stuff explaining practical relevance of linux kernel headers and how to switch/install/check/debug 
+- CUDA, cudnn related stuff
+- provide resources to read about `systemctl`
+- research on `xorg` vs `wayland` display server protocols
 
 ## My manjaro installation walkthrough (i3wm)
 
