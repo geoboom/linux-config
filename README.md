@@ -14,17 +14,12 @@
 
 - make note on the need to change workspace-to-output mapping when change to laptop with external display
 - find out how to copy and paste with tmux keyboard-only
-- alt-tab behavior for workspace switching perhaps LOL
-- zathura config
 - document `system_to_repo.sh` and `repo_to_system.sh`. AND HAVE CONFIRMATION PROMPT.
-- install intellij idea and document process and blog about the helpful keybindings
-  - figure out if intellij idea vim emulation has plugin support
-  - evaluate performance of intellij idea vim emulation especially `set rnu nu`
 - huion tablet driver installation walkthrough and `xinput map-to-output <device-id> <output-id>`
 - add misc section and add this in: `sudo chown -R $(whoami) /usr/share/idea`
 - add notes on `bluetoothctl` setup for audio devices (`a2dp_sink`, `aptX` support, `pavucontrol`, `pulseaudio`, `pactl`, `modprobe`, `lsusb`, `journalctl -f`)
 - add stuff on what is `lsmod`, `modprobe`, `lsblk`, `lsusb`, what is a linux kernel module, etc
-- add more kernel and hardware stuff and how terminal commands interface with them (so next time know where to look to diagnose an issue)
+- add more kernel and hardware stuff and how terminal commands interface with them (so next time know where to look to diagnose an issue + general understanding)  
 - disable `lightdm` and use `startx` to run `i3`
 - add stuff explaining practical relevance of linux kernel headers and how to switch/install/check/debug 
 - CUDA, cudnn related stuff
