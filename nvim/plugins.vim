@@ -57,6 +57,8 @@ autocmd FileType vimwiki nnoremap <silent>\lb :VimwikiAll2HTML<CR><CR>
 autocmd FileType vimwiki nnoremap <silent>\lv :Vimwiki2HTMLBrowse<CR>                     
 " let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_list = [{'path': '~/vimwiki_/'}]
+" prevent files outside vimwiki dir having vimwiki filetype
+let g:vimwiki_global_ext = 0
 """""""""""""""""""""""""""notational-fzf-vim settings"""""""""""""""""""""""""""""""""
 nnoremap <silent>\n :NV<CR>
 let g:nv_search_paths = ['~/vimwiki_']

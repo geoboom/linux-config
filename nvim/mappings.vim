@@ -91,3 +91,5 @@ inoremap <silent>\now <ESC>:r !date<CR>ddPi
 nnoremap <silent>\date :r !date '+\%a \%d \%b'<CR>ddP
 nnoremap <silent>\now :r !date<CR>ddP
 :command! PDate :r !date '+\%a \%d \%b'
+
+autocmd filetype qf nmap <buffer> <cr> <cr>:lcl<cr>
