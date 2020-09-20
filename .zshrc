@@ -111,18 +111,21 @@ alias ssource='source ~/.zshrc'
 alias sss='source ~/.zshrc'
 alias cs='xclip -selection clipboard' # to simplify copying
 alias cpwd='pwd | cs'
+alias cdcp='cd `xsel --clipboard`'
 alias dora='pcmanfm . &'
 alias venv='. venv/bin/activate'
 alias datee='date "+%a %d %b"'
 alias editi3='vim .i3/config'
 
 function tablmap {
+    tablgrep='HUION .* Pen Pen'
+    tablid=`xinput --list | grep $tablgrep | sed -n -e 's/^.*id=\(\w\+\).*$/\1/p'`
     if [ "$1" = "right" ]; then
-        echo "tablet mapped to right monitor (HDMI-0)"
-        xinput map-to-output 25 HDMI-0
+        echo "tablet ($tablid) mapped to right monitor (HDMI-0)"
+        xinput map-to-output $tablid HDMI-0
     else
-        echo "tablet mapped to main monitor (DP-4)"
-        xinput map-to-output 25 DP-4
+        echo "tablet ($tablid) mapped to main monitor (DP-4)"
+        xinput map-to-output $tablid DP-4
     fi
 }
 
