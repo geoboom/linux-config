@@ -167,6 +167,7 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Return scratchpad show
+bindsym $mod+Shift+Return scratchpad show
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -176,20 +177,20 @@ set $ws0 "~"
 set $ws1 1
 set $ws2 2
 set $ws3 3
-set $ws4 "4:ML and SQL"
+set $ws4 4
 set $ws5 5
 set $ws6 6
-set $ws7 "7: schoolA"
-set $ws8 "8: schoolB"
-set $ws9 "9: schoolC"
+set $ws7 "7(sA)"
+set $ws8 "8(sB)"
+set $ws9 "9(sC)"
 set $ws10 10
-set $ws11 ".11.u"
-set $ws12 ".12.i"
-set $ws13 ".13.o"
-set $ws14 ".14.p"
-set $ws15 ".15.["
-set $ws16 ".16.]"
-set $ws17 ".17.backslash"
+set $ws11 "11(u)"
+set $ws12 "12(i)"
+set $ws13 "13(o)"
+set $ws14 "14(p)"
+set $ws15 "15([)"
+set $ws16 "16(])"
+set $ws17 "17(\)"
 
 # switch to workspace
 bindsym $mod+grave workspace $ws0
