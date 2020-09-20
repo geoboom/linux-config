@@ -151,6 +151,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
+            \ 'coc-flow',
             \ 'coc-css',
             \ 'coc-prettier',
             \ 'coc-eslint',

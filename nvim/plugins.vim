@@ -8,8 +8,7 @@ if executable('curl')
 
         augroup plug_init
             autocmd!
-            autocmd VimEnter * PlugInstall --sync | quit |source $MYVIMRC
-        augroup END
+            autocmd VimEnter * PlugInstall --sync | quit |source $MYVIMRC augroup END
     endif
 else
     echoerr 'You have to install curl to install vim-plug, or install '

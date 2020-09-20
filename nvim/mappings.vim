@@ -6,10 +6,17 @@ nnoremap <silent> <Space><Space> :noh<CR>
 " nnoremap L g_
 nnoremap H gT
 nnoremap L gt
+
+" Disable TAB binding because it conflicts with <C-i>
+" behavior to jump to next jumplist entry
 " TAB in general mode will move to text buffer
-nnoremap <silent> <TAB> :bnext<CR>
+" nnoremap <silent> <TAB> :bnext<CR>
 " SHIFT-TAB will go back
-nnoremap <silent> <S-TAB> :bprevious<CR>
+" nnoremap <silent> <S-TAB> :bprevious<CR>
+
+" easier buffer switching 
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
+
 " creates empty buffer in vertical split (<C-n> does it horizontally)
 nnoremap <C-N> :vnew<CR>
 
@@ -84,5 +91,3 @@ inoremap <silent>\now <ESC>:r !date<CR>ddPi
 nnoremap <silent>\date :r !date '+\%a \%d \%b'<CR>ddP
 nnoremap <silent>\now :r !date<CR>ddP
 :command! PDate :r !date '+\%a \%d \%b'
-
-
