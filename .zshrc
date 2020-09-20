@@ -114,6 +114,7 @@ alias cpwd='pwd | cs'
 alias dora='pcmanfm . &'
 alias venv='. venv/bin/activate'
 alias datee='date "+%a %d %b"'
+alias editi3='vim .i3/config'
 
 function tablmap {
     if [ "$1" = "right" ]; then
@@ -162,6 +163,14 @@ ide_lite() {
     tmux rename-window "server"
     tmux new-window
     tmux rename-window "backend"
+}
+
+ide_dev() {
+    tmux rename-window "dev-1"
+    tmux new-window
+    tmux rename-window "dev-2"
+    tmux new-window
+    tmux rename-window "dev-3"
 }
 
 ide1() {
