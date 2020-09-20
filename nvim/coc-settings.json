@@ -2,6 +2,7 @@
     "coc.preferences.formatOnSaveFiletypes": ["python","javascript", "css", "markdown"],
     "prettier.singleQuote": true,
     "prettier.trailingComma": "all",
+    "prettier.semi": true,
     "signature.hideOnTextChange": true,
     "python.jediEnabled": false,
     "python.jediPath": "/home/geoboom/.local/lib/python3.8/site-packages",
