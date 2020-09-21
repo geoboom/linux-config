@@ -1,0 +1,10 @@
+# configure mouse accel
+G502_MOUSE_ID=`xinput --list | grep 'G502 .* pointer' | sed -n -e 's/^.*id=\(\w\+\).*$/\1/p'`
+MOUSE_ACCEL_NAME='libinput Accel Speed'
+MOUSE_ACCEL_VAL='-0.8'
+
+xinput --set-prop $G502_MOUSE_ID $MOUSE_ACCEL_NAME $MOUSE_ACCEL_VAL
+
+# run xrandr script
+sh /home/geoboom/.screenlayout/default-layout.sh
+

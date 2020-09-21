@@ -178,19 +178,19 @@ set $ws1 1
 set $ws2 2
 set $ws3 3
 set $ws4 4
-set $ws5 5
-set $ws6 6
-set $ws7 "7(sA)"
-set $ws8 "8(sB)"
-set $ws9 "9(sC)"
-set $ws10 10
+set $ws5 "music"
+set $ws6 "6(s1)"
+set $ws7 "7(s2)"
+set $ws8 "8(s3)"
+set $ws9 "9(s4)"
+set $ws10 "notes"
 set $ws11 "11(u)"
 set $ws12 "12(i)"
 set $ws13 "13(o)"
 set $ws14 "14(p)"
-set $ws15 "15([)"
-set $ws16 "16(])"
-set $ws17 "17(\)"
+set $ws15 "stash-1"
+set $ws16 "stash-2"
+set $ws17 "comms"
 
 # switch to workspace
 bindsym $mod+grave workspace $ws0
@@ -409,6 +409,7 @@ exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id focus-last.py
 exec --no-startup-id xset r rate 270 33 # delay, interval
 exec --no-startup-id xset -b # remove the stupid bell
+
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
