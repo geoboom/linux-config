@@ -25,6 +25,7 @@
 - CUDA, cudnn related stuff
 - provide resources to read about `systemctl`
 - research on `xorg` vs `wayland` display server protocols
+- remove urxvt update with alacritty
 
 ## My manjaro installation walkthrough (i3wm)
 
@@ -255,7 +256,7 @@ exec --no-startup-id xset -b # remove the stupid bell
   (where you search for an app to run) - it's the shortcut I use for vim `ctrlp/fzf` plugin to
   search for a file.
 
-## urxvt config (.Xresources)
+## urxvt config (.Xresources) - OUTDATED. I use alacritty now. TODO: Remove this section!
 
 urxvt is a unicode version of the lightweight rxvt terminal and is shipped with manjaro i3 by default, alongside iterm and i3-sensible-terminal which I don't use and should uninstall soon.
 
