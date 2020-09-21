@@ -19,9 +19,9 @@
 - add misc section and add this in: `sudo chown -R $(whoami) /usr/share/idea`
 - add notes on `bluetoothctl` setup for audio devices (`a2dp_sink`, `aptX` support, `pavucontrol`, `pulseaudio`, `pactl`, `modprobe`, `lsusb`, `journalctl -f`)
 - add stuff on what is `lsmod`, `modprobe`, `lsblk`, `lsusb`, what is a linux kernel module, etc
-- add more kernel and hardware stuff and how terminal commands interface with them (so next time know where to look to diagnose an issue + general understanding)  
+- add more kernel and hardware stuff and how terminal commands interface with them (so next time know where to look to diagnose an issue + general understanding)
 - disable `lightdm` and use `startx` to run `i3`
-- add stuff explaining practical relevance of linux kernel headers and how to switch/install/check/debug 
+- add stuff explaining practical relevance of linux kernel headers and how to switch/install/check/debug
 - CUDA, cudnn related stuff
 - provide resources to read about `systemctl`
 - research on `xorg` vs `wayland` display server protocols
@@ -43,31 +43,21 @@ section.
 10. sound: (TODO: `alsa-utils` sound driver install; `pulseaudio` is the soundserver)
     1. install pavucontrol and pulseaudio. Not sure if need pulseaudio if I have pavucontrol/any alternatives to pavucontrol...
     2. default soundcard issue `/etc/modprobe.d/alsa-base.conf` (see arch wiki)
-11. disable mouse acceleration
-12. configure datetime properly. Not sure why after boot into manjaro timezone fucks up: manjaro-settings-manager -> time and date -> set time and date automatically
+11. configure datetime properly. Not sure why after boot into manjaro timezone fucks up: manjaro-settings-manager -> time and date -> set time and date automatically
+12. [disable mouse acceleration](#disable-mouse-acceleration)
 13. flameshot for screenshot: `pacman -S flameshot` (TODO: remove this. Document `scrot`)
-14. disable mouse acceleration (`xinput --list`, `xinput --list-props <device-id>`, `xinput --set-prop <device-id> 'libinput Accel Speed' -0.7`) and permanently commit: xorg config file in `/etc/X11/xorg.conf.d/10-mouse.conf`:
-
-    ```sh
-    Section "InputClass"
-        Identifier "Mouse"
-        MatchIsPointer "True"
-        Option "libinput Accel Speed" "-0.8"
-    EndSection
-    ```
-
-15. if window is nested/stuck, just move it to the left/right until it gets unnested!
-16. change cursor to inverted color and make it bigger
-17. replace `dmenu` with `rofi`
-18. to mount windows partition (`mkdir -p /media/$USER/WIN_PART` first):
+14. if window is nested/stuck, just move it to the left/right until it gets unnested!
+15. change cursor to inverted color and make it bigger
+16. replace `dmenu` with `rofi`
+17. to mount windows partition (`mkdir -p /media/$USER/WIN_PART` first):
     1. `lsblk`
     2. `sudo mount -t ntfs-3g -o ro /dev/sdX# /media/$USER/WIN_PART`
     3. `sudo umount /media/$USER/WIN_PART`
-19. `inxi -G` to see graphic drivers. Then, `nvidia-settings`: set refresh rate to 144Hz.
-20. set ctrl+j/k to select prev/next row in rofi: https://gist.github.com/MilesMcBain/0e6f449c3f8e07ed1b06aa785b0726ff
+18. `inxi -G` to see graphic drivers. Then, `nvidia-settings`: set refresh rate to 144Hz.
+19. set ctrl+j/k to select prev/next row in rofi: https://gist.github.com/MilesMcBain/0e6f449c3f8e07ed1b06aa785b0726ff
     1. to get rofi config, `mkdir -p ~/.config/rofi/`
     2. then `rofi -dump-xresources > ~/.config/rofi/config`
-21. change DNS to google dns:
+20. change DNS to google dns:
     1. create `/etc/NetworkManager/conf.d/20-rc-manager.conf`
     2. save with:
        ```sh
@@ -80,17 +70,17 @@ section.
        name_servers="8.8.8.8 8.4.4.4"
        ```
     4. `sudo resolvconf -u` to reload changes but breaks after restart. Not sure why (TODO).
-22. `i3-msg -t get_tree` to see all windows. Can get class of specific window you
+21. `i3-msg -t get_tree` to see all windows. Can get class of specific window you
     wish to make floating e.g. `for_window [class="Google-chrome" window_role="pop-up"] floating enable`
     for chrome pop-ups e.g. sign in with google OAuth.
-23. for alt-tab behavior:
+22. for alt-tab behavior:
     1. `pip3 install i3ipc`
     2. download the `focus-last.py` from https://github.com/altdesktop/i3ipc-python
     3. `chmod +x focus-last.py` and `mv focus-last.py /usr/bin/`.
     4. add `exec_always --no-startup-id focus-last.py` and
        `bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch` to `~/.i3/config`
     5. restart i3 and enjoy alt-tab behavior for 2 LRU windows
-24. `sudo pacman -S imwheel` to install `imwheel` which can modify scroll wheel speed on a per-program basis and paste the following config into `~/.imwheelrc`
+23. `sudo pacman -S imwheel` to install `imwheel` which can modify scroll wheel speed on a per-program basis and paste the following config into `~/.imwheelrc`
 
     ```sh
     # Speed up scrolling for chromium
@@ -106,15 +96,15 @@ section.
 
     This will allow you to scroll faster (twice normal speed) in chromium and zathura and not break your index finger trying to scroll at one sentence per revolution, the default in linux -\_-. To reload config, `pkill imwheel` and then run `imwheel`. TODO: run as startup task.
 
-25. `sudo pacman -S piper` for mouse config. Supports g502.
-26. `i3-msg 'rename workspace <num1> to <num2>'` helpful to rename/renumber workspace!
-27. Troubleshooting steps if attempting to run docker but getting permissions issue
+24. `sudo pacman -S piper` for mouse config. Supports g502.
+25. `i3-msg 'rename workspace <num1> to <num2>'` helpful to rename/renumber workspace!
+26. Troubleshooting steps if attempting to run docker but getting permissions issue
     trying to connect to the docker daemon socket:
     1. google first and follow digitalocean's guide (the docker usergroup one)
     2. `sudo chmod 777 /var/run/docker.sock` from some stackoverflow answer.
-28. spellchecking: `pacman -S hunspell-en_US` and `echo $LANG` - make sure `LANG` is `en_US`.
+27. spellchecking: `pacman -S hunspell-en_US` and `echo $LANG` - make sure `LANG` is `en_US`.
     Otherwise, `vim /etc/locale.conf` and set `LANG=en_US.UTF-8`.
-29. Dropbox installation process
+28. Dropbox installation process
     1. `cd ~/Downloads` and `git clone https://aur.archlinux.org/dropbox.git`
     2. `cd dropbox` and `wget https://linux.dropbox.com/fedora/rpm-public-key.asc` to download dropbox's
        public key
@@ -122,7 +112,23 @@ section.
     4. `makepkg -si` to build and install
     5. run `dropbox` from dmenu/rofi and login to dropbox on the browser
     6. your dropbox folder can be found in `~/dropbox`. Installation complete.
-30. Installing powerline fonts and configuring urxvt to use them
+29. Installing powerline fonts and configuring urxvt to use them
+
+### Disable mouse acceleration
+
+I write this in my `/etc/X11/xorg.conf.d/10-mouse.conf` and restart X afterwards via `sudo systemctl restart display-manager`
+
+```
+Section "InputClass"
+	Identifier "My Mouse"
+	Driver "libinput"
+	MatchIsPointer "yes"
+	Option "AccelProfile" "flat"
+	Option "AccelSpeed" "0"
+EndSection
+```
+
+I'm not sure if I need to enter `xinput --set-prop <device-id> 'libinput Accel Profile Enabled' 0, 1` afterwards to confirm it. Haven't tested it yet. Referenced from [arch wiki on libinput](https://wiki.archlinux.org/index.php/Mouse_acceleration#with_libinput).
 
 ### Wifi setup
 
