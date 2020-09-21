@@ -7,6 +7,7 @@ rm -rf ./ranger/
 rm -rf ./rofi/
 rm -rf ./zathura/
 rm ./.xprofile
+rm -rf ./alacritty/
 
 cp -r ~/.config/nvim/ .
 cp -r ~/.i3/ .
@@ -17,3 +18,4 @@ cp -r ~/.config/ranger/ .
 cp -r ~/.config/rofi/ .
 cp -r ~/.config/zathura/ .
 cp ~/.xprofile .
+cp -r ~/.config/alacritty/ .
