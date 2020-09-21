@@ -25,8 +25,11 @@ font xft:URWGothic-Book 11
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
+# set default terminal
+set $TERMINAL alacritty
+
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Mod1+Return exec chromium
 
 # kill focused window
@@ -47,7 +50,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 ################################################################################################
 
 exec --no-startup-id volumeicon
-# bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+# bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
 bindsym $mod+F1 exec pavucontrol
@@ -60,12 +63,12 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+Ctrl+b exec $TERMINAL -e 'bmenu'
 bindsym $mod+F2 exec chromium
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec terminal -e 'mocp'
+bindsym $mod+F5 exec $TERMINAL -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
