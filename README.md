@@ -26,6 +26,7 @@
 - provide resources to read about `systemctl`
 - research on `xorg` vs `wayland` display server protocols
 - remove urxvt update with alacritty
+- `pacmd list-sinks`, `pacmd set-default-sink`
 
 ## My manjaro installation walkthrough (i3wm)
 
