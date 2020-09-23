@@ -267,7 +267,8 @@ workspace $ws5 output HDMI-0
 workspace $ws8 output DP-0
 workspace $ws9 output DP-0
 
-workspace $ws11 output DP-2.8     # u
+workspace $ws10 output DP-2.8     # u 
+workspace $ws11 output DP-2.8     # u 
 workspace $ws12 output primary   # i
 workspace $ws13 output DP-0    # o
 workspace $ws14 output HDMI-0      # p
@@ -334,7 +335,7 @@ for_window [class="Piper"] floating enable
 
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# for_window [urgent=latest] focus
 bindsym $mod+slash [urgent=latest] focus
 
 # reload the configuration file

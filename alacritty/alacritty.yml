@@ -86,7 +86,16 @@
   # Scrolling distance multiplier.
   #multiplier: 3
 
+##############################################################################
+##############################################################################
+##############################################################################
 # Font configuration
+# Font configuration
+# Font configuration
+# Font configuration
+##############################################################################
+##############################################################################
+##############################################################################
 font:
   normal:
     family: Droid Sans Mono
@@ -104,7 +113,7 @@ font:
     family: Droid Sans Mono
     style: Bold Italic
 
-  size: 11.0
+  size: 10.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -124,119 +133,62 @@ font:
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
   #use_thin_strokes: true
+##############################################################################
+##############################################################################
+##############################################################################
+# Color Scheme configuration
+# Color Scheme configuration
+# Color Scheme configuration
+# Color Scheme configuration
+##############################################################################
+##############################################################################
+##############################################################################
 
-# If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+# Colors (Ayu Dark)
+custom_cursor_colors: true
+cursor:
+    text: '0x000000'
+    cursor: '0xffffff'
 
-# Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
-
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '#828482'
-    #bright_foreground: '#eaeaea'
-
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Vi mode cursor colors
-  #
-  # Colors for the cursor when the vi mode is active.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #vi_mode_cursor:
-  #  text: CellBackground
-  #  cursor: CellForeground
-
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
-
-  # Search colors
-  #
-  # Colors used for the search bar and match highlighting.
-  #
-  # Allowed values are CellForeground and CellBackground, which reference the
-  # affected cell, or hexadecimal colors like #ff00ff.
-  #search:
-  #  matches:
-  #    foreground: '#000000'
-  #    background: '#ffffff'
-  #
-  #  bar:
-  #    background: CellForeground
-  #    foreground: CellBackground
+  primary:
+    background: '#0A0E14'
+    foreground: '#B3B1AD'
 
   # Normal colors
-  #normal:
-  #  black:   '#1d1f21'
-  #  red:     '#cc6666'
-  #  green:   '#b5bd68'
-  #  yellow:  '#f0c674'
-  #  blue:    '#81a2be'
-  #  magenta: '#b294bb'
-  #  cyan:    '#8abeb7'
-  #  white:   '#c5c8c6'
+  normal:
+    black: '#01060E'
+    red: '#EA6C73'
+    green: '#91B362'
+    yellow: '#F9AF4F'
+    blue: '#53BDFA'
+    magenta: '#FAE994'
+    cyan: '#90E1C6'
+    white: '#C7C7C7'
 
   # Bright colors
-  #bright:
-  #  black:   '#666666'
-  #  red:     '#d54e53'
-  #  green:   '#b9ca4a'
-  #  yellow:  '#e7c547'
-  #  blue:    '#7aa6da'
-  #  magenta: '#c397d8'
-  #  cyan:    '#70c0b1'
-  #  white:   '#eaeaea'
+  bright:
+    black: '#686868'
+    red: '#F07178'
+    green: '#C2D94C'
+    yellow: '#FFB454'
+    blue: '#59C2FF'
+    magenta: '#FFEE99'
+    cyan: '#95E6CB'
+    white: '#FFFFFF'
 
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '#131415'
-  #  red:     '#864343'
-  #  green:   '#777c44'
-  #  yellow:  '#9e824c'
-  #  blue:    '#556a7d'
-  #  magenta: '#75617b'
-  #  cyan:    '#5b7d78'
-  #  white:   '#828482'
 
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '#ff00ff' }`
-  #
-  #indexed_colors: []
-
-# Bell
-#
-# The bell is rung every time the BEL control character is received.
+##############################################################################
+##############################################################################
+##############################################################################
+# Bell configuration
+# Bell configuration
+# Bell configuration
+# Bell configuration
+##############################################################################
+##############################################################################
+##############################################################################
 #bell:
   # Visual Bell Animation
   #

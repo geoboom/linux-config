@@ -145,7 +145,7 @@ gitcm() {
     git add . && git commit -m "$1" && git push
 }
 
-ide() {
+ide_full() {
     tmux rename-window "fe-dev"
     cd ~/Projects
     tmux new-window

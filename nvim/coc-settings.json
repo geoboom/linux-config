@@ -1,6 +1,5 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["python","javascript", "css", "markdown"],
-    "prettier.singleQuote": true,
+    "coc.preferences.formatOnSaveFiletypes": ["python","typescript","javascript", "css", "markdown"],
     "prettier.trailingComma": "all",
     "prettier.semi": true,
     "javascript.validate.enable": false,
@@ -12,3 +11,6 @@
     "python.formatting.provider": "black"
 }
 
+    // "prettier.singleQuote": true,
+    // "prettier.trailingComma": "all",
+    // "prettier.semi": true,
