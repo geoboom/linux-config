@@ -255,25 +255,42 @@ bindcode $mod+Shift+34 move container to workspace $ws15; workspace $ws15
 bindcode $mod+Shift+35 move container to workspace $ws16; workspace $ws16
 bindcode $mod+Shift+51 move container to workspace $ws17; workspace $ws17
 
-workspace $ws0 output DP-2.8
-workspace $ws1 output primary
-workspace $ws2 output HDMI-0
-workspace $ws3 output HDMI-0
+set $MAIN_MONITOR "primary"
+set $LEFT_MONITOR "DP-0.8"
+set $RIGHT_MONITOR "HDMI-0"
+set $TOP_MONITOR "DP-2"
 
-workspace $ws4 output primary
-workspace $ws6 output primary
-workspace $ws7 output primary
-workspace $ws5 output HDMI-0
-workspace $ws8 output DP-0
-workspace $ws9 output DP-0
+# work
+workspace $ws0 output $LEFT_MONITOR
+workspace $ws1 output $MAIN_MONITOR
+workspace $ws2 output $RIGHT_MONITOR
+workspace $ws3 output $RIGHT_MONITOR
+workspace $ws4 output $MAIN_MONITOR
 
-workspace $ws10 output DP-2.8     # u 
-workspace $ws11 output DP-2.8     # u 
-workspace $ws12 output primary   # i
-workspace $ws13 output DP-0    # o
-workspace $ws14 output HDMI-0      # p
-workspace $ws15 output primary    
-workspace $ws16 output HDMI-0     
+# notes
+workspace $ws10 output $LEFT_MONITOR    
+
+# sch
+workspace $ws6 output $MAIN_MONITOR
+workspace $ws7 output $MAIN_MONITOR
+workspace $ws8 output $TOP_MONITOR
+workspace $ws9 output $TOP_MONITOR
+
+# music
+workspace $ws5 output $RIGHT_MONITOR    
+#
+# comms
+workspace $ws16 output $RIGHT_MONITOR
+
+# u i o p
+workspace $ws11 output $LEFT_MONITOR    
+workspace $ws12 output $MAIN_MONITOR    
+workspace $ws13 output $TOP_MONITOR     
+workspace $ws14 output $RIGHT_MONITOR   
+
+# stashes
+workspace $ws15 output $MAIN_MONITOR    
+workspace $ws16 output $MAIN_MONITOR    
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
