@@ -76,6 +76,8 @@ set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz
 
 " Set a ruler at column 80, see https://stackoverflow.com/q/2447109/6064933
 set colorcolumn=80
+" grey
+highlight ColorColumn ctermbg=8
 
 " Minimum lines to keep above and below cursor when scrolling
 set scrolloff=5
