@@ -30,6 +30,7 @@ set $TERMINAL alacritty
 
 # start a terminal
 bindsym $mod+Return exec $TERMINAL
+bindsym $mod+n exec chromium
 bindsym $mod+Mod1+Return exec chromium
 
 # kill focused window
