@@ -5,7 +5,6 @@ let mapleader="\<Space>"
 " let g:loaded_matchparen=1
 hi MatchParen cterm=underline ctermbg=none ctermfg=yellow
 
-
 source $HOME/.config/nvim/options.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/mappings.vim

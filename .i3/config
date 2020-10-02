@@ -82,22 +82,22 @@ bindsym $mod+Shift+Print --release exec "scrot -s /tmp/screenshot-$(date +%F_%T)
 focus_follows_mouse no
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # next/prev workspace on output
 bindcode $mod+Mod1+47 workspace prev_on_output
 bindcode $mod+Mod1+48 workspace next_on_output
 bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Ctrl+Left workspace prev_on_output
+bindsym $mod+Ctrl+Right workspace next_on_output
 bindsym $mod+Ctrl+h workspace prev_on_output
 bindsym $mod+Ctrl+l workspace next_on_output
 
@@ -112,16 +112,20 @@ bindsym $mod+Mod1+j focus output down
 bindsym $mod+Mod1+k focus output up
 
 # move focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # move workspace
-bindsym $mod+Shift+Left move workspace to output left
-bindsym $mod+Shift+Down move workspace to output down
-bindsym $mod+Shift+Up move workspace to output up
-bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Ctrl+Shift+Left move workspace to output left
+bindsym $mod+Ctrl+Shift+Down move workspace to output down
+bindsym $mod+Ctrl+Shift+Up move workspace to output up
+bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+Ctrl+Shift+h move workspace to output left
 bindsym $mod+Ctrl+Shift+j move workspace to output down
 bindsym $mod+Ctrl+Shift+k move workspace to output up
@@ -266,6 +270,13 @@ workspace $ws1 output $MAIN_MONITOR
 workspace $ws2 output $RIGHT_MONITOR
 workspace $ws3 output $RIGHT_MONITOR
 workspace $ws4 output $MAIN_MONITOR
+
+# exam
+# workspace $ws0 output $MAIN_MONITOR 
+# workspace $ws1 output $MAIN_MONITOR 
+# workspace $ws2 output $MAIN_MONITOR 
+# workspace $ws3 output $MAIN_MONITOR 
+# workspace $ws4 output $MAIN_MONITOR 
 
 # notes
 workspace $ws10 output $LEFT_MONITOR    

@@ -53,9 +53,6 @@ autocmd FileType ts setlocal ts=2 sts=2 sw=2
 " Set matching pairs of characters and highlight matching brackets
 set matchpairs+=<:>,「:」,『:』,【:】,“:”,‘:’,《:》
 
-" Show line number and relative line number
-" set number relativenumber
-
 " Ignore case in general, but become case-sensitive when uppercase is present
 set ignorecase smartcase
 

@@ -22,7 +22,7 @@ let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
 call plug#begin(g:PLUGIN_HOME)
 
 Plug 'mattn/calendar-vim'
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'michal-h21/vim-zettel'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
@@ -41,24 +41,29 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for':
 Plug 'junegunn/goyo.vim'
 " Plug 'morhetz/gruvbox'
 Plug 'https://github.com/alok/notational-fzf-vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
-"""""""""""""""""""""""""""vim-zettel settings""""""""""""""""""""""""""""""
-" g:zettel_options
-" g:zettel_format
-" g:zettel_default_mappings
-" g:zettel_fzf_command
-" g:zettel_fzf_options
-" g:zettel_backlinks_title
 """""""""""""""""""""""""""vimwiki settings""""""""""""""""""""""""""""""
 autocmd FileType vimwiki nnoremap <silent>\b :VimwikiBacklinks<CR>
 autocmd FileType vimwiki nnoremap <silent>\ll :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR> 
-autocmd FileType vimwiki nnoremap <silent>\lb :VimwikiAll2HTML<CR><CR>                    
+autocmd FileType vimwiki nnoremap <silent>\lb :Vimwiki2HTML<CR><CR>                    
+autocmd FileType vimwiki nnoremap <silent>\lba :VimwikiAll2HTML<CR><CR>                    
 autocmd FileType vimwiki nnoremap <silent>\lv :Vimwiki2HTMLBrowse<CR>                     
 " let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_list = [{'path': '~/vimwiki_/'}]
 " prevent files outside vimwiki dir having vimwiki filetype
 let g:vimwiki_global_ext = 0
+" disable tab key
+let g:vimwiki_table_mappings = 0
+autocmd filetype vimwiki silent! iunmap <buffer> <Tab>
+"""""""""""""""""""""""""""ultisnips settings""""""""""""""""""""""""""""""
+" Trigger configuration. You need to change this to something else than <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 """""""""""""""""""""""""""notational-fzf-vim settings"""""""""""""""""""""""""""""""""
 nnoremap <silent>\n :NV<CR>
 let g:nv_search_paths = ['~/vimwiki_']

@@ -145,6 +145,14 @@ gitcm() {
     git add . && git commit -m "$1" && git push
 }
 
+cpss() {
+    if [ ! -n "$1" ]; then
+        cp `ls -drt /tmp/* | grep screenshot | tail -n 1` .
+    else
+        cp `ls -drt /tmp/* | grep screenshot | tail -n 1` $1
+    fi
+}
+
 ide_full() {
     tmux rename-window "fe-dev"
     cd ~/Projects
