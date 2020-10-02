@@ -118,8 +118,8 @@ alias datee='date "+%a %d %b"'
 alias editi3='vim .i3/config'
 
 function tablmap {
-    tablgrep='HUION .* Pad'
-    tablid=`xinput --list | grep $tablgrep | sed -n -e 's/^.*id=\(\w\+\).*$/\1/p'`
+    tablgrep='HUION .* Pen Pen'
+    tablid=`xinput --list | grep -i $tablgrep | sed -n -e 's/^.*id=\(\w\+\).*$/\1/p'`
     if [ "$1" = "right" ]; then
         echo "tablet ($tablid) mapped to right monitor (HDMI-0)"
         xinput map-to-output $tablid HDMI-0
