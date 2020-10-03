@@ -84,6 +84,7 @@ nnoremap <silent> <C-q> :q!<CR>
 autocmd filetype c noremap <F2> :w <bar> !gcc -Wall % -o %:r<CR> :wq <CR>
 autocmd filetype c noremap <F3> :w <bar> !gcc -Wall % -o %:r<CR>
 autocmd filetype c noremap <F4> :w <bar> !gcc -Wall % -o %:r && ./%:r <CR>
+autocmd filetype cpp noremap <F4> :w <bar> !g++ -Wall % -o %:r && ./%:r <CR>
 
 " ddP: make sure pasted text is on the line above
 inoremap <silent>\date <ESC>:r !date '+\%a \%d \%b'<CR>ddPi

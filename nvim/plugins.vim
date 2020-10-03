@@ -41,8 +41,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for':
 Plug 'junegunn/goyo.vim'
 " Plug 'morhetz/gruvbox'
 Plug 'https://github.com/alok/notational-fzf-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 call plug#end()
 """""""""""""""""""""""""""vimwiki settings""""""""""""""""""""""""""""""
