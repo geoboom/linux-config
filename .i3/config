@@ -139,7 +139,7 @@ workspace_auto_back_and_forth no
 bindsym Mod1+Tab exec --no-startup-id focus-last.py --switch
 bindsym $mod+b exec --no-startup-id focus-last.py --switch
 bindsym $mod+Mod1+b workspace back_and_forth
-bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+bindsym $mod+Mod1+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
 # bindsym $mod+h split h;exec notify-send 'tile horizontally'
