@@ -15,7 +15,8 @@ nnoremap L gt
 " nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " easier buffer switching 
-nnoremap <Leader>b :buffers<CR>:buffer<Space>
+" nnoremap <Leader>b :buffers<CR>:buffer<Space>
+" already handled by fzf.vim lul
 
 " creates empty buffer in vertical split (<C-n> does it horizontally)
 nnoremap <C-N> :vnew<CR>

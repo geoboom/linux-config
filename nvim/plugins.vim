@@ -93,6 +93,7 @@ command! ProjectFiles execute s:find_files()
 
 nnoremap <C-p> :ProjectFiles<CR>
 nnoremap <C-\> :Rg<Cr>
+nnoremap <leader>b :Buffers<Cr>
 
 """""""""""""""""""""""""""vimtex settings""""""""""""""""""""""""""""""
 let g:tex_flavor='latex'
