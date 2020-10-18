@@ -81,7 +81,17 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 nnoremap <C-g> :Goyo<Cr>
 
 """""""""""""""""""""""""""fzf.vim settings""""""""""""""""""""""""""""""
-nnoremap <C-p> :Files<Cr>
+function! s:find_files()
+    let git_dir = system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+    if git_dir != ''
+        execute 'GFiles' git_dir
+    else
+        execute 'Files'
+    endif
+endfunction
+command! ProjectFiles execute s:find_files()
+
+nnoremap <C-p> :ProjectFiles<CR>
 nnoremap <C-\> :Rg<Cr>
 
 """""""""""""""""""""""""""vimtex settings""""""""""""""""""""""""""""""
