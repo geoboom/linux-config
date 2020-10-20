@@ -19,7 +19,7 @@ nnoremap L gt
 " already handled by fzf.vim lul
 
 " creates empty buffer in vertical split (<C-n> does it horizontally)
-nnoremap <C-N> :vnew<CR>
+" nnoremap <C-n> :vnew<CR>
 
 " Yank from current cursor position to the end of the line (make it
 " consistent with the behavior of D, C)

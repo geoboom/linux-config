@@ -21,28 +21,35 @@ let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
 
 call plug#begin(g:PLUGIN_HOME)
 
+" notes/diary
+Plug 'https://github.com/alok/notational-fzf-vim'
+Plug 'junegunn/goyo.vim'
+Plug 'lervag/vimtex'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'michal-h21/vim-zettel'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
+
+" coding
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'easymotion/vim-easymotion'
+
+" convenience/qol
+Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-dirvish'
 Plug 'vim-airline/vim-airline'
-Plug 'jiangmiao/auto-pairs'
-Plug 'lervag/vimtex'
-Plug 'alvan/vim-closetag'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
-Plug 'junegunn/goyo.vim'
-" Plug 'morhetz/gruvbox'
-Plug 'https://github.com/alok/notational-fzf-vim'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
+
+" util
+Plug 'justinmk/vim-dirvish'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 
 call plug#end()
 """""""""""""""""""""""""""vimwiki settings""""""""""""""""""""""""""""""
@@ -73,9 +80,6 @@ let g:nv_search_paths = ['~/vimwiki_']
 " let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
-
-"""""""""""""""""""""""""""gruvbox settings""""""""""""""""""""""""""""""
-" autocmd vimenter * colorscheme gruvbox
 
 """""""""""""""""""""""""""goyo.vim settings""""""""""""""""""""""""""""""
 nnoremap <C-g> :Goyo<Cr>
@@ -138,9 +142,6 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 """""""""""""""""""""""""""coc-prettier settings""""""""""""""""""""""""""""""
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-"""""""""""""""""""""""""""easymotion settings""""""""""""""""""""""""""""""
-" map <leader> <Plug>(easymotion-prefix)
 
 """""""""""""""""""""""""""markdown-preview.nvim settings""""""""""""""""""""""""""""""
 " set to 1, nvim will open the preview window after entering the markdown buffer
@@ -232,3 +233,65 @@ autocmd FileType markdown nmap \ll <Plug>MarkdownPreview
 
 """""""""""""""""""""""""""coc.nvim settings""""""""""""""""""""""""""""""
 source $HOME/.config/nvim/cocnvim.vim
+
+"""""""""""""""""""""""""""nvim-tree.lua settings""""""""""""""""""""""""""""""
+" source $HOME/.config/nvim/nvim-tree.vim
+let g:lua_tree_side = 'left'
+let g:lua_tree_width = 40 
+let g:lua_tree_ignore = [ '.git', 'node_modules', '.cache' ] 
+let g:lua_tree_auto_open = 0 
+let g:lua_tree_auto_close = 0 
+let g:lua_tree_quit_on_open = 1 
+let g:lua_tree_follow = 1 
+let g:lua_tree_indent_markers = 1 
+let g:lua_tree_hide_dotfiles = 1 
+let g:lua_tree_git_hl = 1 
+let g:lua_tree_root_folder_modifier = ':~' 
+let g:lua_tree_tab_open = 1 
+let g:lua_tree_show_icons = {
+    \ 'git': 1,
+    \ 'folders': 0,
+    \ 'files': 0,
+    \}
+let g:lua_tree_bindings = {
+    \ 'edit':            ['<CR>', 'o'],
+    \ 'edit_vsplit':     '<C-v>',
+    \ 'edit_split':      '<C-x>',
+    \ 'edit_tab':        '<C-t>',
+    \ 'toggle_ignored':  'I',
+    \ 'toggle_dotfiles': 'H',
+    \ 'refresh':         'R',
+    \ 'preview':         '<Tab>',
+    \ 'cd':              '<C-]>',
+    \ 'create':          'a',
+    \ 'remove':          'd',
+    \ 'rename':          'r',
+    \ 'cut':             'x',
+    \ 'copy':            'c',
+    \ 'paste':           'p',
+    \ 'prev_git_item':   '[c',
+    \ 'next_git_item':   ']c',
+    \ }
+let g:lua_tree_icons = {
+    \ 'default': '',
+    \ 'symlink': '',
+    \ 'git': {
+    \   'unstaged': "✗",
+    \   'staged': "✓",
+    \   'unmerged': "",
+    \   'renamed': "➜",
+    \   'untracked': "★"
+    \   },
+    \ 'folder': {
+    \   'default': "",
+    \   'open': ""
+    \   }
+    \ }
+
+nnoremap <C-n> :LuaTreeToggle<CR>
+nnoremap <leader>r :LuaTreeRefresh<CR>
+nnoremap <leader>n :LuaTreeFindFile<CR>
+" set termguicolors 
+" highlight ColorColumn ctermbg=8
+highlight LuaTreeFolderIcon guibg=blue
+
