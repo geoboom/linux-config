@@ -1,0 +1,56 @@
+" ====================================
+" ============= MAPPINGS =============
+" ====================================
+let mapleader="\<Space>"
+
+inoremap <silent> jk <Esc>
+nnoremap <silent> <Space><Space> :noh<CR>
+
+nnoremap H gT
+nnoremap L gt
+
+" Yank from current cursor position to the end of the line (make it
+" consistent with the behavior of D, C)
+nnoremap Y y$
+
+" Fast window switching
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+
+" Change text without putting it into the vim register,
+" see https://stackoverflow.com/q/54255/6064933
+nnoremap c "_c
+nnoremap C "_C
+nnoremap cc "_cc
+
+" Move the cursor based on physical lines, not the actual lines.
+nnoremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <silent> ^ g^
+nnoremap <silent> 0 g0
+
+nnoremap <silent> <leader>s :w<CR>
+nnoremap <silent> <leader>q :wqa<CR>
+nnoremap <silent> <leader>d :bd<CR>
+
+nnoremap <silent> <C-q> :q!<CR>
+
+" Insert a blank line below or above current line (do not move the cursor),
+" see https://stackoverflow.com/a/16136133/6064933
+nnoremap <expr> oo 'm`' . v:count1 . 'o<Esc>``'
+nnoremap <expr> OO 'm`' . v:count1 . 'O<Esc>``'
+
+" ====================================
+" ============== OPTIONS =============
+" ====================================
+" Ignore case in general, but become case-sensitive when uppercase is present
+set ignorecase smartcase
+
+" highlight search matches
+set hlsearch incsearch
+
+" self explanatory
+set clipboard+=unnamed
+
