@@ -29,7 +29,9 @@ floating_modifier $mod
 set $TERMINAL alacritty
 
 # start a terminal
+bindsym $mod+Shift+Return split h;exec $TERMINAL
 bindsym $mod+Return exec $TERMINAL
+bindsym $mod+Shift+n split h;exec chromium
 bindsym $mod+n exec chromium
 bindsym $mod+Mod1+Return exec chromium
 
@@ -175,7 +177,7 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Return scratchpad show
-bindsym $mod+Shift+Return scratchpad show
+# bindsym $mod+Shift+Return scratchpad show
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use

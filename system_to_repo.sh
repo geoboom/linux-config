@@ -3,6 +3,7 @@ rm -rf ./.i3/
 rm ./.tmux.conf
 rm ./.Xresources
 rm ./.zshrc
+rm ./.ideavimrc
 rm -rf ./ranger/
 rm -rf ./rofi/
 rm -rf ./zathura/
@@ -19,3 +20,4 @@ cp -r ~/.config/rofi/ .
 cp -r ~/.config/zathura/ .
 cp ~/.xprofile .
 cp -r ~/.config/alacritty/ .
+cp ~/.ideavimrc .

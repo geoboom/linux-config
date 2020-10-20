@@ -84,11 +84,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-  export EDITOR='nvim'
+    export EDITOR='nvim'
+    export EDITOR='nvim'
 else
-  export EDITOR='nvim'
-  export EDITOR='nvim'
+    export EDITOR='nvim'
+    export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -116,6 +116,8 @@ alias dora='pcmanfm . &'
 alias venv='. venv/bin/activate'
 alias datee='date "+%a %d %b"'
 alias editi3='vim .i3/config'
+alias cptemplate='cp ../template.cpp solve.cpp'
+alias cptemplatee='cp ../template.cpp solve.cpp && vim -p solve.cpp 1.in'
 
 function tablmap {
     tablgrep='HUION .* Pen Pen'
@@ -141,6 +143,7 @@ function mkcd {
     fi
 }
 
+
 gitcm() {
     git add . && git commit -m "$1" && git push
 }
@@ -152,6 +155,7 @@ cpss() {
         cp `ls -drt /tmp/* | grep screenshot | tail -n 1` $1
     fi
 }
+
 
 ide_full() {
     tmux rename-window "fe-dev"
