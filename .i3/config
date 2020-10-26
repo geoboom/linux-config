@@ -84,6 +84,12 @@ bindsym $mod+Shift+Print --release exec "scrot -s /tmp/screenshot-$(date +%F_%T)
 
 focus_follows_mouse no
 
+# monitor variables
+set $MAIN_MONITOR "primary"
+set $LEFT_MONITOR "DP-0.8"
+set $RIGHT_MONITOR "HDMI-0"
+set $TOP_MONITOR "DP-2"
+
 # change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -105,14 +111,22 @@ bindsym $mod+Ctrl+h workspace prev_on_output
 bindsym $mod+Ctrl+l workspace next_on_output
 
 # select output
-bindsym $mod+Mod1+Left focus output left
-bindsym $mod+Mod1+Right focus output right
-bindsym $mod+Mod1+Down focus output down
-bindsym $mod+Mod1+Up focus output up
-bindsym $mod+Mod1+h focus output left
-bindsym $mod+Mod1+l focus output right
-bindsym $mod+Mod1+j focus output down
-bindsym $mod+Mod1+k focus output up
+bindsym $mod+Mod1+Left focus output $LEFT_MONITOR
+bindsym $mod+Mod1+Right focus output $RIGHT_MONITOR
+bindsym $mod+Mod1+Down focus output $MAIN_MONITOR
+bindsym $mod+Mod1+Up focus output $TOP_MONITOR
+bindsym $mod+Mod1+h focus output $LEFT_MONITOR
+bindsym $mod+Mod1+l focus output $RIGHT_MONITOR
+bindsym $mod+Mod1+j focus output $MAIN_MONITOR
+bindsym $mod+Mod1+k focus output $TOP_MONITOR
+# bindsym $mod+Mod1+Left focus output left
+# bindsym $mod+Mod1+Right focus output right
+# bindsym $mod+Mod1+Down focus output down
+# bindsym $mod+Mod1+Up focus output up
+# bindsym $mod+Mod1+h focus output left
+# bindsym $mod+Mod1+l focus output right
+# bindsym $mod+Mod1+j focus output down
+# bindsym $mod+Mod1+k focus output up
 
 # move focused window
 bindsym $mod+Shift+Left move left
@@ -125,14 +139,22 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # move workspace
-bindsym $mod+Ctrl+Shift+Left move workspace to output left
-bindsym $mod+Ctrl+Shift+Down move workspace to output down
-bindsym $mod+Ctrl+Shift+Up move workspace to output up
-bindsym $mod+Ctrl+Shift+Right move workspace to output right
-bindsym $mod+Ctrl+Shift+h move workspace to output left
-bindsym $mod+Ctrl+Shift+j move workspace to output down
-bindsym $mod+Ctrl+Shift+k move workspace to output up
-bindsym $mod+Ctrl+Shift+l move workspace to output right
+bindsym $mod+Ctrl+Shift+Left move workspace to output $LEFT_MONITOR
+bindsym $mod+Ctrl+Shift+Down move workspace to output $MAIN_MONITOR
+bindsym $mod+Ctrl+Shift+Up move workspace to output $TOP_MONITOR
+bindsym $mod+Ctrl+Shift+Right move workspace to output $RIGHT_MONITOR
+bindsym $mod+Ctrl+Shift+h move workspace to output $LEFT_MONITOR
+bindsym $mod+Ctrl+Shift+j move workspace to output $MAIN_MONITOR
+bindsym $mod+Ctrl+Shift+k move workspace to output $TOP_MONITOR
+bindsym $mod+Ctrl+Shift+l move workspace to output $RIGHT_MONITOR
+# bindsym $mod+Ctrl+Shift+Left move workspace to output left
+# bindsym $mod+Ctrl+Shift+Down move workspace to output down
+# bindsym $mod+Ctrl+Shift+Up move workspace to output up
+# bindsym $mod+Ctrl+Shift+Right move workspace to output right
+# bindsym $mod+Ctrl+Shift+h move workspace to output left
+# bindsym $mod+Ctrl+Shift+j move workspace to output down
+# bindsym $mod+Ctrl+Shift+k move workspace to output up
+# bindsym $mod+Ctrl+Shift+l move workspace to output right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth no
@@ -265,11 +287,6 @@ bindsym $mod+Shift+p move container to workspace $ws14; workspace $ws14
 bindcode $mod+Shift+34 move container to workspace $ws15; workspace $ws15
 bindcode $mod+Shift+35 move container to workspace $ws16; workspace $ws16
 bindcode $mod+Shift+51 move container to workspace $ws17; workspace $ws17
-
-set $MAIN_MONITOR "primary"
-set $LEFT_MONITOR "DP-0.8"
-set $RIGHT_MONITOR "HDMI-0"
-set $TOP_MONITOR "DP-2"
 
 # work
 workspace $ws0 output $LEFT_MONITOR
