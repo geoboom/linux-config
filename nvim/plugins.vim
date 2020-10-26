@@ -98,6 +98,7 @@ command! ProjectFiles execute s:find_files()
 nnoremap <C-p> :ProjectFiles<CR>
 nnoremap <C-\> :Rg<Cr>
 nnoremap <leader>b :Buffers<Cr>
+nnoremap <leader>h :History<Cr>
 
 """""""""""""""""""""""""""vimtex settings""""""""""""""""""""""""""""""
 let g:tex_flavor='latex'
@@ -112,6 +113,21 @@ let g:vimtex_quickfix_latexlog = {
             \ 'packages' : {
             \   'default' : 0,
             \ },
+            \}
+
+let g:vimtex_compiler_latexmk = {
+            \ 'build_dir' : '',
+            \ 'callback' : 1,
+            \ 'continuous' : 1,
+            \ 'executable' : 'latexmk',
+            \ 'hooks' : [],
+            \ 'options' : [
+            \   '-shell-escape',
+            \   '-verbose',
+            \   '-file-line-error',
+            \   '-synctex=1',
+            \   '-interaction=nonstopmode',
+            \ ],
             \}
 
 """""""""""""""""""""""""""vim-closetag settings""""""""""""""""""""""""""""""
