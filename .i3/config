@@ -115,10 +115,16 @@ bindsym $mod+Mod1+Left focus output $LEFT_MONITOR
 bindsym $mod+Mod1+Right focus output $RIGHT_MONITOR
 bindsym $mod+Mod1+Down focus output $MAIN_MONITOR
 bindsym $mod+Mod1+Up focus output $TOP_MONITOR
+
+bindsym $mod+Mod1+u focus output $LEFT_MONITOR
+bindsym $mod+Mod1+i focus output $MAIN_MONITOR
+bindsym $mod+Mod1+o focus output $TOP_MONITOR
+bindsym $mod+Mod1+p focus output $RIGHT_MONITOR
+
 bindsym $mod+Mod1+h focus output $LEFT_MONITOR
-bindsym $mod+Mod1+l focus output $RIGHT_MONITOR
 bindsym $mod+Mod1+j focus output $MAIN_MONITOR
 bindsym $mod+Mod1+k focus output $TOP_MONITOR
+bindsym $mod+Mod1+l focus output $RIGHT_MONITOR
 # bindsym $mod+Mod1+Left focus output left
 # bindsym $mod+Mod1+Right focus output right
 # bindsym $mod+Mod1+Down focus output down
@@ -139,14 +145,14 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # move workspace
-bindsym $mod+Ctrl+Shift+Left move workspace to output $LEFT_MONITOR
-bindsym $mod+Ctrl+Shift+Down move workspace to output $MAIN_MONITOR
-bindsym $mod+Ctrl+Shift+Up move workspace to output $TOP_MONITOR
-bindsym $mod+Ctrl+Shift+Right move workspace to output $RIGHT_MONITOR
-bindsym $mod+Ctrl+Shift+h move workspace to output $LEFT_MONITOR
-bindsym $mod+Ctrl+Shift+j move workspace to output $MAIN_MONITOR
-bindsym $mod+Ctrl+Shift+k move workspace to output $TOP_MONITOR
-bindsym $mod+Ctrl+Shift+l move workspace to output $RIGHT_MONITOR
+bindsym $mod+Mod1+Shift+Left move workspace to output $LEFT_MONITOR
+bindsym $mod+Mod1+Shift+Down move workspace to output $MAIN_MONITOR
+bindsym $mod+Mod1+Shift+Up move workspace to output $TOP_MONITOR
+bindsym $mod+Mod1+Shift+Right move workspace to output $RIGHT_MONITOR
+bindsym $mod+Mod1+Shift+h move workspace to output $LEFT_MONITOR
+bindsym $mod+Mod1+Shift+j move workspace to output $MAIN_MONITOR
+bindsym $mod+Mod1+Shift+k move workspace to output $TOP_MONITOR
+bindsym $mod+Mod1+Shift+l move workspace to output $RIGHT_MONITOR
 # bindsym $mod+Ctrl+Shift+Left move workspace to output left
 # bindsym $mod+Ctrl+Shift+Down move workspace to output down
 # bindsym $mod+Ctrl+Shift+Up move workspace to output up
@@ -385,6 +391,9 @@ for_window [class="Piper"] floating enable
 
 # for zoom
 # for_window [class="zoom"] floating enable
+
+# for guake terminal
+for_window [class="Main.py"] floating enable
 
 
 # switch to workspace with urgent window automatically
