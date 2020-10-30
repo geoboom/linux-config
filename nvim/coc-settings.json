@@ -1,7 +1,5 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["python","typescript","javascript", "css", "markdown"],
-    "prettier.trailingComma": "all",
-    "prettier.semi": true,
+    "coc.preferences.formatOnSaveFiletypes": ["python","typescriptreact","typescript","javascript", "css", "markdown"],
     "javascript.validate.enable": false,
     "javascript.showUnused": false,
     "signature.hideOnTextChange": true,
