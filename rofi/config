@@ -107,7 +107,7 @@
 ! "Indicate how it match by underlining it." Set from: Default
 ! rofi.show-match:                     true
 ! "New style theme file" Set from: Default
-! rofi.theme:                          
+rofi.theme:                            "gruvbox-dark"
 ! "Color scheme for normal row" Set from: Default
 ! rofi.color-normal:                   
 ! "Color scheme for urgent row" Set from: Default
@@ -284,3 +284,4 @@ rofi.kb-row-tab:
 ! rofi.me-accept-entry:                MouseDPrimary
 ! "Accept hovered row with custom action" Set from: Default
 ! rofi.me-accept-custom:               Control+MouseDPrimary
+rofi.theme: /usr/share/rofi/themes/gruvbox-dark.rasi
