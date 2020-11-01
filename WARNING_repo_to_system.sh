@@ -13,6 +13,6 @@ cp ./.zshrc ~
 cp -r ./alacritty/ ~/.config/alacritty/
 cp .Xmodmap ~/.Xmodmap
 cp .ideavimrc ~/.ideavimrc
-cp -r ./.config/ranger/  ~/.config/ranger/
-cp -r ./.config/rofi/    ~/.config/rofi/
-cp -r ./.config/zathura/ ~/.config/zathura/
+cp -r ./ranger/  ~/.config/ranger/
+cp -r ./rofi/    ~/.config/rofi/
+cp -r ./zathura/ ~/.config/zathura/
