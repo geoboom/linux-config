@@ -49,6 +49,8 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType js setlocal ts=2 sts=2 sw=2
 autocmd FileType typescript setlocal ts=2 sts=2 sw=2
 autocmd FileType ts setlocal ts=2 sts=2 sw=2
+autocmd FileType typescriptreact setlocal ts=2 sts=2 sw=2
+autocmd FileType tsx setlocal ts=2 sts=2 sw=2
 
 " Set matching pairs of characters and highlight matching brackets
 set matchpairs+=<:>,「:」,『:』,【:】,“:”,‘:’,《:》

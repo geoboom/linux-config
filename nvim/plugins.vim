@@ -88,7 +88,7 @@ nnoremap <C-g> :Goyo<Cr>
 function! s:find_files()
     let git_dir = system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
     if git_dir != ''
-        execute 'GFiles' git_dir
+        execute 'GFiles --cached' git_dir 
     else
         execute 'Files'
     endif
@@ -132,13 +132,13 @@ let g:vimtex_compiler_latexmk = {
 
 """""""""""""""""""""""""""vim-closetag settings""""""""""""""""""""""""""""""
 " These are the file extensions where this plugin is enabled.
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*js,*md'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*js,*jsx,*md,*tsx,*ts'
 " This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js,*md'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js,*md,*ts,*tsx'
 " These are the file types where this plugin is enabled.
 let g:closetag_filetypes = 'html,xhtml,phtml,javascript,markdown'
 " This will make the list of non-closing tags self-closing in the specified files.
-let g:closetag_xhtml_filetypes = 'xhtml,jsx,js,md'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,js,md,tsx,ts'
 
 " integer value [0|1]
 " This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)

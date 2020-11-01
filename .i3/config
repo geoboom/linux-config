@@ -216,7 +216,7 @@ set $ws1 1
 set $ws2 2
 set $ws3 3
 set $ws4 4
-set $ws5 "music"
+set $ws5 "🎶"
 set $ws6 "6(s1)"
 set $ws7 "7(s2)"
 set $ws8 "8(s3)"

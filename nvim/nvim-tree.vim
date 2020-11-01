@@ -11,7 +11,7 @@ let g:lua_tree_git_hl = 1
 let g:lua_tree_root_folder_modifier = ':~' 
 let g:lua_tree_tab_open = 1 
 let g:lua_tree_show_icons = {
-    \ 'git': 1,
+    \ 'git': 0,
     \ 'folders': 0,
     \ 'files': 0,
     \}
