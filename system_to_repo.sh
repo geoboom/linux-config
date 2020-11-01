@@ -9,6 +9,7 @@ rm -rf ./rofi/
 rm -rf ./zathura/
 rm ./.xprofile
 rm -rf ./alacritty/
+rm .Xmodmap
 
 cp -r ~/.config/nvim/ .
 cp -r ~/.i3/ .
@@ -21,3 +22,4 @@ cp -r ~/.config/zathura/ .
 cp ~/.xprofile .
 cp -r ~/.config/alacritty/ .
 cp ~/.ideavimrc .
+cp ~/.Xmodmap .

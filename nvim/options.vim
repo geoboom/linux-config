@@ -1,5 +1,6 @@
 " relatve and absolute line numbers
-set rnu nu
+" set rnu nu
+set nu
 
 " good to have
 set nocompatible

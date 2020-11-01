@@ -29,6 +29,7 @@ floating_modifier $mod
 set $TERMINAL alacritty
 
 # start a terminal
+bindsym $mod+Shift+Mod1+Return split h;exec chromium
 bindsym $mod+Shift+Return split h;exec $TERMINAL
 bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+n split h;exec chromium
@@ -183,8 +184,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+w layout toggle split
+bindsym $mod+e layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
