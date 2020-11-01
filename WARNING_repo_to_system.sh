@@ -16,3 +16,4 @@ cp .ideavimrc ~/.ideavimrc
 cp -r ./ranger/  ~/.config/ranger/
 cp -r ./rofi/    ~/.config/rofi/
 cp -r ./zathura/ ~/.config/zathura/
+cp ./.guake_preferences ~/

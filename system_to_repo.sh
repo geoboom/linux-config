@@ -23,3 +23,4 @@ cp ~/.xprofile .
 cp -r ~/.config/alacritty/ .
 cp ~/.ideavimrc .
 cp ~/.Xmodmap .
+cp ~/.guake_preferences .
