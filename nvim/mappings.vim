@@ -76,15 +76,25 @@ nnoremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <silent> ^ g^
 nnoremap <silent> 0 g0
 
+nnoremap <silent> <leader>m :mksession! session.vim<CR>
 nnoremap <silent> <leader>s :w<CR>
+
+nnoremap <silent> \s :w<CR>
+nnoremap <silent> \q :q!<CR>
+nnoremap <silent> \sq :wqa<CR>
+nnoremap <silent> \qa :qa!<CR>
+
 nnoremap <silent> <leader>q :wqa<CR>
+nnoremap <silent> <leader>c :set cursorline!<CR>
 nnoremap <silent> <leader>d :bd<CR>
 
 nnoremap <silent> <C-q> :q!<CR>
+nnoremap <silent> <C-qa> :qa!<CR>
 
 autocmd filetype c noremap <F2> :w <bar> !gcc -Wall % -o %:r<CR> :wq <CR>
 autocmd filetype c noremap <F3> :w <bar> !gcc -Wall % -o %:r<CR>
 autocmd filetype c noremap <F4> :w <bar> !gcc -Wall % -o %:r && ./%:r <CR>
+autocmd filetype cpp noremap <F3> :w <bar> !g++ -Wall % -o %:r && ./%:r <CR>
 autocmd filetype cpp noremap <F4> :w <bar> !g++ -Wall -DLOCAL_DEFINE % -o %:r && ./%:r <CR>
 
 " ddP: make sure pasted text is on the line above

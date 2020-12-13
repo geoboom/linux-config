@@ -7,7 +7,7 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 3
+default_border pixel 5
 default_floating_border normal
 
 # Hide borders
@@ -384,6 +384,7 @@ for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Require
 for_window [title="^Steam Keyboard$"] floating enable
 
 # for browser popup
+for_window [class="xdman-Main"] floating enable
 for_window [class="Chromium" window_role="pop-up"] floating enable
 for_window [class="firefox" window_role="pop-up"] floating enable
 

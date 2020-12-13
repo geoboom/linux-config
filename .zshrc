@@ -104,6 +104,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias vim='nvim'
+alias vims='nvim -S session.vim'
 alias v='nvim'
 alias ..='cd ..'
 alias rr='ranger'
@@ -141,6 +142,10 @@ function mkcd {
     else
         md $1 && cd $1
     fi
+}
+
+function comp {
+    g++ -Wall -DLOCAL_DEFINE $1.cpp -o $1 && ./$1
 }
 
 

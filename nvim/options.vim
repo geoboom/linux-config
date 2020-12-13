@@ -62,7 +62,7 @@ set ignorecase smartcase
 " Break line at predefined characters
 set linebreak
 " Character to show before the lines that have been soft-wrapped
-set showbreak=↪
+" set showbreak=↪
 
 " wild stuff
 " List all items and start selecting matches in cmd completion
