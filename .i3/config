@@ -475,8 +475,9 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id focus-last.py
-exec --no-startup-id xset r rate 270 33 # delay, interval
-exec --no-startup-id xset -b # remove the stupid bell
+exec_always --no-startup-id xset r rate 270 33 # delay, interval
+exec_always --no-startup-id xset -b # remove the stupid bell
+exec_always --no-startup-id setxkbmap -option caps:escape # map caps to escape
 
 
 # Color palette used for the terminal ( ~/.Xresources file )
