@@ -191,7 +191,7 @@ rofi.kb-row-up:                      Up,Control+k,Control+p
 ! "Select next entry" Set from: Default
 rofi.kb-row-down:                    Down,Control+j,Control+n
 ! "Go to next row, if one left, accept it, if no left next mode." Set from: Default
-rofi.kb-row-tab:                     
+rofi.kb-row-tab:                       Shift+Page_Up
 ! "Go to the previous page" Set from: Default
 ! rofi.kb-page-prev:                   Page_Up
 ! "Go to the next page" Set from: Default

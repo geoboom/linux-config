@@ -1,26 +1,17 @@
-rm -rf ./nvim/
-rm -rf ./.i3/
-rm ./.tmux.conf
-rm ./.Xresources
-rm ./.zshrc
-rm ./.ideavimrc
-rm -rf ./ranger/
-rm -rf ./rofi/
-rm -rf ./zathura/
-rm ./.xprofile
-rm -rf ./alacritty/
-rm .Xmodmap
+config_folder='./config/'
+home_folder='./home/'
 
-cp -r ~/.config/nvim/ .
-cp -r ~/.i3/ .
-cp ~/.tmux.conf .
-cp ~/.Xresources .
-cp ~/.zshrc .
-cp -r ~/.config/ranger/ .
-cp -r ~/.config/rofi/ .
-cp -r ~/.config/zathura/ .
-cp ~/.xprofile .
-cp -r ~/.config/alacritty/ .
-cp ~/.ideavimrc .
-cp ~/.Xmodmap .
-cp ~/.guake_preferences .
+mkdir -p $config_folder
+mkdir -p $home_folder
+
+cp -r ~/.config/alacritty/ $config_folder
+cp -r ~/.config/nvim/ $config_folder
+cp -r ~/.config/i3/ $config_folder
+cp -r ~/.config/i3status/ $config_folder
+cp -r ~/.config/ranger/ $config_folder
+cp -r ~/.config/rofi/ $config_folder
+cp -r ~/.config/zathura/ $config_folder
+cp -r ~/.config/.guake_preferences $config_folder
+
+cp ~/.tmux.conf $home_folder
+cp ~/.zshrc $home_folder
