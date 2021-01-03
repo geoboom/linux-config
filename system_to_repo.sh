@@ -13,5 +13,6 @@ cp -r ~/.config/rofi/ $config_folder
 cp -r ~/.config/zathura/ $config_folder
 cp -r ~/.config/.guake_preferences $config_folder
 
-cp ~/.tmux.conf $home_folder
-cp ~/.zshrc $home_folder
+cp -r ~/.tmux.conf $home_folder
+cp -r ~/.zshrc $home_folder
+cp -r ~/scripts $home_folder
