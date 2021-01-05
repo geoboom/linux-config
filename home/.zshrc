@@ -1,8 +1,9 @@
+ZSH_DISABLE_COMPFIX=true
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/geoboom/.oh-my-zsh"
+export ZSH="/Users/leegeorgie/.oh-my-zsh"
 ZSH_THEME="bureau"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
