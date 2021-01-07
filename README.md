@@ -7,7 +7,7 @@ I'm using **Pop!\_OS**.
 ```sh
 # install necessary packages
 sudo apt install i3 i3lock i3status fzf \
-         ripgrep python3-pip guake rofi \
+         ripgrep python3-pip guake rofi ranger \
          pavucontrol alacritty tmux fonts-powerline -y
 
 # install python packages
@@ -39,3 +39,5 @@ guake --restore-preferences ~/.config/.guake_preferences
 
 # logout and login using i3
 ```
+
+Also need to `git clone https://github.com/ryanoasis/nerd-fonts` and `./install.sh`, `git clone https://github.com/junegunn/fzf` and `./install.sh` to install the fzf zsh bindings.
