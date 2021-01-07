@@ -6,7 +6,7 @@ I'm using **Pop!\_OS**.
 
 ```sh
 # install necessary packages
-sudo apt install i3 i3lock i3status fzf \
+sudo apt install i3 i3lock i3status fzf scrot \
          ripgrep python3-pip guake rofi ranger \
          pavucontrol alacritty tmux fonts-powerline -y
 
