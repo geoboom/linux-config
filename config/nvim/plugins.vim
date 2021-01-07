@@ -22,7 +22,7 @@ let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
 call plug#begin(g:PLUGIN_HOME)
 
 " notes/diary
-Plug 'https://github.com/alok/notational-fzf-vim'
+" Plug 'https://github.com/alok/notational-fzf-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'lervag/vimtex'
 Plug 'mattn/calendar-vim'

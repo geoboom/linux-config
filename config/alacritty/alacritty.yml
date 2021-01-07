@@ -98,22 +98,22 @@
 ##############################################################################
 font:
   normal:
-    family: Droid Sans Mono
+    family: Monospace
     style: Regular
 
   bold:
-    family: Droid Sans Mono
+    family: Monospace
     style: Bold
 
   italic:
-    family: Droid Sans Mono
+    family: Monospace
     style: Italic
 
   bold_italic:
-    family: Droid Sans Mono
+    family: Monospace
     style: Bold Italic
 
-  size: 10.5
+  size: 7
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
