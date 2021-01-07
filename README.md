@@ -7,7 +7,8 @@ I'm using **Pop!\_OS**.
 ```sh
 # install necessary packages
 sudo apt install i3 i3lock i3status fzf \
-         ripgrep python3-pip guake rofi alacritty tmux fonts-powerline -y
+         ripgrep python3-pip guake rofi \
+         pavucontrol alacritty tmux fonts-powerline -y
 
 # install python packages
 pip3 install pynvim i3ipc
