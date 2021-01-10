@@ -8,7 +8,8 @@ I'm using **Pop!\_OS**.
 # install necessary packages
 sudo apt install i3 i3lock i3status fzf scrot zsh \
          ripgrep python3-pip guake rofi ranger \
-         pavucontrol alacritty tmux fonts-powerline -y
+         pavucontrol alacritty tmux fonts-powerline \
+         lxappearance gtk-chtheme -y
 
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
