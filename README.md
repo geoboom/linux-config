@@ -6,9 +6,12 @@ I'm using **Pop!\_OS**.
 
 ```sh
 # install necessary packages
-sudo apt install i3 i3lock i3status fzf scrot \
+sudo apt install i3 i3lock i3status fzf scrot zsh \
          ripgrep python3-pip guake rofi ranger \
          pavucontrol alacritty tmux fonts-powerline -y
+
+# install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install python packages
 pip3 install pynvim i3ipc
@@ -19,7 +22,7 @@ chmod +x nvim.appimage
 sudo mv ./nvim.appimage /usr/local/bin/nvim
 
 # install nodejs
-curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -\nsudo apt-get install -y nodejs
+curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash sudo apt-get install -y nodejs
 
 # commands below not tested yet
 cp -r config/. ~/.config/
@@ -40,4 +43,14 @@ guake --restore-preferences ~/.config/.guake_preferences
 # logout and login using i3
 ```
 
-Also need to `git clone https://github.com/ryanoasis/nerd-fonts` and `./install.sh`, `git clone https://github.com/junegunn/fzf` and `./install.sh` to install the fzf zsh bindings.
+```bash
+# install nerd fonts
+git clone https://github.com/ryanoasis/nerd-fonts --depth 1
+cd nerd-fonts
+./install.sh
+
+# install fzf bindings
+git clone https://github.com/junegunn/fzf
+cd fzf
+./install.sh
+```
