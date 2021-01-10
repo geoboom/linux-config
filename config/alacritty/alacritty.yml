@@ -545,6 +545,7 @@ key_bindings:
   #- { key: Left,                        mode: Vi, action: Left                    }
   #- { key: Right,                       mode: Vi, action: Right                   }
   #- { key: Key0,                        mode: Vi, action: First                   }
+  - { key: 12,   mods: Shift,         mode: Vi, action: First                    }
   - { key: 5,   mods: Shift,         mode: Vi, action: Last                    }
   # - { key: Key4,   mods: Shift,         mode: Vi, action: Last                    }
   #- { key: Key6,   mods: Shift,         mode: Vi, action: FirstOccupied           }
