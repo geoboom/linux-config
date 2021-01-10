@@ -274,8 +274,10 @@ bindcode $mod+Shift+51 move container to workspace $ws17; workspace $ws17
 # work
 workspace $ws0 output $LEFT_MONITOR
 workspace $ws1 output $MAIN_MONITOR
-workspace $ws2 output $RIGHT_MONITOR
-workspace $ws3 output $RIGHT_MONITOR
+workspace $ws2 output $MAIN_MONITOR
+workspace $ws3 output $MAIN_MONITOR
+# workspace $ws2 output $RIGHT_MONITOR
+# workspace $ws3 output $RIGHT_MONITOR
 workspace $ws4 output $MAIN_MONITOR
 
 # exam
