@@ -113,7 +113,7 @@ font:
     family: Monospace
     style: Bold Italic
 
-  size: 7
+  size: 10
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -504,7 +504,7 @@ colors:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }
   #- { key: L,         mods: Control,             action: ClearLogNotice }
@@ -545,7 +545,8 @@ colors:
   #- { key: Left,                        mode: Vi, action: Left                    }
   #- { key: Right,                       mode: Vi, action: Right                   }
   #- { key: Key0,                        mode: Vi, action: First                   }
-  #- { key: Key4,   mods: Shift,         mode: Vi, action: Last                    }
+  - { key: 5,   mods: Shift,         mode: Vi, action: Last                    }
+  # - { key: Key4,   mods: Shift,         mode: Vi, action: Last                    }
   #- { key: Key6,   mods: Shift,         mode: Vi, action: FirstOccupied           }
   #- { key: H,      mods: Shift,         mode: Vi, action: High                    }
   #- { key: M,      mods: Shift,         mode: Vi, action: Middle                  }
