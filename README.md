@@ -9,7 +9,7 @@ I'm using **Pop!\_OS**.
 sudo apt install i3 i3lock i3status fzf scrot zsh \
          ripgrep python3-pip guake rofi ranger \
          pavucontrol alacritty tmux fonts-powerline \
-         lxappearance gtk-chtheme bsdmainutils -y
+         lxappearance gtk-chtheme bsdmainutils zathura -y
 
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
