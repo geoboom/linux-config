@@ -54,3 +54,15 @@ git clone https://github.com/junegunn/fzf
 cd fzf
 ./install.sh
 ```
+
+```bash
+# to connect to VPN using openconnect
+
+# install openconnect
+sudo apt install openconnect -y
+
+# fix symlink /etc/resolv.conf -> /run/resolvconf/resolv.conf issue
+sudo dpkg-reconfigure resolvconf
+
+
+```
