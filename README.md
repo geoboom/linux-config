@@ -64,5 +64,9 @@ sudo apt install openconnect -y
 # fix symlink /etc/resolv.conf -> /run/resolvconf/resolv.conf issue
 sudo dpkg-reconfigure resolvconf
 
+# convert pfx key to pem key type (for my work vpn)
+openssl pkcs12 -in GeneralVPN.pfx -out WorkVPN.pem -nodes
 
+# connect to vpn
+sudo openconnect -c path_to_pem_file vpn_url
 ```
