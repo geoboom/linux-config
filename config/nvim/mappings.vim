@@ -1,6 +1,22 @@
 inoremap <silent> jk <Esc>
 nnoremap <silent> <Space><Space> :noh<CR>
 
+"------------------------------------------
+" Split window
+" nmap ss :split<Return><C-w>w
+" nmap sv :vsplit<Return><C-w>w
+nmap ss :split<Return>
+nmap sv :vsplit<Return>
+" Move window
+map sh <C-w>h
+map sk <C-w>k
+map sj <C-w>j
+map sl <C-w>l
+" Switch tab
+nmap <S-Tab> :tabprev<Return>
+nmap <Tab> :tabnext<Return>
+"------------------------------------------
+
 " Go to start or end of line easier
 " nnoremap H ^
 " nnoremap L g_
@@ -84,6 +100,7 @@ nnoremap <silent> \q :q!<CR>
 nnoremap <silent> \sq :wqa<CR>
 nnoremap <silent> \qa :qa!<CR>
 
+nnoremap <silent> <leader>s :w<CR>
 nnoremap <silent> <leader>q :wqa<CR>
 nnoremap <silent> <leader>c :set cursorline!<CR>
 nnoremap <silent> <leader>d :bd<CR>

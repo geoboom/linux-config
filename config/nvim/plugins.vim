@@ -23,7 +23,7 @@ call plug#begin(g:PLUGIN_HOME)
 
 " notes/diary
 " Plug 'https://github.com/alok/notational-fzf-vim'
-Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/goyo.vim'
 Plug 'lervag/vimtex'
 Plug 'mattn/calendar-vim'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
@@ -48,8 +48,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons' |
+            \ Plug 'flw-cn/vim-nerdtree-l-open-h-close'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 """""""""""""""""""""""""""vimwiki settings""""""""""""""""""""""""""""""
@@ -82,7 +85,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
 """""""""""""""""""""""""""goyo.vim settings""""""""""""""""""""""""""""""
-nnoremap <C-g> :Goyo<Cr>
+" nnoremap <C-g> :Goyo<Cr>
 
 """""""""""""""""""""""""""fzf.vim settings""""""""""""""""""""""""""""""
 function! s:find_files()
@@ -97,8 +100,10 @@ command! ProjectFiles execute s:find_files()
 
 nnoremap <C-p> :ProjectFiles<CR>
 nnoremap <C-\> :Rg<Cr>
-nnoremap <leader>b :Buffers<Cr>
+nnoremap <C-b> :Buffers<Cr>
 nnoremap <leader>h :History<Cr>
+" nnoremap <C-h> :History<Cr>
+" nnoremap <leader>b :Buffers<Cr>
 
 """""""""""""""""""""""""""vimtex settings""""""""""""""""""""""""""""""
 let g:tex_flavor='latex'
@@ -250,5 +255,10 @@ autocmd FileType markdown nmap \ll <Plug>MarkdownPreview
 """""""""""""""""""""""""""coc.nvim settings""""""""""""""""""""""""""""""
 source $HOME/.config/nvim/cocnvim.vim
 
-"""""""""""""""""""""""""""nvim-tree.lua settings""""""""""""""""""""""""""""""
-source $HOME/.config/nvim/nvim-tree.vim
+"""""""""""""""""""""""""""nerdtree settings""""""""""""""""""""""""""""""
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <C-n> :NERDTreeFocus<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+let g:NERDTreeMapActivateNode    = get(g:, 'NERDTreeMapActivateNode',    'l')
