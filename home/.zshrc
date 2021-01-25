@@ -4,7 +4,7 @@ export PATH=$HOME/scripts:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/geoboom/.oh-my-zsh"
 ZSH_THEME="bureau"
-plugins=(git)
+plugins=(git docker docker-compose)
 source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -15,6 +15,7 @@ else
     export EDITOR='nvim'
 fi
 
+alias vvpn='connect-garena-vpn'
 alias vim='nvim'
 alias vims='nvim -S session.vim'
 alias v='nvim'
@@ -29,8 +30,10 @@ alias dora='pcmanfm . &'
 alias venv='. venv/bin/activate'
 alias datee='date "+%a %d %b"'
 alias editi3='vim ~/.config/i3/config'
+alias editdns='sudo vim /etc/resolv.conf'
 alias cptemplate='cp ../template.cpp solve.cpp'
 alias cptemplatee='cp ../template.cpp solve.cpp && vim -p solve.cpp 1.in'
+alias cdwork='cd ~/Projects/_work/sea-2021'
 
 function tablmap {
     tablgrep='HUION .* Pen Pen'

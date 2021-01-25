@@ -436,7 +436,7 @@ mode "resize" {
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 10 -locker blurlock -corners 000-
 exec --no-startup-id guake
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $scripts/focus-last

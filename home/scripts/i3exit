@@ -5,7 +5,7 @@ lock() {
 
 case "$1" in
 	lock)
-		lock
+		$HOME/scripts/blurlock
 		;;
 	logout)
 		i3-msg exit
