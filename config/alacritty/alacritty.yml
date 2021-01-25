@@ -97,20 +97,31 @@
 ##############################################################################
 ##############################################################################
 font:
+
+  # normal:
+  #   family: Hack Nerd Font Mono
+  #   style: Regular
+  # bold:
+  #   family: Hack Nerd Font Mono
+  #   style: Bold
+  # italic:
+  #   family: Hack Nerd Font Mono
+  #   style: Italic
+  # bold_italic:
+  #   family: Hack Nerd Font Mono
+  #   style: Bold Italic
+
   normal:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Regular
-
   bold:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Bold
-
   italic:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Italic
-
   bold_italic:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Bold Italic
 
   size: 8
