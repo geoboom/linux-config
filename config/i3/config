@@ -6,7 +6,7 @@ set $scripts $HOME/scripts
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 4
+default_border pixel 2
 default_floating_border normal
 
 # Hide borders
@@ -27,6 +27,7 @@ floating_modifier $mod
 # set default programs
 set $TERMINAL alacritty
 # set $BROWSER firefox
+# set $BROWSER chromium
 set $BROWSER google-chrome
 
 # start programs
@@ -55,7 +56,6 @@ exec --no-startup-id volumeicon
 # bindsym $mod+Ctrl+m exec $TERMINAL -e 'alsamixer'
 # exec --no-startup-id pulseaudio
 # exec --no-startup-id pa-applet
-bindsym $mod+F2 exec gnome-calendar
 bindsym $mod+F1 exec pavucontrol
 bindsym $mod+m exec pavucontrol
 
@@ -86,16 +86,18 @@ bindcode $mod+$alt+47 workspace prev_on_output
 bindcode $mod+$alt+48 workspace next_on_output
 bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Prior workspace prev_on_output
+bindsym $mod+Next workspace next_on_output
 bindsym $mod+Ctrl+Left workspace prev_on_output
 bindsym $mod+Ctrl+Right workspace next_on_output
 bindsym $mod+Ctrl+h workspace prev_on_output
 bindsym $mod+Ctrl+l workspace next_on_output
 
 # monitor variables
-set $MAIN_MONITOR "primary"
-set $LEFT_MONITOR "DP-0.8"
-set $RIGHT_MONITOR "HDMI-0"
-set $TOP_MONITOR "DP-2"
+set $LEFT_MONITOR "primary"
+set $MAIN_MONITOR "HDMI-1"
+set $TOP_MONITOR "HDMI-1"
+set $RIGHT_MONITOR "DP-1"
 
 # select output (monitor names)
 bindsym $mod+$alt+Left focus output $LEFT_MONITOR
@@ -274,10 +276,8 @@ bindcode $mod+Shift+51 move container to workspace $ws17; workspace $ws17
 # work
 workspace $ws0 output $LEFT_MONITOR
 workspace $ws1 output $MAIN_MONITOR
-workspace $ws2 output $MAIN_MONITOR
-workspace $ws3 output $MAIN_MONITOR
-# workspace $ws2 output $RIGHT_MONITOR
-# workspace $ws3 output $RIGHT_MONITOR
+workspace $ws2 output $RIGHT_MONITOR
+workspace $ws3 output $RIGHT_MONITOR
 workspace $ws4 output $MAIN_MONITOR
 
 # exam
@@ -342,8 +342,6 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="Gnome-calendar"] floating enable resize set 800 800
-for_window [class="Org.gnome.Nautilus"] floating enable resize set 800 800
 
 # https://github.com/z3ntu/dotfiles/blob/master/i3/.config/i3/config
 for_window [class="^Steam$" title="^Friends$"] floating enable
@@ -440,8 +438,8 @@ exec --no-startup-id xautolock -time 10 -locker blurlock
 exec --no-startup-id guake
 exec_always --no-startup-id fix_xcursor
 exec_always --no-startup-id $scripts/focus-last
-exec_always --no-startup-id $scripts/xrandr-layout-1
 exec_always --no-startup-id $scripts/startup-scripts.sh
+exec_always --no-startup-id $scripts/xrandr-layout-1.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 set_from_resource $term_background background
@@ -505,4 +503,3 @@ bar {
     binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 }
-

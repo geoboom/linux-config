@@ -6,7 +6,6 @@
     "python.jediEnabled": false,
     "python.jediPath": "/home/geoboom/.local/lib/python3.8/site-packages",
     "python.condaPath": "/home/geoboom/anaconda3/bin/python",
-    "python.formatting.autopep8Path": "/home/geoboom/.local/bin/autopep8",
     "python.formatting.blackPath": "/home/geoboom/.local/bin/black",
     "python.formatting.provider": "black",
     "java.format.enabled": true,

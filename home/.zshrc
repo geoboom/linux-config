@@ -15,6 +15,9 @@ else
     export EDITOR='nvim'
 fi
 
+alias python='python2.7'
+alias python2='python2.7'
+alias vvpn='connect-labs-vpn.sh'
 alias vim='nvim'
 alias vims='nvim -S session.vim'
 alias v='nvim'
@@ -29,8 +32,11 @@ alias dora='pcmanfm . &'
 alias venv='. venv/bin/activate'
 alias datee='date "+%a %d %b"'
 alias editi3='vim ~/.config/i3/config'
+alias editdns='sudo vim /etc/resolv.conf'
 alias cptemplate='cp ../template.cpp solve.cpp'
 alias cptemplatee='cp ../template.cpp solve.cpp && vim -p solve.cpp 1.in'
+alias batinfo="upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E 'state|energy|percentage|time to empty'"
+alias cdwork='cd ~/WorkStuff/'
 
 function tablmap {
     tablgrep='HUION .* Pen Pen'
