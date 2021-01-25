@@ -86,6 +86,8 @@ bindcode $mod+$alt+47 workspace prev_on_output
 bindcode $mod+$alt+48 workspace next_on_output
 bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
+bindsym $mod+Prior workspace prev_on_output
+bindsym $mod+Next workspace next_on_output
 bindsym $mod+Ctrl+Left workspace prev_on_output
 bindsym $mod+Ctrl+Right workspace next_on_output
 bindsym $mod+Ctrl+h workspace prev_on_output
