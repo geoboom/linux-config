@@ -156,7 +156,7 @@ let g:coc_global_extensions = [
             \ 'coc-prettier',
             \ 'coc-eslint',
             \ 'coc-json',
-            \ 'coc-python',
+            \ 'coc-pyright',
             \ 'coc-vimtex',
             \ 'coc-java',
             \ ]

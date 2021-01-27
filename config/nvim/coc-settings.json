@@ -3,17 +3,5 @@
     "javascript.validate.enable": false,
     "javascript.showUnused": false,
     "signature.hideOnTextChange": true,
-    "python.jediEnabled": false,
-    "python.jediPath": "/home/geoboom/.local/lib/python3.8/site-packages",
-    "python.condaPath": "/home/geoboom/anaconda3/bin/python",
-    "python.formatting.blackPath": "/home/geoboom/.local/bin/black",
-    "python.formatting.provider": "black",
-    "java.format.enabled": true,
-    "java.format.onType.enabled": true,
-    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
+    "python.formatting.blackPath": "/home/geoboom/.local/bin/black"
 }
-
-    // "prettier.singleQuote": true,
-    // "prettier.trailingComma": "all",
-    // "prettier.semi": true,
-

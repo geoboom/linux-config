@@ -98,19 +98,19 @@
 ##############################################################################
 font:
   normal:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Regular
 
   bold:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Bold
 
   italic:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Italic
 
   bold_italic:
-    family: Monospace
+    family: DejaVu Sans Mono
     style: Bold Italic
 
   size: 7
