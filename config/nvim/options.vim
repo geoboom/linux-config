@@ -42,6 +42,8 @@ set softtabstop=4   " number of spaces in tab when editing
 set shiftwidth=4    " number of spaces to use for autoindent
 set expandtab       " expand tab to spaces so that tabs are spaces
 
+autocmd FileType md,markdown setlocal ts=2 sts=2 sw=2
+autocmd FileType c,cpp setlocal ts=2 sts=2 sw=2
 autocmd FileType scss setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=2 sts=2 sw=2
 autocmd FileType html setlocal ts=2 sts=2 sw=2

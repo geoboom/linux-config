@@ -13,8 +13,8 @@ map sk <C-w>k
 map sj <C-w>j
 map sl <C-w>l
 " Switch tab
-nmap <S-Tab> :tabprev<Return>
-nmap <Tab> :tabnext<Return>
+" nmap <S-Tab> :tabprev<Return>
+" nmap <Tab> :tabnext<Return>
 "------------------------------------------
 
 " Go to start or end of line easier
@@ -111,8 +111,8 @@ nnoremap <silent> <C-qa> :qa!<CR>
 autocmd filetype c noremap <F2> :w <bar> !gcc -Wall % -o %:r<CR> :wq <CR>
 autocmd filetype c noremap <F3> :w <bar> !gcc -Wall % -o %:r<CR>
 autocmd filetype c noremap <F4> :w <bar> !gcc -Wall % -o %:r && ./%:r <CR>
-autocmd filetype cpp noremap <F3> :w <bar> !g++ -Wall % -o %:r && ./%:r <CR>
-autocmd filetype cpp noremap <F4> :w <bar> !g++ -Wall -DLOCAL_DEFINE % -o %:r && ./%:r <CR>
+autocmd filetype cpp noremap <F3> :w <bar> !g++ -Wall -std=c++17 % -o %:r<CR><CR>
+autocmd filetype cpp noremap <F4> :w <bar> !g++ -Wall -std=c++17 -DLOCAL_DEFINE % -o %:r && ./%:r <CR>
 
 " ddP: make sure pasted text is on the line above
 inoremap <silent>\date <ESC>:r !date '+\%a \%d \%b'<CR>ddPi

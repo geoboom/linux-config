@@ -1,20 +1,32 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["python","typescriptreact","typescript","javascript", "css", "markdown"],
+    "coc.preferences.formatOnSaveFiletypes": [],
     "javascript.validate.enable": false,
     "javascript.showUnused": false,
     "signature.hideOnTextChange": true,
-    "python.jediEnabled": false,
-    "python.jediPath": "/home/geoboom/.local/lib/python3.8/site-packages",
-    "python.condaPath": "/home/geoboom/anaconda3/bin/python",
-    "python.formatting.autopep8Path": "/home/geoboom/.local/bin/autopep8",
-    "python.formatting.blackPath": "/home/geoboom/.local/bin/black",
-    "python.formatting.provider": "black",
-    "java.format.enabled": true,
-    "java.format.onType.enabled": true,
-    "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml"
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "args": ["--log-file=/tmp/ccls.log", "-v=1"],
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                },
+                "client": {
+                    "snippetSupport": true
+                },
+                "clang": {
+                    "extraArgs": ["-std=c++17"]
+                }
+            }
+        }
+    },
+    "markdownlint.config": {
+        "line_length": false,
+        "no-duplicate-header": false,
+        "no-inline-html": false,
+        "no-bare-urls": false,
+        "heading-increment": false
+    }
 }
-
-    // "prettier.singleQuote": true,
-    // "prettier.trailingComma": "all",
-    // "prettier.semi": true,
-

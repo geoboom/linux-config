@@ -3,7 +3,7 @@ export PATH=$HOME/scripts:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/geoboom/.oh-my-zsh"
-ZSH_THEME="bureau"
+ZSH_THEME="robbyrussell"
 plugins=(git docker docker-compose)
 source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
@@ -31,9 +31,22 @@ alias venv='. venv/bin/activate'
 alias datee='date "+%a %d %b"'
 alias editi3='vim ~/.config/i3/config'
 alias editdns='sudo vim /etc/resolv.conf'
-alias cptemplate='cp ../template.cpp solve.cpp'
-alias cptemplatee='cp ../template.cpp solve.cpp && vim -p solve.cpp 1.in'
+alias cptemplate='cp /home/geoboom/Projects/_algorithms/template.cpp solve.cpp'
+alias cptemplatee='cp /home/geoboom/Projects/_algorithms/template.cpp solve.cpp && vim -p solve.cpp 1.in'
 alias cdwork='cd ~/Projects/_work/sea-2021'
+alias cdalgo='cd ~/Projects/_algorithms/'
+alias cdcpp='cd /home/geoboom/Dropbox/_projects/cpp'
+alias cdnotes='cd /home/geoboom/Dropbox/notes'
+alias cdnotes2='cd /home/geoboom/Projects/sharednotes'
+
+function today {
+    date_str="./$(date +%Y-%m-%d)"
+    if [ ! -d "$date_str" ]; then
+        echo "Created $date_str."
+        mkdir "$date_str"
+    fi
+    cd "$date_str"
+}
 
 function tablmap {
     tablgrep='HUION .* Pen Pen'
@@ -76,47 +89,26 @@ cpss() {
     fi
 }
 
+PROJECT_DIR="/home/geoboom/Projects/_work/sea-2021"
 
-ide_full() {
-    tmux rename-window "fe-dev"
-    cd ~/Projects
+ide_work_win() {
+    cd $PROJECT_DIR/sams/client
     tmux new-window
-    tmux rename-window "fe-etc"
+    cd $PROJECT_DIR/itsupport_ticket/server
     tmux new-window
-    tmux rename-window "server"
+    cd $PROJECT_DIR/itsupport_ticket/client
     tmux new-window
-    tmux rename-window "be-dev"
-    tmux new-window
-    tmux rename-window "be-etc"
-    tmux next-window
+    cd $PROJECT_DIR/sams/server
 }
 
-ide_lite() {
-    tmux rename-window "frontend"
-    cd ~/Projects
-    tmux new-window
-    tmux rename-window "server"
-    tmux new-window
-    tmux rename-window "backend"
-}
-
-ide_dev() {
-    tmux rename-window "dev-1"
-    tmux new-window
-    tmux rename-window "dev-2"
-    tmux new-window
-    tmux rename-window "dev-3"
-}
-
-ide1() {
-    tmux split-window -h -p 50
-    tmux split-window -v
-}
-
-ide2() {
-    tmux split-window -v -p 30
-    tmux split-window -h -p 66
-    tmux split-window -h -p 50
+ide_work_split() {
+    cd $PROJECT_DIR/itsupport_ticket
+    tmux split-window
+    cd $PROJECT_DIR/sams/client
+    tmux split-window
+    cd $PROJECT_DIR/itsupport_ticket/client
+    tmux split-window
+    cd $PROJECT_DIR/sams
 }
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden'

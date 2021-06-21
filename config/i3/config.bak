@@ -82,10 +82,6 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # next/prev workspace on output
-bindcode $mod+47 workspace prev_on_output
-bindcode $mod+48 workspace next_on_output
-bindcode $mod+Ctrl+47 workspace prev_on_output
-bindcode $mod+Ctrl+48 workspace next_on_output
 bindcode $mod+$alt+47 workspace prev_on_output
 bindcode $mod+$alt+48 workspace next_on_output
 bindsym $mod+Shift+Tab workspace prev_on_output
@@ -173,8 +169,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout toggle split
-bindsym $mod+e layout toggle tabbed splith
-bindsym $mod+shift+e layout stacking
+bindsym $mod+e layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -196,90 +191,131 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 bindsym $mod+Ctrl+Return scratchpad show
 
-# =====================================================================================
-# =====================================================================================
-# ======== i3 workspace groups
-# =====================================================================================
-# =====================================================================================
-set $exec_i3_groups exec --no-startup-id i3-workspace-groups
-# Switch active workspace group
-bindsym $mod+g exec --no-startup-id i3-switch-active-workspace-group
-# Assign workspace to a group
-bindsym $mod+Shift+g exec --no-startup-id i3-assign-workspace-to-group
-# Select workspace to focus on
-bindsym $mod+$alt+g exec --no-startup-id i3-focus-on-workspace
-bindsym $mod+t exec --no-startup-id i3-focus-on-workspace
-# bindsym $mod+s exec --no-startup-id i3-focus-on-workspace
-# Move the focused container to another workspace
-bindsym $mod+$alt+Shift+g exec --no-startup-id i3-move-to-workspace
-# Rename/renumber workspace. Uses Super+Alt+n
-bindsym Mod1+Mod4+n exec --no-startup-id i3-rename-workspace
-bindsym $mod+grave $exec_i3_groups workspace-number 11
-bindsym $mod+1 $exec_i3_groups workspace-number 1
-bindsym $mod+2 $exec_i3_groups workspace-number 2
-bindsym $mod+3 $exec_i3_groups workspace-number 3
-bindsym $mod+4 $exec_i3_groups workspace-number 4
-bindsym $mod+5 $exec_i3_groups workspace-number 5
-bindsym $mod+6 $exec_i3_groups workspace-number 6
-bindsym $mod+7 $exec_i3_groups workspace-number 7
-bindsym $mod+8 $exec_i3_groups workspace-number 8
-bindsym $mod+9 $exec_i3_groups workspace-number 9
-bindsym $mod+0 $exec_i3_groups workspace-number 10
-bindsym $mod+u $exec_i3_groups workspace-number 30
-bindsym $mod+i $exec_i3_groups workspace-number 31
-bindsym $mod+o $exec_i3_groups workspace-number 32
-bindsym $mod+p $exec_i3_groups workspace-number 33
-bindcode $mod+34 $exec_i3_groups workspace-number 34
-bindcode $mod+35 $exec_i3_groups workspace-number 35
-bindcode $mod+51 $exec_i3_groups workspace-number 22
+# Workspace names
+set $ws0 "~"
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 "🎶"
+set $ws6 "6(s1)"
+set $ws7 "7(s2)"
+set $ws8 "8(s3)"
+set $ws9 "9(s4)"
+set $ws10 "10 🤔"
+set $wsnotes "notes 📚"
+set $ws11 "11(u)"
+set $ws12 "12(i)"
+set $ws13 "13(o)"
+set $ws14 "14(p)"
+set $ws15 "stash-1"
+set $ws16 "stash-2"
+set $ws17 "💬"
 
-bindsym $mod+Ctrl+grave $exec_i3_groups move-to-number 11
-bindsym $mod+Ctrl+1 $exec_i3_groups move-to-number 1
-bindsym $mod+Ctrl+2 $exec_i3_groups move-to-number 2
-bindsym $mod+Ctrl+3 $exec_i3_groups move-to-number 3
-bindsym $mod+Ctrl+4 $exec_i3_groups move-to-number 4
-bindsym $mod+Ctrl+5 $exec_i3_groups move-to-number 5
-bindsym $mod+Ctrl+6 $exec_i3_groups move-to-number 6
-bindsym $mod+Ctrl+7 $exec_i3_groups move-to-number 7
-bindsym $mod+Ctrl+8 $exec_i3_groups move-to-number 8
-bindsym $mod+Ctrl+9 $exec_i3_groups move-to-number 9
-bindsym $mod+Ctrl+0 $exec_i3_groups move-to-number 10
-bindsym $mod+Ctrl+u $exec_i3_groups move-to-number 30
-bindsym $mod+Ctrl+i $exec_i3_groups move-to-number 31
-bindsym $mod+Ctrl+o $exec_i3_groups move-to-number 32
-bindsym $mod+Ctrl+p $exec_i3_groups move-to-number 33
-bindcode $mod+Ctrl+34 $exec_i3_groups move-to-number 34
-bindcode $mod+Ctrl+35 $exec_i3_groups move-to-number 35
-bindcode $mod+Ctrl+51 $exec_i3_groups move-to-number 22
+# switch to workspace
+bindsym $mod+grave workspace $ws0
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+bindsym $mod+BackSpace workspace $wsnotes
+bindsym $mod+u workspace $ws11
+bindsym $mod+i workspace $ws12
+bindsym $mod+o workspace $ws13
+bindsym $mod+p workspace $ws14
+bindcode $mod+34 workspace $ws15
+bindcode $mod+35 workspace $ws16
+bindcode $mod+51 workspace $ws17
 
-bindsym $mod+Shift+grave $exec_i3_groups move-to-number-and-goto 11
-bindsym $mod+Shift+1 $exec_i3_groups move-to-number-and-goto 1
-bindsym $mod+Shift+2 $exec_i3_groups move-to-number-and-goto 2
-bindsym $mod+Shift+3 $exec_i3_groups move-to-number-and-goto 3
-bindsym $mod+Shift+4 $exec_i3_groups move-to-number-and-goto 4
-bindsym $mod+Shift+5 $exec_i3_groups move-to-number-and-goto 5
-bindsym $mod+Shift+6 $exec_i3_groups move-to-number-and-goto 6
-bindsym $mod+Shift+7 $exec_i3_groups move-to-number-and-goto 7
-bindsym $mod+Shift+8 $exec_i3_groups move-to-number-and-goto 8
-bindsym $mod+Shift+9 $exec_i3_groups move-to-number-and-goto 9
-bindsym $mod+Shift+0 $exec_i3_groups move-to-number-and-goto 10
-bindsym $mod+Shift+u $exec_i3_groups move-to-number-and-goto 30
-bindsym $mod+Shift+i $exec_i3_groups move-to-number-and-goto 31
-bindsym $mod+Shift+o $exec_i3_groups move-to-number-and-goto 32
-bindsym $mod+Shift+p $exec_i3_groups move-to-number-and-goto 33
-bindcode $mod+Shift+34 $exec_i3_groups move-to-number-and-goto 34
-bindcode $mod+Shift+35 $exec_i3_groups move-to-number-and-goto 35
-bindcode $mod+Shift+51 $exec_i3_groups move-to-number-and-goto 22
+# Move focused container to workspace
+bindsym $mod+Ctrl+grave move container to workspace $ws0
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Ctrl+0 move container to workspace $ws10
+bindsym $mod+Ctrl+BackSpace move container to workspace $wsnotes
+bindsym $mod+Ctrl+u move container to workspace $ws11
+bindsym $mod+Ctrl+i move container to workspace $ws12
+bindsym $mod+Ctrl+o move container to workspace $ws13
+bindsym $mod+Ctrl+p move container to workspace $ws14
+bindcode $mod+Ctrl+34 move container to workspace $ws15
+bindcode $mod+Ctrl+35 move container to workspace $ws16
+bindcode $mod+Ctrl+51 move container to workspace $ws17
 
-# workspace "*30" output $LEFT_MONITOR
-# workspace "*:31" output $MAIN_MONITOR
-# workspace "*:32" output $TOP_MONITOR
-# workspace "*:33" output $RIGHT_MONITOR
+# Move to workspace with focused container
+bindsym $mod+Shift+grave move container to workspace $ws0; workspace $ws0
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+BackSpace move container to workspace $wsnotes; workspace $wsnotes
+bindsym $mod+Shift+u move container to workspace $ws11; workspace $ws11
+bindsym $mod+Shift+i move container to workspace $ws12; workspace $ws12
+bindsym $mod+Shift+o move container to workspace $ws13; workspace $ws13
+bindsym $mod+Shift+p move container to workspace $ws14; workspace $ws14
+bindcode $mod+Shift+34 move container to workspace $ws15; workspace $ws15
+bindcode $mod+Shift+35 move container to workspace $ws16; workspace $ws16
+bindcode $mod+Shift+51 move container to workspace $ws17; workspace $ws17
 
-# =====================================================================================
-# =====================================================================================
-# =====================================================================================
-# =====================================================================================
+# work
+workspace $ws0 output $MAIN_MONITOR
+workspace $ws1 output $MAIN_MONITOR
+workspace $ws2 output $MAIN_MONITOR
+workspace $ws3 output $MAIN_MONITOR
+# workspace $ws2 output $RIGHT_MONITOR
+# workspace $ws3 output $RIGHT_MONITOR
+workspace $ws4 output $MAIN_MONITOR
+
+# exam
+# workspace $ws0 output $MAIN_MONITOR 
+# workspace $ws1 output $MAIN_MONITOR 
+# workspace $ws2 output $MAIN_MONITOR 
+# workspace $ws3 output $MAIN_MONITOR 
+# workspace $ws4 output $MAIN_MONITOR 
+
+# notes
+workspace $wsnotes output $LEFT_MONITOR    
+
+# sch
+workspace $ws6 output $MAIN_MONITOR
+workspace $ws7 output $MAIN_MONITOR
+workspace $ws8 output $TOP_MONITOR
+workspace $ws9 output $TOP_MONITOR
+
+# music
+workspace $ws5 output $RIGHT_MONITOR    
+
+# comms
+workspace $ws16 output $RIGHT_MONITOR
+
+# u i o p
+workspace $ws11 output $LEFT_MONITOR    
+workspace $ws12 output $MAIN_MONITOR    
+workspace $ws13 output $TOP_MONITOR     
+workspace $ws14 output $RIGHT_MONITOR   
+
+# stashes/etc
+workspace $ws15 output $MAIN_MONITOR    
+workspace $ws16 output $MAIN_MONITOR    
+workspace $ws10 output $MAIN_MONITOR    
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -338,9 +374,6 @@ for_window [class="Piper"] floating enable
 
 # for guake terminal
 for_window [class="Main.py"] floating enable
-
-# for SFML window
-for_window [title=".*SFML_WINDOW.*"] floating enable
 
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus
@@ -434,6 +467,20 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+# Start i3bar to display a workspace bar (plus the system information i3status if available)
+#bar {
+#    i3bar_command i3bar
+#        status_command i3status
+#        position bottom
+
+### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+#        tray_output primary
+##	tray_output eDP1
+
+#        bindsym button4 nop
+#        bindsym button5 nop
+##   font xft:URWGothic-Book 11
+## strip_workspace_numbers yes
 
 # class                 border  bground text    indicator child_border
 client.focused          #6272A4 #6272A4 #F8F8F2 #FFFFFF   #6272A4
@@ -445,7 +492,6 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 bar {
-  strip_workspace_numbers yes
   status_command i3status
   i3bar_command i3bar
   position top

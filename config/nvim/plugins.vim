@@ -20,31 +20,37 @@ endif
 let g:PLUGIN_HOME=expand(stdpath('data') . '/plugged')
 
 call plug#begin(g:PLUGIN_HOME)
+" ======== color
+Plug 'andreasvc/vim-256noir'
 
-" notes/diary
-" Plug 'https://github.com/alok/notational-fzf-vim'
-" Plug 'junegunn/goyo.vim'
+" ======== notes/diary
 Plug 'lervag/vimtex'
 Plug 'mattn/calendar-vim'
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-Plug 'michal-h21/vim-zettel'
+" Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+" Plug 'michal-h21/vim-zettel'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install()  }, 'for': ['markdown', 'vim-plug'] }
+Plug 'dhruvasagar/vim-table-mode'
+" Plug 'https://github.com/alok/notational-fzf-vim'
+" Plug 'junegunn/goyo.vim'
 
-" coding
+" ======== coding
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
+" Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'pangloss/vim-javascript'
+Plug 'rhysd/vim-clang-format'
 
-" convenience/qol
-Plug 'alvan/vim-closetag'
-Plug 'jiangmiao/auto-pairs'
+" ======== convenience/qol
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ferrine/md-img-paste.vim'
+" Plug 'alvan/vim-closetag'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
-" util
+" ======== util
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -55,6 +61,21 @@ Plug 'preservim/nerdtree' |
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
+"""""""""""""""""""""""""""md-img-paste.vim settings""""""""""""""""""""""""""""""
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+" there are some defaults for image directory and image name, you can change them
+" let g:mdip_imgdir = 'img'
+" let g:mdip_imgname = 'image'
+"""""""""""""""""""""""""""clang_format settings""""""""""""""""""""""""""""""
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11",
+            \ "BreakBeforeBraces" : "Stroustrup"}
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 """""""""""""""""""""""""""vimwiki settings""""""""""""""""""""""""""""""
 autocmd FileType vimwiki nnoremap <silent>\b :VimwikiBacklinks<CR>
 autocmd FileType vimwiki nnoremap <silent>\ll :VimwikiAll2HTML<CR>:Vimwiki2HTMLBrowse<CR> 
@@ -83,6 +104,7 @@ let g:nv_search_paths = ['~/vimwiki_']
 " let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_theme='minimalist'
 
 """""""""""""""""""""""""""goyo.vim settings""""""""""""""""""""""""""""""
 " nnoremap <C-g> :Goyo<Cr>
@@ -101,6 +123,7 @@ command! ProjectFiles execute s:find_files()
 nnoremap <C-p> :ProjectFiles<CR>
 nnoremap <C-\> :Rg<Cr>
 nnoremap <C-b> :Buffers<Cr>
+nnoremap <leader>b :Buffers<Cr>
 nnoremap <leader>h :History<Cr>
 " nnoremap <C-h> :History<Cr>
 " nnoremap <leader>b :Buffers<Cr>
@@ -127,6 +150,7 @@ let g:vimtex_compiler_latexmk = {
             \ 'executable' : 'latexmk',
             \ 'hooks' : [],
             \ 'options' : [
+            \   '-xelatex',
             \   '-shell-escape',
             \   '-verbose',
             \   '-file-line-error',
@@ -178,7 +202,7 @@ let g:mkdp_auto_close = 0
 " leave from insert mode, default 0 is auto refresh markdown as you edit or
 " move the cursor
 " default: 0
-let g:mkdp_refresh_slow = 0
+let g:mkdp_refresh_slow = 1
 
 " set to 1, the MarkdownPreview command can be use for all files,
 " by default it can be use in markdown file
@@ -258,7 +282,7 @@ source $HOME/.config/nvim/cocnvim.vim
 """""""""""""""""""""""""""nerdtree settings""""""""""""""""""""""""""""""
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <C-n> :NERDTreeFocus<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-e> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
 let g:NERDTreeMapActivateNode    = get(g:, 'NERDTreeMapActivateNode',    'l')

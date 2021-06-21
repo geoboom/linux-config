@@ -80,8 +80,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
     autocmd!
@@ -151,12 +151,12 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 
 let g:coc_global_extensions = [
             \ 'coc-tsserver',
-            \ 'coc-flow',
             \ 'coc-css',
             \ 'coc-prettier',
             \ 'coc-eslint',
             \ 'coc-json',
-            \ 'coc-python',
             \ 'coc-vimtex',
             \ 'coc-java',
+            \ 'coc-markdownlint',
+            \ 'coc-python',
             \ ]

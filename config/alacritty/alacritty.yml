@@ -99,32 +99,32 @@
 font:
 
   # normal:
-  #   family: Hack Nerd Font Mono
-  #   style: Regular
+    # family: Hack Nerd Font Mono
+    # style: Regular
   # bold:
-  #   family: Hack Nerd Font Mono
-  #   style: Bold
+    # family: Hack Nerd Font Mono
+    # style: Bold
   # italic:
-  #   family: Hack Nerd Font Mono
-  #   style: Italic
+    # family: Hack Nerd Font Mono
+    # style: Italic
   # bold_italic:
-  #   family: Hack Nerd Font Mono
-  #   style: Bold Italic
+    # family: Hack Nerd Font Mono
+    # style: Bold Italic
 
   normal:
-    family: DejaVu Sans Mono
+    family: Terminus
     style: Regular
   bold:
-    family: DejaVu Sans Mono
+    family: Terminus
     style: Bold
   italic:
-    family: DejaVu Sans Mono
+    family: Terminus
     style: Italic
   bold_italic:
-    family: DejaVu Sans Mono
+    family: Terminus
     style: Bold Italic
 
-  size: 8
+  size: 10 
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -155,40 +155,62 @@ font:
 ##############################################################################
 ##############################################################################
 
-# Colors (Ayu Dark)
-custom_cursor_colors: true
-cursor:
-    text: '0x000000'
-    cursor: '0xffffff'
-
+# # Colors (Ayu Dark)
+# custom_cursor_colors: true
+# cursor:
+#     text: '0x000000'
+#     cursor: '0xffffff'
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#0A0E14'
+#     foreground: '#B3B1AD'
+#   # Normal colors
+#   normal:
+#     black: '#01060E'
+#     red: '#EA6C73'
+#     green: '#91B362'
+#     yellow: '#F9AF4F'
+#     blue: '#53BDFA'
+#     magenta: '#FAE994'
+#     cyan: '#90E1C6'
+#     white: '#C7C7C7'
+#   # Bright colors
+#   bright:
+#     black: '#686868'
+#     red: '#F07178'
+#     green: '#C2D94C'
+#     yellow: '#FFB454'
+#     blue: '#59C2FF'
+#     magenta: '#FFEE99'
+#     cyan: '#95E6CB'
+#     white: '#FFFFFF'
+# Colors (Blood Moon)
 colors:
   # Default colors
   primary:
-    background: '#0A0E14'
-    foreground: '#B3B1AD'
-
+    background: '#10100E'
+    foreground: '#C6C6C4'
   # Normal colors
   normal:
-    black: '#01060E'
-    red: '#EA6C73'
-    green: '#91B362'
-    yellow: '#F9AF4F'
-    blue: '#53BDFA'
-    magenta: '#FAE994'
-    cyan: '#90E1C6'
-    white: '#C7C7C7'
-
+    black:   '#10100E'
+    red:     '#C40233'
+    green:   '#009F6B'
+    yellow:  '#FFD700'
+    blue:    '#0087BD'
+    magenta: '#9A4EAE'
+    cyan:    '#20B2AA'
+    white:   '#C6C6C4'
   # Bright colors
   bright:
-    black: '#686868'
-    red: '#F07178'
-    green: '#C2D94C'
-    yellow: '#FFB454'
-    blue: '#59C2FF'
-    magenta: '#FFEE99'
-    cyan: '#95E6CB'
-    white: '#FFFFFF'
-
+    black:   '#696969'
+    red:     '#FF2400'
+    green:   '#03C03C'
+    yellow:  '#FDFF00'
+    blue:    '#007FFF'
+    magenta: '#FF1493'
+    cyan:    '#00CCCC'
+    white:   '#FFFAFA'
 
 ##############################################################################
 ##############################################################################
