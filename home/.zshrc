@@ -38,6 +38,8 @@ alias cdalgo='cd ~/Projects/_algorithms/'
 alias cdcpp='cd /home/geoboom/Dropbox/_projects/cpp'
 alias cdnotes='cd /home/geoboom/Dropbox/notes'
 alias cdnotes2='cd /home/geoboom/Projects/sharednotes'
+alias spe="echo georgie.lee@squarepoint-capital.com | cs"
+alias spp="echo ')rAdfS0kz8' | cs"
 
 function today {
     date_str="./$(date +%Y-%m-%d)"
