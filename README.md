@@ -2,7 +2,7 @@
 
 I'm using **Pop!\_OS**.
 
-## Summary
+## My Bootstrapping Notes
 
 ```sh
 # install necessary packages
