@@ -12,7 +12,9 @@ I'm using **Ubuntu 22.04**.
 1. (Optional) `ssh`'d into my new machine from `poop-os`. Let's just call my new machine `ubuntu-server-main`.
 1. In `ubuntu-server-main`, ran:
 ```
-export NEEDRESTART_MODE=a # to avoid annoying popup and autorestart services
+# to avoid annoying popup and autorestart services
+export DEBIAN_FRONTEND=noninteractive
+export NEEDRESTART_MODE=a
 
 sudo apt update && sudo apt upgrade -y
 
@@ -94,5 +96,11 @@ cd $HOME
 # install alacritty themes
 mkdir -p ~/.config/alacritty/themes
 git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes
+
+# install chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main" -y
+sudo apt update
+sudo apt install google-chrome-stable -y
 ```
 

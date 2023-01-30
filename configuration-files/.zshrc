@@ -3,8 +3,11 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
     exec startx
 fi
 
-# add some paths
+# to avoid annoying popup and autorestart services
+export DEBIAN_FRONTEND=noninteractive
 export NEEDRESTART_MODE=a
+
+# add some paths
 export PATH=$HOME/scripts:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
