@@ -1,0 +1,130 @@
+{
+	"name": "Vimium C",
+	"@time": "1/31/2023, 1:56:15 AM",
+	"time": 1675101375874,
+	"environment": {
+		"extension": "1.99.97",
+		"platform": "linux",
+		"chromium": 106
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://bfnightly.bracketproductions.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https?://collabedit\\.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://docs.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.hackerrank.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": "^https://leetcode.com/problems/.+?/$"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.overleaf.com/project/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://www.notion.so/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.codility.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://monkeytype.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://creditsuisse.recsolu.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://codebunk.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://codeshare.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://steamcommunity.com/chat"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.coderpad.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://vscode.dev/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://godbolt.org/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://replit.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://v6p9d9t4.ssl.hwcdn.net/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://tingalinga.itch.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.gather.town/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.codesignal.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://soc-tips.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://vc.larksuite.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://codeinterview.io/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://calendar.google.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://app.diagrams.net/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://excalidraw.com/"
+		}
+	],
+	"keyMappings": [
+		"#! no-check",
+		"unmap W",
+		"map W moveTabToNewWindow",
+		""
+	]
+}
