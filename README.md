@@ -125,5 +125,8 @@ cd $HOME
 # changing these DefaultTimeoutStartSec, DefaultTimeoutStopSec in /etc/systemd/system.conf
 # TODO: use sed to uncomment and set the values instead of appending
 echo "DefaultTimeoutStartSec=10s\nDefaultTimeoutStopSec=10s\n" | sudo tee -a /etc/systemd/system.conf > /dev/null
+
+# set timezone, might break idk
+sudo timedatectl set-timezone $(timedatectl list-timezones | grep -i singapore | head -n 1)
 ```
 
