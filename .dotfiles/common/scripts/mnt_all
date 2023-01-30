@@ -1,6 +1,0 @@
-sudo umount /mnt/win-3
-sudo umount /mnt/win-2
-sudo umount /mnt/win-1
-sudo mount -t ntfs /dev/sdc1 /mnt/win-3
-sudo mount -t ntfs /dev/sdd2 /mnt/win-2
-sudo mount -t ntfs /dev/sda2 /mnt/win-1
