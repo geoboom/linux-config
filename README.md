@@ -102,5 +102,17 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main" -y
 sudo apt update
 sudo apt install google-chrome-stable -y
+
+# install nvidia driver for RTX 4080 (method#1)
+sudo add-apt-repository ppa:graphics-drivers/ppa -y
+sudo apt update
+sudo apt install nvidia-driver-525 -y
+
+# install nvidia driver for RTX 4080 (method#2)
+cd $HOME/Downloads
+wget https://us.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-x86_64-525.60.11.run
+chmod +x NVIDIA-Linux-x86_64-525.60.11.run
+sudo ./NVIDIA-Linux-x86_64-525.60.11.run
+cd $HOME
 ```
 
