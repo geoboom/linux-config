@@ -34,8 +34,8 @@ floating_modifier $mod
 
 # set default programs
 set $TERMINAL alacritty
-set $BROWSER firefox
-# set $BROWSER google-chrome
+# set $BROWSER firefox
+set $BROWSER google-chrome
 
 # start programs
 bindsym $mod+$alt+Shift+Return;exec $TERMINAL --title alacritty_floating
