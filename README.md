@@ -62,6 +62,12 @@ source "$HOME/.cargo/env"
 # install clang stuff
 sudo apt install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang -y
 
+# add bits/stdc++.h header
+sudo mkdir -p /usr/include/bits
+sudo wget \
+  https://raw.githubusercontent.com/tekfyl/bits-stdc-.h-for-mac/master/stdc%2B%2B.h \
+  --output-document=/usr/include/bits/stdc++.h
+
 # install neovim
 mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin
@@ -114,5 +120,10 @@ wget https://us.download.nvidia.com/XFree86/Linux-x86_64/525.60.11/NVIDIA-Linux-
 chmod +x NVIDIA-Linux-x86_64-525.60.11.run
 sudo ./NVIDIA-Linux-x86_64-525.60.11.run
 cd $HOME
+
+# set time to kill pending process to 10s so shutdown is faster by
+# changing these DefaultTimeoutStartSec, DefaultTimeoutStopSec in /etc/systemd/system.conf
+# TODO: use sed to uncomment and set the values instead of appending
+echo "DefaultTimeoutStartSec=10s\nDefaultTimeoutStopSec=10s\n" | sudo tee -a /etc/systemd/system.conf > /dev/null
 ```
 
