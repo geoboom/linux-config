@@ -1,3 +1,5 @@
+# Outdated, see [ubuntu-server-main](https://github.com/geoboom/linux-config/tree/ubuntu-server-main)
+
 # Ubuntu/Debian-based config
 
 I'm using **Pop!\_OS**.
