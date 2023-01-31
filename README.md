@@ -13,8 +13,11 @@ I'm using **Ubuntu 22.04**.
 1. In `ubuntu-server-main`, ran:
 ```
 # to avoid annoying popup and autorestart services
-export DEBIAN_FRONTEND=noninteractive
-export NEEDRESTART_MODE=a
+# apparently just writing `export DEBIAN_FRONTEND=noninteractive\nexport NEEDRESTART_MODE=a`
+# in terminal won't work because the `apt upgrade` and `apt install` commands are run
+# with sudo, which doesn't preserve this user environment unless ran with sudo -E.
+# so, I will add these exports into /etc/environment, used system-wide :D
+echo 'export DEBIAN_FRONTEND=noninteractive\nexport NEEDRESTART_MODE=a' | sudo tee -a /etc/environment > /dev/null
 
 sudo apt update && sudo apt upgrade -y
 
