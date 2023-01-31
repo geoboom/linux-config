@@ -1,3 +1,0 @@
-#!/bin/sh
-pacmd unload-module module-remap-source
-pacmd load-module module-remap-source source_name=mono_Mix master= master_channel=front-right channel_map=mono

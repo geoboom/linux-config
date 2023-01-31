@@ -1,5 +1,0 @@
-#!/bin/bash
-pem_path=$HOME/Downloads/SeaLabs.pem
-url='oneconnect.garenanow.com'
-
-sudo openconnect -u leegeorgie --authgroup SailorVPN -c $pem_path $url -b
