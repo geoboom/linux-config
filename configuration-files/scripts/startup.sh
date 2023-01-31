@@ -45,6 +45,7 @@ then
     set_x_stuff
 else
     # echo "[$0]: \$DISPLAY not detected"
+    :
 fi
 
 # set_g502_sens

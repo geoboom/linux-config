@@ -141,5 +141,9 @@ cd dragon-dnd
 sudo apt install libgtk-3-dev
 make install PREFIX=$HOME/.local
 cd $HOME
+
+# install zathura and make it the default pdf reader
+sudo apt install zathura
+xdg-mime default org.pwmt.zathura.desktop application/pdf
 ```
 
