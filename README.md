@@ -42,7 +42,8 @@ sudo apt install xinit \
                  zip \
                  xsel \
                  alacritty \
-                 libfuse2 -y
+                 libfuse2 \
+                 tree -y
 
 mkdir -p $HOME/.local/bin
 ln -s /usr/bin/fdfind $HOME/.local/bin/fd
@@ -133,5 +134,12 @@ echo "DefaultTimeoutStartSec=10s\nDefaultTimeoutStopSec=10s\n" | sudo tee -a /et
 
 # set timezone, might break idk
 sudo timedatectl set-timezone $(timedatectl list-timezones | grep -i singapore | head -n 1)
+
+# install dragon for drag and drop
+cd $HOME/Downloads && git clone https://github.com/mwh/dragon dragon-dnd
+cd dragon-dnd
+sudo apt install libgtk-3-dev
+make install PREFIX=$HOME/.local
+cd $HOME
 ```
 

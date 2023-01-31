@@ -41,3 +41,5 @@ alias j_p="cd $HOME/projects"
 
 source $HOME/scripts/startup.sh
 
+bindkey \^U backward-kill-line
+
