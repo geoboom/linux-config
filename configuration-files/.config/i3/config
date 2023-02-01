@@ -4,6 +4,7 @@ popup_during_fullscreen smart
 set $alt Mod1
 set $mod Mod4
 set $scripts $HOME/scripts
+set $term zsh
 
 # ==================================================================================
 # ==================================================================================
@@ -16,6 +17,10 @@ set $scripts $HOME/scripts
 exec_always --no-startup-id pkill -f i3-focus-last
 exec_always --no-startup-id $scripts/startup.sh
 exec_always --no-startup-id $scripts/xrandr-layout-1
+exec_always --no-startup-id $term -c '. $HOME/.zshrc && set_g502_sens'
+
+# put some commands after killing i3-focus-last so server doesn't accidentally
+# get killed
 exec_always --no-startup-id $HOME/.local/bin/i3-focus-last server
 
 # set default desktop layout (default is tiling)
