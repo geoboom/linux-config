@@ -68,7 +68,12 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 
-# install clang stuff
+# install rust-analyzer (https://rust-analyzer.github.io/manual.html#installation)
+rustup component add rust-src
+rustup component add rust-analyzer
+ln -s $(rustup which --toolchain stable rust-analyzer) ~/.cargo/bin/rust-analyzer
+
+# install clang stuff, see `.config/clangd/config.yaml` in configuration-files
 sudo apt install clang-format clang-tidy clang-tools clang clangd libc++-dev libc++1 libc++abi-dev libc++abi1 libclang-dev libclang1 liblldb-dev libllvm-ocaml-dev libomp-dev libomp5 lld lldb llvm-dev llvm-runtime llvm python3-clang -y
 
 # add bits/stdc++.h header
