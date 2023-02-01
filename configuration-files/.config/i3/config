@@ -10,11 +10,13 @@ set $scripts $HOME/scripts
 # Autostart applications
 # ==================================================================================
 # ==================================================================================
-exec --no-startup-id dropbox start
-exec --no-startup-id nm-applet
-# exec_always --no-startup-id pkill -f i3-focus-last
-exec_always --no-startup-id $HOME/.local/bin/i3-focus-last server
+# exec --no-startup-id dropbox start
+# exec --no-startup-id nm-applet
+# exec_always --no-startup-id $HOME/.local/bin/snixembed --fork
+exec_always --no-startup-id pkill -f i3-focus-last
 exec_always --no-startup-id $scripts/startup.sh
+exec_always --no-startup-id $scripts/xrandr-layout-1
+exec_always --no-startup-id $HOME/.local/bin/i3-focus-last server
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -80,11 +82,15 @@ bindcode $mod+48 workspace next_on_output
 bindsym $mod+Shift+Tab workspace prev_on_output
 bindsym $mod+Tab workspace next_on_output
 
+# for g502 mouse buttons
+bindsym $mod+$alt+Ctrl+Prior focus output left
+bindsym $mod+$alt+Ctrl+Next focus output right
+
 # monitor variables
 set $MAIN_MONITOR "primary"
-set $LEFT_MONITOR "primary"
-set $RIGHT_MONITOR "primary"
-set $TOP_MONITOR "primary"
+set $LEFT_MONITOR "HDMI-0"
+set $RIGHT_MONITOR "DP-2"
+set $TOP_MONITOR "DP-0"
 
 # select output (monitor names)
 bindsym $mod+$alt+h focus output $LEFT_MONITOR
@@ -299,12 +305,12 @@ mode "resize" {
 # =====================================================================================
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
+# for_window [title="alsamixer"] floating enable border normal
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="Galculator"] floating enable border normal
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
@@ -371,6 +377,8 @@ for_window [class="Org.gnome.Nautilus"] border pixel
 for_window [class="org-dreambot-Boot"] border pixel
 no_focus [class="org-dreambot-Boot"]
 
+for_window [class="Cheese"] border pixel
+
 # ==================================================================================
 # ==================================================================================
 # Colors and shit
@@ -391,6 +399,8 @@ bar {
   i3bar_command i3bar
   position top
   tray_output primary
+  # font pango: Hack, Font Awesome 5 Free Regular 12
+  # font pango: JetBrains Mono, Font Awesome 5 Free 12
 
   colors {
     background #282A36
