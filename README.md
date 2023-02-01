@@ -54,8 +54,10 @@ chsh -s $(which zsh)
 # install omz
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# make xinit start i3
-echo "exec i3" > $HOME/.xinitrc
+# make xinit start i3 and GTK apps not take 10 years to fking open
+STUPID_GTK='dbus-update-activation-environment'
+STUPID_GTK+=' --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
+echo "exec i3\n${STUPID_GTK}" > $HOME/.xinitrc
 
 # install fzf and set up bindings
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -145,5 +147,10 @@ cd $HOME
 # install zathura and make it the default pdf reader
 sudo apt install zathura
 xdg-mime default org.pwmt.zathura.desktop application/pdf
+
+# set up audio
+sudo apt install alsa-utils pavucontrol -y
+pulseaudio -k
+pulseaudio -D
 ```
 
