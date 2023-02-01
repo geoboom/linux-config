@@ -55,6 +55,7 @@ chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # make xinit start i3 and GTK apps not take 10 years to fking open
+# see reply in https://bbs.archlinux.org/viewtopic.php?id=224787 by dumblob
 STUPID_GTK='dbus-update-activation-environment'
 STUPID_GTK+=' --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
 echo "exec i3\n${STUPID_GTK}" > $HOME/.xinitrc
