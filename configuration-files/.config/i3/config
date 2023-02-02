@@ -4,7 +4,7 @@ popup_during_fullscreen smart
 set $alt Mod1
 set $mod Mod4
 set $scripts $HOME/scripts
-set $term zsh
+set $shell zsh
 
 # ==================================================================================
 # ==================================================================================
@@ -17,7 +17,7 @@ set $term zsh
 exec_always --no-startup-id pkill -f i3-focus-last
 exec_always --no-startup-id $scripts/startup.sh
 exec_always --no-startup-id $scripts/xrandr-layout-1
-exec_always --no-startup-id $term -c '. $HOME/.zshrc && set_g502_sens'
+exec_always --no-startup-id $shell -c '. $HOME/.zshrc && set_g502_sens'
 
 # put some commands after killing i3-focus-last so server doesn't accidentally
 # get killed
@@ -40,16 +40,16 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # set default programs
-set $TERMINAL alacritty
-# set $BROWSER firefox
-set $BROWSER google-chrome
+set $terminal $HOME/.local/bin/kitty
+# set $browser firefox
+set $browser google-chrome
 
 # start programs
-bindsym $mod+$alt+Shift+Return;exec $TERMINAL --title alacritty_floating
-bindsym $mod+Shift+Return split h;exec $TERMINAL
-bindsym $mod+Return exec $TERMINAL
-bindsym $mod+Shift+n split h;exec $BROWSER
-bindsym $mod+n exec $BROWSER
+bindsym $mod+$alt+Shift+Return;exec $terminal --class="termfloat"
+bindsym $mod+Shift+Return split h;exec $terminal
+bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+n split h;exec $browser
+bindsym $mod+n exec $browser
 
 # kill focused window
 bindsym $mod+q kill
@@ -353,8 +353,10 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
-# for alacritty_floating
-for_window [title="alacritty_floating"] floating enable
+# for floating terminal
+for_window [class="termfloat"] floating enable
+for_window [class="termfloat"] resize set height 600
+for_window [class="termfloat"] resize set width 900
 
 # for browser_floating
 for_window [class="browser_floating"] floating enable

@@ -158,5 +158,22 @@ xdg-mime default org.pwmt.zathura.desktop application/pdf
 sudo apt install alsa-utils pavucontrol -y
 pulseaudio -k
 pulseaudio -D
+
+# TODO:
+# instructions on setting up kitty, installing pillow, ffmpeg, ffmpegthumbnailer
+# for ranger image and video preview
+
+# TODO:
+# instructions on compiling mupdf, zathura, zathura-pdf-mupdf and setting
+# mupdf-x11 as default image viewer using mimeopen -d or creating .local/share/applications/<...>.desktop
+# and adding to .config/mimeapps.list:
+# image/png=mupdf-usercreated-1.desktop;
+# image/jpeg=mupdf-usercreated-2.desktop;
+# under [Added Associations]
+
+# install some comms
+sudo snap install discord
+sudo snap connect discord:system-observe
+sudo snap install telegram-desktop --edge
 ```
 
