@@ -42,7 +42,8 @@ sudo apt install xinit \
                  xsel \
                  alacritty \
                  libfuse2 \
-                 tree -y
+                 tree \
+                 cheese -y
 
 # TODO: instructions on how to build ueberzug for image preview in ranger
 sudo pip3 install ranger-fm
@@ -61,7 +62,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # see reply in https://bbs.archlinux.org/viewtopic.php?id=224787 by dumblob
 STUPID_GTK='dbus-update-activation-environment'
 STUPID_GTK+=' --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
-echo "exec i3\n${STUPID_GTK}" > $HOME/.xinitrc
+echo "${STUPID_GTK}\nexec i3" > $HOME/.xinitrc
 
 # install fzf and set up bindings
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -178,5 +179,22 @@ pulseaudio -D
 sudo snap install discord
 sudo snap connect discord:system-observe
 sudo snap install telegram-desktop --edge
+
+# Update kernel from 5.15.X to 5.19.X, just to see if it'll fix the
+# "/user.slice/user-1000.slice/session-1.scope is not a snap cgroup" issue caused
+# by running i3 using `dbus-launch --exit-with-session i3` in ~/.xinitrc to
+# fix GTK apps taking 20s to open, sigh. SPOILER ALERT - it didn't fix the issue
+# but now with just `exec i3` after kernel update, opening GTK apps is instantaneous
+# (for now at least) so I wasted an hour of debugging for nothing.
+sudo add-apt-repository ppa:cappelikan/ppa
+sudo apt update
+sudo apt install mainline
+sudo mainline --install 5.19.17
+# if not it's gonna hang on startup because my gpu doesn't support modeset
+sudo sed -i \
+    's/GRUB_CMDLINE_LINUX_DEFAULT.*/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"/g' \
+    /etc/default/grub
+sudo update-grub2
+sudo reboot
 ```
 
