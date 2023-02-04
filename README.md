@@ -58,6 +58,10 @@ chsh -s $(which zsh)
 # install omz
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# make omz not lag in git repos
+git config --add oh-my-zsh.hide-status 1
+git config --add oh-my-zsh.hide-dirty 1
+
 # make xinit start i3 and GTK apps not take 10 years to fking open
 # see reply in https://bbs.archlinux.org/viewtopic.php?id=224787 by dumblob
 STUPID_GTK='dbus-update-activation-environment'
