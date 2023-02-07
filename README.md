@@ -1,7 +1,7 @@
 # Ubuntu 22.04 Server Bootstrap Notes
 
 I'm using **Ubuntu 22.04**.
-![image](https://user-images.githubusercontent.com/13282914/215683931-be2f8529-ca97-47b3-a9d2-c9bd3748066e.png)
+![image](https://user-images.githubusercontent.com/13282914/217356191-22fc1c32-4b58-4d53-adae-8a7cee3684dd.png)
 
 ## Diary
 
