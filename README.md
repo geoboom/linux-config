@@ -66,7 +66,7 @@ git config --add oh-my-zsh.hide-dirty 1
 # see reply in https://bbs.archlinux.org/viewtopic.php?id=224787 by dumblob
 STUPID_GTK='dbus-update-activation-environment'
 STUPID_GTK+=' --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY'
-echo "${STUPID_GTK}\nexec i3" > $HOME/.xinitrc
+echo -e "${STUPID_GTK}\nexec i3" > $HOME/.xinitrc
 
 # install fzf and set up bindings
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -146,7 +146,7 @@ cd $HOME
 # set time to kill pending process to 10s so shutdown is faster by
 # changing these DefaultTimeoutStartSec, DefaultTimeoutStopSec in /etc/systemd/system.conf
 # TODO: use sed to uncomment and set the values instead of appending
-echo "DefaultTimeoutStartSec=10s\nDefaultTimeoutStopSec=10s\n" | sudo tee -a /etc/systemd/system.conf > /dev/null
+echo -e "DefaultTimeoutStartSec=10s\nDefaultTimeoutStopSec=10s\n" | sudo tee -a /etc/systemd/system.conf > /dev/null
 
 # set timezone, might break idk
 sudo timedatectl set-timezone $(timedatectl list-timezones | grep -i singapore | head -n 1)
