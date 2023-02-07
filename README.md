@@ -45,10 +45,6 @@ sudo apt install xinit \
                  tree \
                  cheese -y
 
-# TODO: instructions on how to build ueberzug for image preview in ranger
-sudo pip3 install ranger-fm
-CC="cc -mavx2" pip3 install -U --force-reinstall pillow-simd
-
 mkdir -p $HOME/.local/bin
 ln -s /usr/bin/fdfind $HOME/.local/bin/fd
 
