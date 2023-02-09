@@ -109,6 +109,10 @@ cp target/release/i3-focus-last $HOME/.local/bin/
 GIT_ROOT_DIR=$(git rev-parse --show-toplevel)
 rsync -ravP $GIT_ROOT_DIR/configuration-files/ 192.168.0.132:~/
 
+# alternatively on the same machine,
+GIT_ROOT_DIR=$(git rev-parse --show-toplevel)
+rsync -ravP $GIT_ROOT_DIR/configuration-files/ ~
+
 # install jetbrains mono nerd font
 mkdir -p $HOME/.local/share/fonts
 cd $HOME/.local/share/fonts

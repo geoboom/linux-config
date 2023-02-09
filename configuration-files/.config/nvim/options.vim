@@ -136,5 +136,8 @@ set spellsuggest+=10  " The number of suggestions shown in the screen for z=
 set lazyredraw
 set ttyfast
 
+set background=dark
+
 set foldlevelstart=99
 set foldmethod=syntax
+set foldopen=hor,mark,percent,quickfix,search,tag,undo

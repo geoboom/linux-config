@@ -18,8 +18,6 @@ map sl <C-w>l
 "------------------------------------------
 
 " Go to start or end of line easier
-" nnoremap H ^
-" nnoremap L g_
 nnoremap H gT
 nnoremap L gt
 
@@ -31,7 +29,7 @@ nnoremap L gt
 " nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " easier buffer switching
-" nnoremap <Leader>b :buffers<CR>:buffer<Space>
+nnoremap <Leader>b :buffers<CR>:buffer<Space>
 " already handled by fzf.vim lul
 
 " creates empty buffer in vertical split (<C-n> does it horizontally)
@@ -128,3 +126,13 @@ inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
+
+" for me to spam leader + s / \ + s / space + s for save file
+nnoremap s <Nop>
+
+" Open new file adjacent to current file
+nnoremap <leader>o :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" <BSLASH><BSLASH> toggles between buffers
+nnoremap <BSLASH><BSLASH> <c-^>
+
