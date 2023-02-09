@@ -40,7 +40,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # set default programs
-set $terminal $HOME/.local/bin/kitty
+set $terminal $HOME/.local/bin/alacritty
 # set $browser firefox
 set $browser google-chrome
 
