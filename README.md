@@ -45,6 +45,8 @@ sudo apt install xinit \
                  tree \
                  cheese -y
 
+sudo npm install --global yarn
+
 mkdir -p $HOME/.local/bin
 ln -s /usr/bin/fdfind $HOME/.local/bin/fd
 
