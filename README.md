@@ -263,17 +263,11 @@ brew install --cask karabiner-elements
 brew install --cask alt-tab
 brew install --cask hammerspoon
 brew install koekeishiya/formulae/skhd
-brew install koekeishiya/formulae/yabai # https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+brew install koekeishiya/formulae/yabai
 
 # install fzf and set up bindings
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
-```
-
-- Start services
-```
-brew services start yabai
-brew services start skhd
 ```
 
 - Install and setup sketchybar
@@ -291,3 +285,16 @@ cp -r ./SketchyBar/{plugins,sketchybarrc} ~/.config/sketchybar
 chmod +x ~/.config/sketchybar/plugins/*
 rm -rf SketchyBar
 ```
+
+- Start services and grant permissions
+```
+brew services start yabai
+brew services start skhd
+```
+
+- Launch karabiner-elements, alt-tab, hammerspoon and grant permissions
+
+- Run import defaults script again
+
+- TODO: install clangd and other things and document
+
