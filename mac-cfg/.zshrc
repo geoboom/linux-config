@@ -121,4 +121,5 @@ export LC_ALL=en_US.UTF-8
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$HOME/homebrew/bin:$PATH
 
