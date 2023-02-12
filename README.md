@@ -3,7 +3,7 @@
 I'm using **Ubuntu 22.04**.
 ![image](https://user-images.githubusercontent.com/13282914/217356191-22fc1c32-4b58-4d53-adae-8a7cee3684dd.png)
 
-## Diary
+## Diary - Linux
 
 1. I downloaded `Ubuntu 22.04` server using `wget https://releases.ubuntu.com/22.04/ubuntu-22.04.1-live-server-amd64.iso` on my `pop-os` desktop
 1. I plugged in my USB thumbdrive and ran `lsblk`, identified the block device corresponding to it which is `/dev/sdd`, and ran `sudo dd if=$HOME/Downloads/ubuntu-22.04.1-live-server-amd64.iso of=/dev/sdd bs=1M status=progress`. Alternatively, you can run `dmesg` (as root) after plugging in the thumbdrive and it'll tell you which block device it corresponds to. `dmesg` displays all the messages from the kernel ring buffer which is basically a log of the kernel.
@@ -204,3 +204,84 @@ sudo update-grub2
 sudo reboot
 ```
 
+## Diary - Mac
+
+- System Preferences > General:
+  - Accent color: graphite
+  - Sidebar icon size: small
+- System Preferences > Accessibility:
+  - Tick "Reduce motion"
+  - Tick "Reduce transparency"
+- System Preferences > Trackpad:
+  - Untick "Scroll direction: Natural"
+- System Preferences > Desktop & Dock:
+  - Automatically hide and show the menu bar: "Always"
+- Might have to set up workspace switching keybinds (`alt+{1-0,;,'}`), idk
+- Install chrome extensions:
+  - ublock-origin
+  - vimium-c
+    - import configuration into chrome
+
+- Install xcode tools:
+```
+xcode-select --install
+```
+
+- Save and run this script to import defaults
+```
+#!/bin/bash
+
+IFS=$', '
+EXPORT_DIR=MY_DEFAULTS_EXPORTS_PATH
+domains=$(defaults domains)
+
+for domain in $domains; do
+    cmd="defaults import $domain $EXPORT_DIR/$domain.txt"
+    echo $cmd
+    eval $cmd
+done
+```
+
+- Install homebrew:
+```
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+- Install programs
+```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+brew install --cask alacritty
+brew install tmux
+brew install ripgrep
+brew install fd
+brew install --cask karabiner-elements
+brew install --cask alt-tab
+brew install --cask hammerspoon
+brew install koekeishiya/formulae/skhd
+brew install koekeishiya/formulae/yabai # https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+
+# install fzf and set up bindings
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
+```
+
+- Start services
+```
+brew services start yabai
+brew services start skhd
+```
+
+- Install and setup sketchybar
+```
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+brew tap FelixKratz/formulae
+brew install sketchybar
+brew services start sketchybar
+
+git clone https://github.com/FelixKratz/SketchyBar
+mkdir -p ~/.config/sketchybar
+cp -r ./SketchyBar/{plugins,sketchybarrc} ~/.config/sketchybar
+chmod +x ~/.config/sketchybar/plugins/*
+rm -rf SketchyBar
+```
