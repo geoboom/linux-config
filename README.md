@@ -255,6 +255,7 @@ echo 'export PATH=$PATH:$HOME/homebrew/bin' >> ~/.zshrc && source ~/.zshrc
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew install --cask alacritty
+brew install neovim
 brew install tmux
 brew install ripgrep
 brew install fd
