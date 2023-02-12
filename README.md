@@ -247,7 +247,8 @@ done
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # if no sudo
-mkdir ~/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+mkdir ~/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/homebrew
+echo 'export PATH=$PATH:$HOME/homebrew/bin' >> ~/.zshrc && source ~/.zshrc
 ```
 
 - Install programs
@@ -277,6 +278,7 @@ brew services start skhd
 - Install and setup sketchybar
 ```
 brew tap homebrew/cask-fonts
+brew install font-jetbrains-mono-nerd-font
 brew install --cask font-hack-nerd-font
 brew tap FelixKratz/formulae
 brew install sketchybar
